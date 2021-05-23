@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+ <bean name="appProperties" class="com.ecosys.properties.AppProperties">
+<constructor-arg value="app.properties" />
+</bean>
+
+ <bean id="globalConstants" class="com.ecosys.properties.GlobalConstants">
+<property name="appProperties" ref="appProperties" />
+</bean>
+
+<bean id="batchQueueGlobalConstants"
+class="com.ecosys.properties.BatchQueueConstants">
+<property name="appProperties" ref="appProperties" />
+</bean>
+
+ <bean id="epcRestMgr" class="com.ecosys.service.EpcRestMgrImpl">
+</bean>
+
+<bean id="batchQueueLogging" class="com.ecosys.service.BatchQueueLoggingImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+</bean>
+
+<bean id="BatchQueueMgr"
+class="com.ecosys.service.BatchQueueMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueLogging" ref="batchQueueLogging" />
+</bean>
+
+ <bean id="BQService" class="com.ecosys.service.BQService">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
+
+ <bean id="ActualsImport" class="com.ecosys.service.ActualsImportMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
+
+
+</beans>

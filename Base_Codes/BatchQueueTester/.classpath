@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-12">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-lang.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-pool-1.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/ecosys-batchqueue.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/ecosysintg.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-annotations-2.10.4.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-core-2.10.4.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-databind-2.10.4.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-dataformat-yaml-2.10.4.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-jaxrs-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-impl-2.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-impl-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-runtime-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-xjc-2.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jersey-bundle-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jersey-client-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jersey-core-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jersey-json-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jersey-server-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jersey-servlet-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/joda-time-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/kafka_2.12-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/kafka-clients-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/mpxj.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/poi-4.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/rtfparserkit-1.15.0.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/SBIntegration.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/slf4j-log4j12-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-aop.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-beans.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-context.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-core.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-expression.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-transaction.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
