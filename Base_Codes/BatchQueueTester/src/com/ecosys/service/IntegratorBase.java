@@ -106,18 +106,23 @@ public abstract class IntegratorBase {
 	protected String[] getArguments(String taskInternalID) throws SystemException {
 		String arguments[] = batchQueueMgr.readTask(client,taskInternalID).getBatchQueueParam1ID().split("\\|");
 		
-		this.logger.debug("Arg1: " + arguments[0] + "Arg2: " + arguments[1]);
+		for ( int i=0; i < arguments.length; i++) {
+			
+			this.logger.info("Argument-" + (i+1) + " : " +  arguments[i].toString() );
+			
+		}
 		
 		return arguments;
 	}
 	
-	
-	protected String getMPPFilePath(Client client, String projectID, String minorPeriodID) throws SystemException {
+	protected String getIntegrationType(String taskInternalID) throws SystemException {
 		
+		String integrationType = batchQueueMgr.readTask(client,taskInternalID).getBatchQueueIntegrationTypeID();
 		
-		return null;
+		this.logger.info(integrationType);
+		
+		return integrationType;
 	}
-	
 
 
 }

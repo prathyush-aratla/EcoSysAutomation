@@ -1,14 +1,14 @@
 package com.ecosys.startup;
 
 import org.apache.log4j.Logger;
+import org.joda.time.format.ISOPeriodFormat;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.ecosys.service.ActualsImportMgrImpl;
-import com.ecosys.service.BQService;
 import com.ecosys.service.BatchQueueMgr;
 import com.ecosys.service.EpcRestMgr;
 import com.ecosys.service.IntegratorMgr;
 import com.ecosys.service.MppReaderImpl;
+import com.ecosys.util.Stopwatch;
 
 public class MainRunner {
 	
@@ -18,9 +18,15 @@ public class MainRunner {
 	
 	protected static BatchQueueMgr batchQueueMgr;
 
+
 	public static void main(String[] args)  throws Exception{
 		// TODO Auto-generated method stub
 		
+		Stopwatch timerTotal = new Stopwatch();
+		timerTotal.start();
+		
+
+		int error_code = 0;
 		
 		try {
 			logger.info("********Integration Starts*********");
@@ -29,38 +35,24 @@ public class MainRunner {
 			
 			logger.info("Starting BatchQueue Testing.....");
 			
-//			BQService service = (BQService) context.getBean("BQService", BQService.class);
-//			
-//			String arguments[] = service.GetArguments("22961");
-//			
-//			logger.info("Argument A : " + arguments[0].toString());
-//			logger.info("Argument B : " + arguments[1].toString());
-			
-			
-			
-//			IntegratorMgr actualsImport = (ActualsImportMgrImpl) context.getBean("ActualsImport", ActualsImportMgrImpl.class);
-			
-//			actualsImport.test();
-			
 			IntegratorMgr readMPP = (MppReaderImpl) context.getBean("MppReader", MppReaderImpl.class);
 			
 			readMPP.test();
 			
-//			ActualsImportMgrImpl actualsImport = (ActualsImportMgrImpl) context.getBean("ActualsImport", ActualsImportMgrImpl.class);
-//			actualsImport.test();
-//			String arguments[] = actualsImport.getArguments("22961");
-//			logger.info("Argument A : " + arguments[0].toString());
-//			logger.info("Argument B : " + arguments[1].toString());
 			
+			logger.info("----> Time taken : " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));
 			logger.info("********Integration End*********");
+			
 			((ClassPathXmlApplicationContext) context).close();
 			
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			error_code = -1;
 		}
-
+	
+			
 
 	}
 

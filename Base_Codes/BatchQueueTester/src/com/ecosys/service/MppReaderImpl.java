@@ -9,6 +9,8 @@ import java.net.URL;
 
 import javax.ws.rs.core.NewCookie;
 
+import org.apache.poi.ss.formula.functions.Choose;
+
 import com.ecosys.exception.SystemException;
 import com.ecosys.getmetcfile.DocumentValueType;
 import com.ecosys.getmetcfile.MSPGetMppFileResultType;
@@ -32,8 +34,12 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
 		
-		String arguments[] = getArguments(taskInternalID);
+		String intgType = getIntegrationType(taskInternalID);
 		
+		
+		
+		String arguments[] = getArguments(taskInternalID);
+				
 		projectName = arguments[0];
 		
 		String filePathA = getMPPFile(client, arguments[1]);
@@ -46,6 +52,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 		
 	}
+	
 	
 	// get MPP file for retrieve ETC Data
 	private String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
@@ -89,6 +96,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		}
 		
 		return mppFilePath;
+		
 	}
 	
 	// get MPP file for retrieve Project Structure Data
@@ -129,6 +137,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		}
 		else {
 			logError("Could not find the mpp file to create Project Structure for Project - " + projectName);
+			
 		}
 		
 		return mppFilePath;
