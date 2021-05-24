@@ -1,0 +1,34 @@
+2021-05-23 20:28:42,847 INFO  com.ecosys.startup.MainRunner.main:25 - ********Integration Starts*********
+2021-05-23 20:28:43,199 INFO  com.ecosys.startup.MainRunner.main:29 - Starting BatchQueue Testing.....
+2021-05-23 20:28:43,394 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-23 20:28:43,398 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22961
+2021-05-23 20:28:44,883 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-23 20:28:44,884 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,88E0D0F3341DB2FF5289B67874697DFE
+2021-05-23 20:28:45,064 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-23 20:28:45,292 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - BatchQueue Project ID : EIM
+2021-05-23 20:28:45,338 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-23 20:28:45,339 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22961
+2021-05-23 20:28:45,538 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-23 20:28:45,539 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,3C1C78B6639F706BBC7A7176AF6D052D
+2021-05-23 20:28:45,708 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-23 20:28:45,711 DEBUG com.ecosys.service.IntegratorBase.getArguments:109 - Arg1: PRX2Arg2: 39090
+2021-05-23 20:28:45,711 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - Argument PRX2
+2021-05-23 20:28:45,711 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - Argument 39090
+2021-05-23 20:28:45,713 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-05-23 20:28:45,719 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-05-23 20:28:45,719 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:3
+2021-05-23 20:28:45,980 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-05-23 20:28:46,009 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,6102AD7F869E123FF321A807E40DB513
+2021-05-23 20:28:46,020 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.289S for 3 records
+2021-05-23 20:28:46,021 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.302S
+2021-05-23 20:28:46,188 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-23 20:28:46,188 INFO  com.ecosys.startup.MainRunner.main:50 - ********Integration End*********

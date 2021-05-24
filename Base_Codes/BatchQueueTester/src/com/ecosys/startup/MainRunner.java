@@ -8,6 +8,7 @@ import com.ecosys.service.BQService;
 import com.ecosys.service.BatchQueueMgr;
 import com.ecosys.service.EpcRestMgr;
 import com.ecosys.service.IntegratorMgr;
+import com.ecosys.service.MppReaderImpl;
 
 public class MainRunner {
 	
@@ -37,9 +38,13 @@ public class MainRunner {
 			
 			
 			
-			IntegratorMgr actualsImport = (ActualsImportMgrImpl) context.getBean("ActualsImport", ActualsImportMgrImpl.class);
+//			IntegratorMgr actualsImport = (ActualsImportMgrImpl) context.getBean("ActualsImport", ActualsImportMgrImpl.class);
 			
-			actualsImport.test();
+//			actualsImport.test();
+			
+			IntegratorMgr readMPP = (MppReaderImpl) context.getBean("MppReader", MppReaderImpl.class);
+			
+			readMPP.test();
 			
 //			ActualsImportMgrImpl actualsImport = (ActualsImportMgrImpl) context.getBean("ActualsImport", ActualsImportMgrImpl.class);
 //			actualsImport.test();

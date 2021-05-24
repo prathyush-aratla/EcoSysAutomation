@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://ecosys.net/api/MSPGetMppFile", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ecosys.getmppfile;
+package com.ecosys.getmetcfile;
