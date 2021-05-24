@@ -199,3 +199,178 @@
 </body></html>
 
 2021-05-24 12:28:16,255 INFO  com.ecosys.startup.MainRunner.main:55 - ********Integration End*********
+2021-05-24 12:34:09,725 INFO  com.ecosys.startup.MainRunner.main:26 - ********Integration Starts*********
+2021-05-24 12:34:10,080 INFO  com.ecosys.startup.MainRunner.main:30 - Starting BatchQueue Testing.....
+2021-05-24 12:34:10,270 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:34:10,276 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22963
+2021-05-24 12:34:11,641 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:11,642 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2B30155DEB0238FA9FC661844DBAADB6
+2021-05-24 12:34:11,778 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:11,950 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:34:11,950 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22963
+2021-05-24 12:34:12,120 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:12,121 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F1188471B5C515934674E0BB049886D2
+2021-05-24 12:34:12,256 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:12,257 DEBUG com.ecosys.service.IntegratorBase.getArguments:109 - Arg1: GEORG010CONArg2: 33712
+2021-05-24 12:34:12,258 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=33712
+2021-05-24 12:34:12,472 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:12,472 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:95 - HTTP status code: 200
+2021-05-24 12:34:12,474 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,DF9351E80834DCB9345CA470E95BCC2B
+2021-05-24 12:34:12,609 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:12,654 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=662&RootCostObject=33712
+2021-05-24 12:34:12,830 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:12,830 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:55 - HTTP status code: 200
+2021-05-24 12:34:12,830 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,6B9A3DF0272859D49184400FFFE8A1C5
+2021-05-24 12:34:12,966 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:13,017 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - Project File : null
+2021-05-24 12:34:13,053 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - ETC File : https://ipmtest.devdemo.hexagonppm.com/ecosys/api/restdoc/MSPGetMppFile///33712-Attachment/GEORG010CON%20-%20Project%20Schedule_DRC_05.13.2021.mpp?ProjectPeriod=662&RootCostObject=33712&_username=apiuser&_password=apiuser123
+2021-05-24 12:34:13,053 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-05-24 12:34:13,056 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-05-24 12:34:13,057 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:2
+2021-05-24 12:34:13,287 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:13,327 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,CADCAB46793A8CFE60D87AC4E9927B20
+2021-05-24 12:34:13,335 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.270S for 2 records
+2021-05-24 12:34:13,335 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.278S
+2021-05-24 12:34:13,470 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:13,470 INFO  com.ecosys.startup.MainRunner.main:55 - ********Integration End*********
+2021-05-24 12:34:45,455 INFO  com.ecosys.startup.MainRunner.main:26 - ********Integration Starts*********
+2021-05-24 12:34:45,797 INFO  com.ecosys.startup.MainRunner.main:30 - Starting BatchQueue Testing.....
+2021-05-24 12:34:45,974 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:34:45,978 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22759
+2021-05-24 12:34:47,265 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:47,268 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,98182C65BF61149757D83757E6DB0A54
+2021-05-24 12:34:47,407 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:47,579 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:34:47,579 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22759
+2021-05-24 12:34:47,753 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:47,753 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,10692ADB5B545479F5A8894692620D9A
+2021-05-24 12:34:47,891 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:47,892 DEBUG com.ecosys.service.IntegratorBase.getArguments:109 - Arg1: PRX2Arg2: 39090
+2021-05-24 12:34:47,892 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39090
+2021-05-24 12:34:48,097 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:48,098 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:95 - HTTP status code: 200
+2021-05-24 12:34:48,100 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2DB5071CC723CFE288DA654EE094A77A
+2021-05-24 12:34:48,237 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:48,305 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=611&RootCostObject=39090
+2021-05-24 12:34:48,475 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:48,475 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:55 - HTTP status code: 200
+2021-05-24 12:34:48,475 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,20BD76C0845101D77A418374D9B4056E
+2021-05-24 12:34:48,615 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:48,678 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - Project File : https://ipmtest.devdemo.hexagonppm.com/ecosys/api/restdoc/MSPGetMppFileStructure///39090-Attachment/PRX2A.mpp?RootCostObject=39090&_username=apiuser&_password=apiuser123
+2021-05-24 12:34:48,713 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - ETC File : https://ipmtest.devdemo.hexagonppm.com/ecosys/api/restdoc/MSPGetMppFile///39090-Attachment/PRX2A.mpp?ProjectPeriod=611&RootCostObject=39090&_username=apiuser&_password=apiuser123
+2021-05-24 12:34:48,713 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-05-24 12:34:48,716 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-05-24 12:34:48,717 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:2
+2021-05-24 12:34:48,918 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:34:48,961 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F9CF345BFE74D0C5F742592A9F0CD518
+2021-05-24 12:34:48,974 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.245S for 2 records
+2021-05-24 12:34:48,975 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.258S
+2021-05-24 12:34:49,110 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:34:49,110 INFO  com.ecosys.startup.MainRunner.main:55 - ********Integration End*********
+2021-05-24 12:35:48,719 INFO  com.ecosys.startup.MainRunner.main:26 - ********Integration Starts*********
+2021-05-24 12:35:49,112 INFO  com.ecosys.startup.MainRunner.main:30 - Starting BatchQueue Testing.....
+2021-05-24 12:35:49,408 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:35:49,413 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22963
+2021-05-24 12:35:50,564 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:35:50,568 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,FA4681C9D17F8B0BAFFBFAF5E262BD0B
+2021-05-24 12:35:50,714 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:35:50,907 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:35:50,908 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22963
+2021-05-24 12:35:51,080 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:35:51,081 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,5EAD04EF31C0178CE7815D8E7D8DA66A
+2021-05-24 12:35:51,216 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:35:51,218 DEBUG com.ecosys.service.IntegratorBase.getArguments:109 - Arg1: GEORG010CONArg2: 33712
+2021-05-24 12:36:02,290 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=33712
+2021-05-24 12:36:02,566 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:36:05,722 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:95 - HTTP status code: 200
+2021-05-24 12:36:06,311 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,602E5A1852E99A5BAD79D6B44F08D839
+2021-05-24 12:36:07,733 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:39:40,755 INFO  com.ecosys.startup.MainRunner.main:26 - ********Integration Starts*********
+2021-05-24 12:39:41,095 INFO  com.ecosys.startup.MainRunner.main:30 - Starting BatchQueue Testing.....
+2021-05-24 12:39:41,264 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:39:41,268 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22963
+2021-05-24 12:39:42,475 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:39:42,478 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,5BCA95585668AF835EF09A11784B5A11
+2021-05-24 12:39:42,622 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:39:42,778 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-05-24 12:39:42,778 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=22963
+2021-05-24 12:39:42,953 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:39:42,954 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,FB814FFE1EA97A5270A190CCFB0503FD
+2021-05-24 12:39:43,092 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:39:43,095 DEBUG com.ecosys.service.IntegratorBase.getArguments:109 - Arg1: GEORG010CONArg2: 33712
+2021-05-24 12:39:43,096 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=33712
+2021-05-24 12:39:43,321 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:39:43,321 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:99 - HTTP status code: 200
+2021-05-24 12:39:43,324 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,1C0323E98816A51F7AA4BCD79DFBA3FB
+2021-05-24 12:39:43,462 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:39:43,511 ERROR com.ecosys.service.IntegratorBase.logError:70 - Could not find the mpp file attachment with GEORG010CON project
+2021-05-24 12:39:43,552 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipmtest.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=662&RootCostObject=33712
+2021-05-24 12:39:43,764 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:39:43,764 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:59 - HTTP status code: 200
+2021-05-24 12:39:43,764 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,5A055EF555965743551F192C4CE7E96E
+2021-05-24 12:39:43,906 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:39:43,975 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - Project File : null
+2021-05-24 12:39:43,975 INFO  com.ecosys.service.IntegratorBase.logInfo:91 - ETC File : https://ipmtest.devdemo.hexagonppm.com/ecosys/api/restdoc/MSPGetMppFile///33712-Attachment/GEORG010CON%20-%20Project%20Schedule_DRC_05.13.2021.mpp?ProjectPeriod=662&RootCostObject=33712&_username=apiuser&_password=apiuser123
+2021-05-24 12:39:43,975 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-05-24 12:39:43,978 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-05-24 12:39:43,979 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:3
+2021-05-24 12:39:44,189 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-05-24 12:39:44,218 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,14B39AAF018FCC5B3BB8F1632BAB3968
+2021-05-24 12:39:44,232 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.240S for 3 records
+2021-05-24 12:39:44,232 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.253S
+2021-05-24 12:39:44,374 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-05-24 12:39:44,375 INFO  com.ecosys.startup.MainRunner.main:55 - ********Integration End*********

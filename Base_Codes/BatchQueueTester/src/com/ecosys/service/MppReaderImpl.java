@@ -22,6 +22,8 @@ import com.sun.jersey.api.client.ClientResponse;
 
 public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 	
+	String projectName = null; 
+	
 	public void test() throws SystemException {
 		process("22963");
 	}
@@ -31,6 +33,8 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
 		
 		String arguments[] = getArguments(taskInternalID);
+		
+		projectName = arguments[0];
 		
 		String filePathA = getMPPFile(client, arguments[1]);
 				
@@ -80,6 +84,9 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 				e.printStackTrace();
 			}
 		}
+		else {
+			logError("Could not find the mpp file to create ETC data for Project - " + projectName);
+		}
 		
 		return mppFilePath;
 	}
@@ -119,6 +126,9 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+		else {
+			logError("Could not find the mpp file to create Project Structure for Project - " + projectName);
 		}
 		
 		return mppFilePath;
