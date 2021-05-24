@@ -13,6 +13,8 @@ import com.ecosys.exception.SystemException;
 import com.ecosys.getmetcfile.DocumentValueType;
 import com.ecosys.getmetcfile.MSPGetMppFileResultType;
 import com.ecosys.getmetcfile.MSPGetMppFileType;
+import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
+import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.GlobalConstants;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -34,8 +36,8 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 				
 		String filePathB = getMPPFile(client, arguments[1], arguments[2]);
 		
-		logInfo("File Path Retrieved : " + filePathA);
-		logInfo("File Path Retrieved : " + filePathB);
+		logInfo("Project File : " + filePathA);
+		logInfo("ETC File : " + filePathB);
 		
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 		
@@ -64,7 +66,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		
 		List<MSPGetMppFileType> lstMSPType = result.getMSPGetMppFile();
 
-		DocumentValueType document = lstMSPType.get(0).getAttachment();
+		com.ecosys.getmetcfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
 		
 		if (document.getTitle() != null) {
 			
@@ -95,16 +97,16 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		if(sessionCookie != null)
 			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
 		
-		MSPGetMppFileResultType result = this.epcRestMgr.responseToObject(response, MSPGetMppFileResultType.class);
+		MSPGetMppFileStructureResultType result = this.epcRestMgr.responseToObject(response, MSPGetMppFileStructureResultType.class);
 		
 		if(!result.isSuccessFlag()) {
 			this.logger.debug(this.epcRestMgr.responseToString(response, true));
 			throw new SystemException("Error reading " + GlobalConstants.EPC_API_GETMPRJFILE);
 		}
 		
-		List<MSPGetMppFileType> lstMSPType = result.getMSPGetMppFile();
+		List<MSPGetMppFileStructureType> lstMSPType = result.getMSPGetMppFileStructure();
 
-		DocumentValueType document = lstMSPType.get(0).getAttachment();
+		com.ecosys.getmprjfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
 		
 		if (document.getTitle() != null) {
 			
