@@ -1,25 +1,35 @@
 package com.ecosys.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-
 import javax.ws.rs.core.NewCookie;
 
-import org.apache.poi.ss.formula.functions.Choose;
-
 import com.ecosys.exception.SystemException;
-import com.ecosys.getmetcfile.DocumentValueType;
 import com.ecosys.getmetcfile.MSPGetMppFileResultType;
 import com.ecosys.getmetcfile.MSPGetMppFileType;
 import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
 import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.GlobalConstants;
+import com.ecosys.putetchrs.MSPPutMppDataResultType;
+import com.ecosys.putprjwbs.MSPPutMppStructureRequestType;
+import com.ecosys.putprjwbs.MSPPutMppStructureResultType;
+import com.ecosys.putprjwbs.MSPPutMppStructureType;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
+
+import net.sf.mpxj.MPXJException;
+import net.sf.mpxj.ProjectFile;
+import net.sf.mpxj.Task;
+import net.sf.mpxj.mpp.MPPReader;
+import net.sf.mpxj.reader.ProjectReader;
 
 
 public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
@@ -27,33 +37,125 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 	String projectName = null; 
 	
 	public void test() throws SystemException {
-		process("22963");
+		process("22961");
 	}
 
-	public void process(String taskInternalID) throws SystemException {
+	public void process(String taskInternalID) throws SystemException{
+		
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
 		
-		String intgType = getIntegrationType(taskInternalID);
-		
-		
-		
+		//Arg1 : Project Name ; Arg2 : ProjectInternalID ; Arg3 : MinorPeriodID
 		String arguments[] = getArguments(taskInternalID);
-				
 		projectName = arguments[0];
 		
-		String filePathA = getMPPFile(client, arguments[1]);
-				
-		String filePathB = getMPPFile(client, arguments[1], arguments[2]);
+		String integrationType = getIntegrationType(taskInternalID);
 		
-		logInfo("Project File : " + filePathA);
-		logInfo("ETC File : " + filePathB);
+		switch (integrationType){
+		
+		case "Import ETC Hours": {
+			
+			importETCHours(arguments[1],arguments[2]);
+			break;
+			
+			}
+		case "Import Project Structure": {
+			importProjectStructure(arguments[1]);
+			break;
+			
+			}
+		
+		default: {
+			logError("Integration type not found : " + integrationType);
+			
+			}
+			
+		}
+		
 		
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 		
 	}
 	
 	
+	private void importETCHours(String projectID, String minorPeriodID) throws SystemException {
+		// TODO Auto-generated method stub
+		
+		try {
+			
+			String mppFilePath = getMPPFile(client, projectID, minorPeriodID);
+			
+			InputStream input = new URL(mppFilePath).openStream();
+			ProjectReader reader = new MPPReader();
+			ProjectFile project = reader.read(input);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		
+
+	}
+
+	private void importProjectStructure(String projectID) throws SystemException {
+		// TODO Auto-generated method stub
+		List<MSPPutMppStructureType> lstWBSStructure = new ArrayList<MSPPutMppStructureType>();
+		String mppFilePath;
+		try {
+			mppFilePath = getMPPFile(client, projectID);
+			InputStream input = new URL(mppFilePath).openStream();
+			ProjectReader reader = new MPPReader();
+			ProjectFile project = reader.read(input);
+			
+			for(Task task : project.getTasks()) {
+				
+				if (task.getResourceAssignments().size()==0 ) {
+					MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
+					String strWBS = task.getWBS();
+					String pathID = "";
+					if (strWBS.contains(projectName)) {
+						pathID = strWBS;
+					}
+					else {
+						pathID = projectName + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
+					}
+					String strID = strWBS.substring(strWBS.lastIndexOf(".") + 1);
+					String strName = task.getName();
+					wbsRecord.setPathID(pathID);
+					wbsRecord.setID(strID);
+					wbsRecord.setName(strName);
+					
+					if (task.getOutlineLevel()!=0) {
+						
+						lstWBSStructure.add(wbsRecord);
+						logInfo("Record added - PathID: " + pathID + " Task Name: "+ strName);
+					}
+						
+				}
+				
+			}
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MPXJException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		logInfo("Count of WBS Items : " + String.valueOf(lstWBSStructure.size()));
+		
+	//	List<MSPPutMppStructureResultType> resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstWBSStructure, 
+	//			MSPPutMppStructureRequestType.class, MSPPutMppStructureResultType.class, com.ecosys.putprjwbs.ObjectFactory.class, 
+	//			GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMPRJFILE,GlobalConstants.EPC_API_GETMPRJFILE, null, true);
+		
+	}
+
 	// get MPP file for retrieve ETC Data
 	private String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
 		String mppFilePath = null;

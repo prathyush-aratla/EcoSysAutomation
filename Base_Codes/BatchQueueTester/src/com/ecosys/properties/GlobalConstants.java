@@ -14,6 +14,7 @@ public class GlobalConstants {
 	public static String EPC_REST_BASEURI;
 	
 	public static String EPC_REST_Uri;
+	public static String EPC_HIERARCHY_SEPARATOR;
 	
 	public static String EPC_API_INVOICE;
 	public static String EPC_API_GETMETCFILE;
@@ -36,6 +37,7 @@ public class GlobalConstants {
 		
 		EPC_REST_Uri = GlobalConstants.EPC_REST_PROTOCOL + "://" + GlobalConstants.EPC_REST_SERVER + ":" + GlobalConstants.EPC_REST_PORT + "/" + GlobalConstants.EPC_REST_BASEURI;
 		
+		EPC_HIERARCHY_SEPARATOR = this.appProperties.getProperty("epc.hierarchy.separator");
 		
 		EPC_API_INVOICE = this.appProperties.getProperty("epc.api.invoicedetails");
 		

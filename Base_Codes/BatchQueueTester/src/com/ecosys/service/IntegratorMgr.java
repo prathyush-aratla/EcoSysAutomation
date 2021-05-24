@@ -2,6 +2,11 @@ package com.ecosys.service;
 
 import com.ecosys.rest.BatchQueueRead.BatchQueueReadType;
 import com.sun.jersey.api.client.Client;
+
+import net.sf.mpxj.MPXJException;
+
+import java.io.IOException;
+
 import com.ecosys.exception.SystemException;
 
 public interface IntegratorMgr {
