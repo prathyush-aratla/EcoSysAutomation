@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.ecosys.service.BatchQueueMgr;
 import com.ecosys.service.EpcRestMgr;
 import com.ecosys.service.IntegratorMgr;
-import com.ecosys.service.MppReaderImpl;
+import com.ecosys.service.MppIntegrationImpl;
 import com.ecosys.util.Stopwatch;
 
 public class MainRunner {
@@ -35,7 +35,7 @@ public class MainRunner {
 			
 			logger.info("Starting BatchQueue Testing.....");
 			
-			IntegratorMgr mppIntegration = (MppReaderImpl) context.getBean("MppReader", MppReaderImpl.class);
+			IntegratorMgr mppIntegration = (MppIntegrationImpl) context.getBean("MppReader", MppIntegrationImpl.class);
 			
 			//mppIntegration.test();
 			

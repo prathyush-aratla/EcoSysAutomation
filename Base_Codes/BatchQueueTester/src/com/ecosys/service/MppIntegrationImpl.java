@@ -31,7 +31,7 @@ import net.sf.mpxj.mpp.MPPReader;
 import net.sf.mpxj.reader.ProjectReader;
 
 
-public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
+public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr {
 	
 	String prjID = null; 
 	
