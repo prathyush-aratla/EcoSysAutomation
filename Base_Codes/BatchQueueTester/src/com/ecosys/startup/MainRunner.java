@@ -9,7 +9,6 @@ import com.ecosys.service.EpcRestMgr;
 import com.ecosys.service.IntegratorMgr;
 import com.ecosys.service.MppReaderImpl;
 import com.ecosys.util.Stopwatch;
-import com.sun.jersey.api.client.Client;
 
 public class MainRunner {
 	
@@ -36,10 +35,12 @@ public class MainRunner {
 			
 			logger.info("Starting BatchQueue Testing.....");
 			
-			IntegratorMgr readMPP = (MppReaderImpl) context.getBean("MppReader", MppReaderImpl.class);
+			IntegratorMgr mppIntegration = (MppReaderImpl) context.getBean("MppReader", MppReaderImpl.class);
 			
-			readMPP.test();
+			//mppIntegration.test();
 			
+			mppIntegration.process(args[0]);
+		
 			
 			logger.info("----> Time taken : " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));
 			logger.info("********Integration End*********");

@@ -33,7 +33,7 @@ import net.sf.mpxj.reader.ProjectReader;
 
 public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 	
-	String projectName = null; 
+	String prjID = null; 
 	
 	public void test() throws SystemException {
 		process("22961");
@@ -44,10 +44,11 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
 		
-		//Arg1 : Project Name ; Arg2 : ProjectInternalID ; Arg3 : MinorPeriodID
+		//Arg1 : ProjectID ; Arg2 : ProjectInternalID ; Arg3 : MinorPeriodID
 		
 		String arguments[] = getArguments(taskInternalID);
-		projectName = arguments[0];
+		
+		prjID = arguments[0];
 		
 		String integrationType = getIntegrationType(taskInternalID);
 		
@@ -77,15 +78,14 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		
 	}
 	
-
-
-	private void importProjectStructure(String projectID) throws SystemException {
+	//Method to create/update Project Structure in EcoSys from MPP File
+	private void importProjectStructure(String prjInternalID) throws SystemException {
 		
 		// TODO Auto-generated method stub
 		List<MSPPutMppStructureType> lstUpdateWBS = new ArrayList<MSPPutMppStructureType>();
 		String mppFilePath;
 		try {
-			mppFilePath = getMPPFile(client, projectID);
+			mppFilePath = getMPPFile(client, prjInternalID);
 			InputStream input = new URL(mppFilePath).openStream();
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
@@ -96,11 +96,11 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 					MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
 					String strWBS = task.getWBS();
 					String pathID = "";
-					if (strWBS.contains(projectName)) {
+					if (strWBS.contains(prjID)) {
 						pathID = strWBS;
 					}
 					else {
-						pathID = projectName + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
+						pathID = prjID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
 					}
 					String strID = strWBS.substring(strWBS.lastIndexOf(".") + 1);
 					String strName = task.getName();
@@ -134,7 +134,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		logInfo("Count of WBS Items : " + String.valueOf(lstUpdateWBS.size()));
 		
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", projectID);
+		parameterMap.put("RootCostObject", prjInternalID);
 		
 		List<MSPPutMppStructureResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateWBS, MSPPutMppStructureRequestType.class,
 				MSPPutMppStructureResultType.class, ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEWBS, GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
@@ -152,13 +152,12 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 	}
 	
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
-	
-	private void importETCHours(String projectID, String minorPeriodID) throws SystemException {
+	private void importETCHours(String prjInternalID, String minorPeriodID) throws SystemException {
 		// TODO Auto-generated method stub
 		
 		try {
 			
-			String mppFilePath = getMPPFile(client, projectID, minorPeriodID);
+			String mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
 			
 			InputStream input = new URL(mppFilePath).openStream();
 			ProjectReader reader = new MPPReader();
@@ -208,7 +207,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 			}
 		}
 		else {
-			logError("Could not find the mpp file to create ETC data for Project - " + projectName);
+			logError("Could not find the mpp file to create ETC data for Project - " + prjID);
 		}
 		
 		return mppFilePath;
@@ -252,7 +251,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 			}
 		}
 		else {
-			logError("Could not find the mpp file to create Project Structure for Project - " + projectName);
+			logError("Could not find the mpp file to create Project Structure for Project - " + prjID);
 			
 		}
 		
