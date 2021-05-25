@@ -17,11 +17,10 @@ import com.ecosys.getmetcfile.MSPGetMppFileType;
 import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
 import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.GlobalConstants;
-import com.ecosys.putetchrs.MSPPutMppDataResultType;
 import com.ecosys.putprjwbs.MSPPutMppStructureRequestType;
 import com.ecosys.putprjwbs.MSPPutMppStructureResultType;
 import com.ecosys.putprjwbs.MSPPutMppStructureType;
-
+import com.ecosys.putprjwbs.ObjectFactory;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 
@@ -46,6 +45,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
 		
 		//Arg1 : Project Name ; Arg2 : ProjectInternalID ; Arg3 : MinorPeriodID
+		
 		String arguments[] = getArguments(taskInternalID);
 		projectName = arguments[0];
 		
@@ -67,7 +67,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		
 		default: {
 			logError("Integration type not found : " + integrationType);
-			
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);		
 			}
 			
 		}
@@ -77,29 +77,12 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 		
 	}
 	
-	
-	private void importETCHours(String projectID, String minorPeriodID) throws SystemException {
-		// TODO Auto-generated method stub
-		
-		try {
-			
-			String mppFilePath = getMPPFile(client, projectID, minorPeriodID);
-			
-			InputStream input = new URL(mppFilePath).openStream();
-			ProjectReader reader = new MPPReader();
-			ProjectFile project = reader.read(input);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
 
-		
-
-	}
 
 	private void importProjectStructure(String projectID) throws SystemException {
+		
 		// TODO Auto-generated method stub
-		List<MSPPutMppStructureType> lstWBSStructure = new ArrayList<MSPPutMppStructureType>();
+		List<MSPPutMppStructureType> lstUpdateWBS = new ArrayList<MSPPutMppStructureType>();
 		String mppFilePath;
 		try {
 			mppFilePath = getMPPFile(client, projectID);
@@ -127,7 +110,7 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 					
 					if (task.getOutlineLevel()!=0) {
 						
-						lstWBSStructure.add(wbsRecord);
+						lstUpdateWBS.add(wbsRecord);
 						logInfo("Record added - PathID: " + pathID + " Task Name: "+ strName);
 					}
 						
@@ -148,12 +131,43 @@ public class MppReaderImpl extends IntegratorBase implements IntegratorMgr {
 			e.printStackTrace();
 		}
 		
-		logInfo("Count of WBS Items : " + String.valueOf(lstWBSStructure.size()));
+		logInfo("Count of WBS Items : " + String.valueOf(lstUpdateWBS.size()));
 		
-	//	List<MSPPutMppStructureResultType> resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstWBSStructure, 
-	//			MSPPutMppStructureRequestType.class, MSPPutMppStructureResultType.class, com.ecosys.putprjwbs.ObjectFactory.class, 
-	//			GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMPRJFILE,GlobalConstants.EPC_API_GETMPRJFILE, null, true);
+		HashMap<String, String> parameterMap = new HashMap<String, String>();
+		parameterMap.put("RootCostObject", projectID);
 		
+		List<MSPPutMppStructureResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateWBS, MSPPutMppStructureRequestType.class,
+				MSPPutMppStructureResultType.class, ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEWBS, GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
+		
+    	for(MSPPutMppStructureResultType result : resultList) {
+			for(com.ecosys.putprjwbs.ObjectResultType ort : result.getObjectResult()) {
+				if(!ort.isSuccessFlag()) {
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.putprjwbs.ObjectResultType.class, com.ecosys.putprjwbs.ResultMessageType.class, ort);
+					logError(ort.getExternalId(), message);
+				}
+				logDebug("Cost Object Internal ID : " + ort.getInternalId() + " Created/Updated");
+			}
+		}
+		
+	}
+	
+	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
+	
+	private void importETCHours(String projectID, String minorPeriodID) throws SystemException {
+		// TODO Auto-generated method stub
+		
+		try {
+			
+			String mppFilePath = getMPPFile(client, projectID, minorPeriodID);
+			
+			InputStream input = new URL(mppFilePath).openStream();
+			ProjectReader reader = new MPPReader();
+			ProjectFile project = reader.read(input);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 	}
 
 	// get MPP file for retrieve ETC Data

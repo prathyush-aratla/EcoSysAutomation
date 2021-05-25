@@ -9,6 +9,7 @@ import com.ecosys.service.EpcRestMgr;
 import com.ecosys.service.IntegratorMgr;
 import com.ecosys.service.MppReaderImpl;
 import com.ecosys.util.Stopwatch;
+import com.sun.jersey.api.client.Client;
 
 public class MainRunner {
 	
@@ -52,7 +53,8 @@ public class MainRunner {
 			error_code = -1;
 		}
 	
-			
+		System.exit(error_code);
+		
 
 	}
 
