@@ -7,8 +7,6 @@ import java.util.List;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-
-
 import com.ecosys.exception.SystemException;
 import com.ecosys.properties.GlobalConstants;
 import com.ecosys.putetchrs.MSPPutMppDataRequestType;
@@ -18,7 +16,6 @@ import com.ecosys.putprjwbs.MSPPutMppStructureRequestType;
 import com.ecosys.putprjwbs.MSPPutMppStructureResultType;
 import com.ecosys.putprjwbs.MSPPutMppStructureType;
 import com.ecosys.putprjwbs.ObjectFactory;
-
 import net.sf.mpxj.MPXJException;
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Resource;
@@ -27,7 +24,6 @@ import net.sf.mpxj.Task;
 import net.sf.mpxj.mpp.MPPReader;
 import net.sf.mpxj.reader.ProjectReader;
 
-
 public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr {
 	
 	String costObjectID = null; 
@@ -35,6 +31,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 	public void test() throws SystemException {
 		process("23350");
 	}
+	
 
 	public void process(String taskInternalID) throws SystemException{
 		
@@ -50,12 +47,6 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 //		Should be reflected before importing the hours
 		switch (integrationType){
 		
-		case "Import ETC Hours": {		
-			importProjectStructure(arguments[1]);
-			importETCHours(arguments[1],arguments[2]);
-			break;
-			
-			}
 		case "Import Project Structure": {
 			importProjectStructure(arguments[1]);
 			break;
@@ -69,6 +60,12 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		
 		case "Import Progress":{
 			
+			break;
+		}
+		
+		case "Import ETC Hours": {		
+			importProjectStructure(arguments[1]);
+			importETCHours(arguments[1],arguments[2]);
 			break;
 		}
 		
@@ -119,12 +116,11 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 						lstUpdateWBS.add(wbsRecord);
 						
 						logDebug("Record added - PathID: " + pathID + " Task Name: "+ strName);
-					}
-						
+					}	
 				}
-				
 			}
-		} catch (SystemException | IOException | MPXJException e) {
+		} 
+		catch (SystemException | IOException | MPXJException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			logError(e);
@@ -147,7 +143,6 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 				logDebug("Cost Object Internal ID : " + ort.getInternalId() + " Created/Updated");
 			}
 		}
-		
 	}
 	
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
@@ -222,13 +217,10 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 					else {
 						logDebug("Resources in Path ID " + wbsPathID + " skipped due to no hours left.");
 					}
-
 				}	
-			
 			}
-			
-
 		}
+		
 		catch (SystemException | IOException | MPXJException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -253,13 +245,5 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 				logDebug("ETC Tansaction : " + ort.getInternalId() + " Created");
 			}
 		}
-
-
 	}
-
-
-
-
-
-
 }
