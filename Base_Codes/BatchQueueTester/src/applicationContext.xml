@@ -40,7 +40,7 @@ class="com.ecosys.service.BatchQueueMgrImpl">
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
 </bean>
 
- <bean id="MppReader" class="com.ecosys.service.MppReaderImpl">
+ <bean id="MppIntegration" class="com.ecosys.service.MppIntegrationImpl">
 <property name="epcRestMgr" ref="epcRestMgr" />
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
 </bean>

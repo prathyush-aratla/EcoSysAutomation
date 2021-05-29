@@ -10,9 +10,9 @@ import com.ecosys.service.IntegratorMgr;
 import com.ecosys.service.MppIntegrationImpl;
 import com.ecosys.util.Stopwatch;
 
-public class MainRunner {
+public class Launcher {
 	
-	protected static Logger logger = Logger.getLogger(MainRunner.class);
+	protected static Logger logger = Logger.getLogger(Launcher.class);
 	
 	protected static EpcRestMgr epcRestMgr;
 	
@@ -22,10 +22,13 @@ public class MainRunner {
 	public static void main(String[] args)  throws Exception{
 		// TODO Auto-generated method stub
 		
+		String taskInternalID;
+		
+		taskInternalID = args[0];
+		
 		Stopwatch timerTotal = new Stopwatch();
 		timerTotal.start();
 		
-
 		int error_code = 0;
 		
 		try {
@@ -35,14 +38,14 @@ public class MainRunner {
 			
 			logger.info("Starting BatchQueue Testing.....");
 			
-			IntegratorMgr mppIntegration = (MppIntegrationImpl) context.getBean("MppReader", MppIntegrationImpl.class);
+			IntegratorMgr mppIntegration = (MppIntegrationImpl) context.getBean("MppIntegration", MppIntegrationImpl.class);
 			
-			//mppIntegration.test();
+//			mppIntegration.test();
 			
-			mppIntegration.process(args[0]);
-		
+			mppIntegration.process(taskInternalID);
 			
 			logger.info("----> Time taken : " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));
+			
 			logger.info("********Integration End*********");
 			
 			((ClassPathXmlApplicationContext) context).close();

@@ -1,15 +1,26 @@
 package com.ecosys.service;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+import javax.ws.rs.core.NewCookie;
 
 import org.apache.log4j.Logger;
 
 import com.ecosys.beans.RecordStatus;
 import com.ecosys.exception.SystemException;
+import com.ecosys.getmetcfile.MSPGetMppFileResultType;
+import com.ecosys.getmetcfile.MSPGetMppFileType;
+import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
+import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.BatchQueueConstants;
+import com.ecosys.properties.GlobalConstants;
 import com.ecosys.rest.BatchQueueRead.BatchQueueReadType;
 import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
 
 
 public abstract class IntegratorBase {
@@ -122,6 +133,95 @@ public abstract class IntegratorBase {
 		this.logger.info(integrationType);
 		
 		return integrationType;
+	}
+	
+	// get MPP file for retrieve ETC Data
+	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
+		String mppFilePath = null;
+		
+		HashMap<String, String> parameterMap = new HashMap<String, String>();
+		parameterMap.put("RootCostObject", projectID);
+		parameterMap.put("ProjectPeriod", minorPeriodID);
+
+		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMETCFILE, null, parameterMap, true);
+		this.logger.debug("HTTP status code: " + response.getStatus());
+		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
+		if(sessionCookie != null)
+			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
+		
+		MSPGetMppFileResultType result = this.epcRestMgr.responseToObject(response, MSPGetMppFileResultType.class);
+		
+		if(!result.isSuccessFlag()) {
+			this.logger.debug(this.epcRestMgr.responseToString(response, true));
+			throw new SystemException("Error reading " + GlobalConstants.EPC_API_GETMETCFILE);
+		}
+		
+		List<MSPGetMppFileType> lstMSPType = result.getMSPGetMppFile();
+
+		com.ecosys.getmetcfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
+		
+		if (document.getTitle() != null) {
+			
+			String strHRefDoc = document.getLink().getHref();
+			try {
+				URI uri = new URI(strHRefDoc.replace(" ", "%20")+ "&_username=" + GlobalConstants.EPC_REST_USERNAME + "&_password=" + GlobalConstants.EPC_REST_PASSWORD);
+				mppFilePath = uri.toString();
+				
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else {
+			logError("Could not find the mpp file to create ETC data for Project");
+		}
+		
+		return mppFilePath;
+		
+	}
+	
+	// get MPP file for retrieve Project Structure Data
+	protected String getMPPFile (Client client, String projectID) throws SystemException {
+		String mppFilePath = null;
+		
+		HashMap<String, String> parameterMap = new HashMap<String, String>();
+		parameterMap.put("RootCostObject", projectID);
+
+		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMPRJFILE, null, parameterMap, true);
+		this.logger.debug("HTTP status code: " + response.getStatus());
+		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
+		if(sessionCookie != null)
+			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
+		
+		MSPGetMppFileStructureResultType result = this.epcRestMgr.responseToObject(response, MSPGetMppFileStructureResultType.class);
+		
+		if(!result.isSuccessFlag()) {
+			this.logger.debug(this.epcRestMgr.responseToString(response, true));
+			throw new SystemException("Error reading " + GlobalConstants.EPC_API_GETMPRJFILE);
+		}
+		
+		List<MSPGetMppFileStructureType> lstMSPType = result.getMSPGetMppFileStructure();
+
+		com.ecosys.getmprjfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
+		
+		if (document.getTitle() != null) {
+			
+			String strHRefDoc = document.getLink().getHref();
+			try {
+				URI uri = new URI(strHRefDoc.replace(" ", "%20")+ "&_username=" + GlobalConstants.EPC_REST_USERNAME + "&_password=" + GlobalConstants.EPC_REST_PASSWORD);
+				mppFilePath = uri.toString();
+				
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else {
+			logError("Could not find the mpp file to create Project Structure for Project");
+			
+		}
+		
+		return mppFilePath;
 	}
 
 

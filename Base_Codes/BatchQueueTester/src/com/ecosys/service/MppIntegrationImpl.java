@@ -5,27 +5,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import javax.ws.rs.core.NewCookie;
+
 
 import com.ecosys.exception.SystemException;
-import com.ecosys.getmetcfile.MSPGetMppFileResultType;
-import com.ecosys.getmetcfile.MSPGetMppFileType;
-import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
-import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.GlobalConstants;
+import com.ecosys.putetchrs.MSPPutMppDataRequestType;
+import com.ecosys.putetchrs.MSPPutMppDataResultType;
+import com.ecosys.putetchrs.MSPPutMppDataType;
 import com.ecosys.putprjwbs.MSPPutMppStructureRequestType;
 import com.ecosys.putprjwbs.MSPPutMppStructureResultType;
 import com.ecosys.putprjwbs.MSPPutMppStructureType;
 import com.ecosys.putprjwbs.ObjectFactory;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
 
 import net.sf.mpxj.MPXJException;
 import net.sf.mpxj.ProjectFile;
+import net.sf.mpxj.Resource;
+import net.sf.mpxj.ResourceAssignment;
 import net.sf.mpxj.Task;
 import net.sf.mpxj.mpp.MPPReader;
 import net.sf.mpxj.reader.ProjectReader;
@@ -33,10 +29,10 @@ import net.sf.mpxj.reader.ProjectReader;
 
 public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr {
 	
-	String prjID = null; 
+	String costObjectID = null; 
 	
 	public void test() throws SystemException {
-		process("22961");
+		process("23350");
 	}
 
 	public void process(String taskInternalID) throws SystemException{
@@ -44,23 +40,24 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
 		
-		//Arg1 : ProjectID ; Arg2 : ProjectInternalID ; Arg3 : MinorPeriodID
-		
 		String arguments[] = getArguments(taskInternalID);
-		
-		prjID = arguments[0];
-		
+		costObjectID = arguments[0];
 		String integrationType = getIntegrationType(taskInternalID);
 		
+//		Based on the Integration type code will call the relevant procedure.
+//		The import ETC Hours will call both importProjectStrucutre and importETCHours. This is due to the fact that any new WBS created in the MPP File
+//		Should be reflected before importing the hours
 		switch (integrationType){
 		
 		case "Import ETC Hours": {
 			
+//			importProjectStructure(arguments[1]);
 			importETCHours(arguments[1],arguments[2]);
 			break;
 			
 			}
 		case "Import Project Structure": {
+			
 			importProjectStructure(arguments[1]);
 			break;
 			
@@ -92,15 +89,15 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			
 			for(Task task : project.getTasks()) {
 				
-				if (task.getResourceAssignments().size()==0 ) {
+				if (task.getResourceAssignments().size()==0  & task.getActive() == true) {
 					MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
 					String strWBS = task.getWBS();
 					String pathID = "";
-					if (strWBS.contains(prjID)) {
+					if (strWBS.contains(costObjectID)) {
 						pathID = strWBS;
 					}
 					else {
-						pathID = prjID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
+						pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
 					}
 					String strID = strWBS.substring(strWBS.lastIndexOf(".") + 1);
 					String strName = task.getName();
@@ -111,22 +108,14 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 					if (task.getOutlineLevel()!=0) {
 						
 						lstUpdateWBS.add(wbsRecord);
+						
 						logInfo("Record added - PathID: " + pathID + " Task Name: "+ strName);
 					}
 						
 				}
 				
 			}
-		} catch (SystemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MPXJException e) {
+		} catch (SystemException | IOException | MPXJException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -153,110 +142,109 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 	
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
 	private void importETCHours(String prjInternalID, String minorPeriodID) throws SystemException {
+		
 		// TODO Auto-generated method stub
 		
+		List<MSPPutMppDataType> lstETCRecords = new ArrayList<MSPPutMppDataType>();
+		String mppFilePath;
 		try {
-			
-			String mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
-			
+			mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
 			InputStream input = new URL(mppFilePath).openStream();
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
 			
-		} catch (Exception e) {
+			for(Task task : project.getTasks()) {
+				
+				if (task.getResourceAssignments().size() > 0 & task.getActive() == true ) {
+					
+					String resourceName = "", resourceAlias = "", strWBS = "", wbsPathID = "";
+					 
+					int resCount;
+					double totalRemHrs;
+					
+					strWBS = task.getParentTask().getWBS();
+					
+					if(strWBS.contains(costObjectID)) {
+						wbsPathID = strWBS;
+					}
+					else {
+						wbsPathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
+					}
+					
+					resCount = task.getResourceAssignments().size();			
+					totalRemHrs = Double.valueOf(task.getRemainingWork().toString().replace("h", ""));
+					
+					if (totalRemHrs > 0) {
+						
+						for (ResourceAssignment assignment : task.getResourceAssignments()) {
+							
+							MSPPutMppDataType etcRecord = new MSPPutMppDataType();
+							
+							Resource objResource = assignment.getResource();
+							
+							if (objResource != null) {
+								
+								resourceName = String.valueOf(objResource.getName());	
+								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));
+								
+							}
+
+							
+							logDebug("Record Details : " + wbsPathID + ", " +
+											resourceName + ", " +
+											resourceAlias);
+							
+							etcRecord.setObjectPathID(wbsPathID);
+							etcRecord.setResource(resourceAlias);
+							etcRecord.setMPPETC(totalRemHrs/resCount);
+							etcRecord.setStartDate(null);
+							etcRecord.setEndDate(null);
+							
+							lstETCRecords.add(etcRecord);
+							
+						}
+						
+					}
+					else {
+						logDebug("Resources in Path ID " + wbsPathID + " skipped due to no hours left.");
+					}
+
+				}	
+			
+			}
+			
+
+		}
+		catch (SystemException | IOException | MPXJException e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
-
-	}
-
-	// get MPP file for retrieve ETC Data
-	private String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
-		String mppFilePath = null;
+		
+		logInfo("Count of Transactions created : " + String.valueOf(lstETCRecords.size()));
 		
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", projectID);
+		parameterMap.put("RootCostObject", prjInternalID);
 		parameterMap.put("ProjectPeriod", minorPeriodID);
-
-		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMETCFILE, null, parameterMap, true);
-		this.logger.debug("HTTP status code: " + response.getStatus());
-		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
-		if(sessionCookie != null)
-			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
 		
-		MSPGetMppFileResultType result = this.epcRestMgr.responseToObject(response, MSPGetMppFileResultType.class);
+		List<MSPPutMppDataResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstETCRecords, MSPPutMppDataRequestType.class,
+				MSPPutMppDataResultType.class, com.ecosys.putetchrs.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEETC , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 		
-		if(!result.isSuccessFlag()) {
-			this.logger.debug(this.epcRestMgr.responseToString(response, true));
-			throw new SystemException("Error reading " + GlobalConstants.EPC_API_GETMETCFILE);
-		}
-		
-		List<MSPGetMppFileType> lstMSPType = result.getMSPGetMppFile();
-
-		com.ecosys.getmetcfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
-		
-		if (document.getTitle() != null) {
-			
-			String strHRefDoc = document.getLink().getHref();
-			try {
-				URI uri = new URI(strHRefDoc.replace(" ", "%20")+ "&_username=" + GlobalConstants.EPC_REST_USERNAME + "&_password=" + GlobalConstants.EPC_REST_PASSWORD);
-				mppFilePath = uri.toString();
-				
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+    	for(MSPPutMppDataResultType result : resultList) {
+			for(com.ecosys.putetchrs.ObjectResultType ort : result.getObjectResult()) {
+				if(!ort.isSuccessFlag()) {
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.putetchrs.ObjectResultType.class, com.ecosys.putetchrs.ResultMessageType.class, ort);
+					logError(ort.getExternalId(), message);
+				}
+				logDebug("ETC Tansaction : " + ort.getInternalId() + " Created");
 			}
 		}
-		else {
-			logError("Could not find the mpp file to create ETC data for Project - " + prjID);
-		}
-		
-		return mppFilePath;
-		
-	}
-	
-	// get MPP file for retrieve Project Structure Data
-	private String getMPPFile (Client client, String projectID) throws SystemException {
-		String mppFilePath = null;
-		
-		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", projectID);
 
-		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMPRJFILE, null, parameterMap, true);
-		this.logger.debug("HTTP status code: " + response.getStatus());
-		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
-		if(sessionCookie != null)
-			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
-		
-		MSPGetMppFileStructureResultType result = this.epcRestMgr.responseToObject(response, MSPGetMppFileStructureResultType.class);
-		
-		if(!result.isSuccessFlag()) {
-			this.logger.debug(this.epcRestMgr.responseToString(response, true));
-			throw new SystemException("Error reading " + GlobalConstants.EPC_API_GETMPRJFILE);
-		}
-		
-		List<MSPGetMppFileStructureType> lstMSPType = result.getMSPGetMppFileStructure();
 
-		com.ecosys.getmprjfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
-		
-		if (document.getTitle() != null) {
-			
-			String strHRefDoc = document.getLink().getHref();
-			try {
-				URI uri = new URI(strHRefDoc.replace(" ", "%20")+ "&_username=" + GlobalConstants.EPC_REST_USERNAME + "&_password=" + GlobalConstants.EPC_REST_PASSWORD);
-				mppFilePath = uri.toString();
-				
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else {
-			logError("Could not find the mpp file to create Project Structure for Project - " + prjID);
-			
-		}
-		
-		return mppFilePath;
 	}
+
+
+
+
 
 
 }

@@ -22,6 +22,7 @@ public class GlobalConstants {
 	public static String EPC_API_GETMETCFILE;
 	public static String EPC_API_GETMPRJFILE;
 	public static String EPC_API_UPDATEWBS;
+	public static String EPC_API_UPDATEETC;
 	
 	public static String BATCH_QUEUE_STATUS_ERROR;
 	
@@ -50,6 +51,7 @@ public class GlobalConstants {
 		EPC_API_GETMETCFILE = this.appProperties.getProperty("epc.api.getmetcfile");
 		EPC_API_GETMPRJFILE = this.appProperties.getProperty("epc.api.getmprjfile");
 		EPC_API_UPDATEWBS = this.appProperties.getProperty("epc.api.updateWBS");
+		EPC_API_UPDATEETC = this.appProperties.getProperty("epc.api.updateETC");
 		
 		BATCH_QUEUE_STATUS_ERROR = this.appProperties.getProperty("batchqueue.status.error");
 		
