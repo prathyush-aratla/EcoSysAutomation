@@ -1,6 +1,7 @@
 package com.ecosys.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.io.IOException;
@@ -49,19 +50,27 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 //		Should be reflected before importing the hours
 		switch (integrationType){
 		
-		case "Import ETC Hours": {
-			
-//			importProjectStructure(arguments[1]);
+		case "Import ETC Hours": {		
+			importProjectStructure(arguments[1]);
 			importETCHours(arguments[1],arguments[2]);
 			break;
 			
 			}
 		case "Import Project Structure": {
-			
 			importProjectStructure(arguments[1]);
 			break;
 			
 			}
+		
+		case "Import Budget":{
+			
+			break;
+		}
+		
+		case "Import Progress":{
+			
+			break;
+		}
 		
 		default: {
 			logError("Integration type not found : " + integrationType);
@@ -70,10 +79,10 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			
 		}
 		
-		
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
-		
 	}
+	
+	
 	
 	//Method to create/update Project Structure in EcoSys from MPP File
 	private void importProjectStructure(String prjInternalID) throws SystemException {
@@ -109,7 +118,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 						
 						lstUpdateWBS.add(wbsRecord);
 						
-						logInfo("Record added - PathID: " + pathID + " Task Name: "+ strName);
+						logDebug("Record added - PathID: " + pathID + " Task Name: "+ strName);
 					}
 						
 				}
@@ -118,6 +127,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		} catch (SystemException | IOException | MPXJException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			logError(e);
 		}
 		
 		logInfo("Count of WBS Items : " + String.valueOf(lstUpdateWBS.size()));
@@ -157,11 +167,14 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 				
 				if (task.getResourceAssignments().size() > 0 & task.getActive() == true ) {
 					
-					String resourceName = "", resourceAlias = "", strWBS = "", wbsPathID = "";
-					 
+					String resourceName = "", resourceAlias = "", strWBS = "", wbsPathID = "", origWBS= "";
 					int resCount;
 					double totalRemHrs;
 					
+					Date startDate = task.getStart();
+					Date endDate = task.getFinish();
+					
+					origWBS = task.getWBS();
 					strWBS = task.getParentTask().getWBS();
 					
 					if(strWBS.contains(costObjectID)) {
@@ -185,20 +198,21 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 							if (objResource != null) {
 								
 								resourceName = String.valueOf(objResource.getName());	
-								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));
-								
+								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));							
 							}
-
 							
-							logDebug("Record Details : " + wbsPathID + ", " +
+							logDebug("Record Details : " + origWBS + ", " +
 											resourceName + ", " +
-											resourceAlias);
+											resourceAlias + ", " +
+											(totalRemHrs/resCount) + " hrs, " +
+											dateToXMLGregorianCalendar(startDate).toString() + ", " +
+											dateToXMLGregorianCalendar(endDate).toString());
 							
 							etcRecord.setObjectPathID(wbsPathID);
 							etcRecord.setResource(resourceAlias);
 							etcRecord.setMPPETC(totalRemHrs/resCount);
-							etcRecord.setStartDate(null);
-							etcRecord.setEndDate(null);
+							etcRecord.setStartDate(dateToXMLGregorianCalendar(startDate));
+							etcRecord.setEndDate(dateToXMLGregorianCalendar(endDate));
 							
 							lstETCRecords.add(etcRecord);
 							
@@ -218,6 +232,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		catch (SystemException | IOException | MPXJException e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			logError(e);
 		}
 		
 		logInfo("Count of Transactions created : " + String.valueOf(lstETCRecords.size()));

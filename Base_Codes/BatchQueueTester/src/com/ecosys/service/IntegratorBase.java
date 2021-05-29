@@ -3,10 +3,14 @@ package com.ecosys.service;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.ws.rs.core.NewCookie;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.log4j.Logger;
 
@@ -113,6 +117,23 @@ public abstract class IntegratorBase {
 	
 	
 	//Custom Implementations for client starts Here
+	
+	protected XMLGregorianCalendar dateToXMLGregorianCalendar(Date dateToConvert) {
+		
+		XMLGregorianCalendar xmlDate = null;
+		GregorianCalendar gc = new GregorianCalendar();
+		gc.setTime(dateToConvert);
+		
+		try {
+			xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return xmlDate;
+		
+	}
 	
 	protected String[] getArguments(String taskInternalID) throws SystemException {
 		String arguments[] = batchQueueMgr.readTask(client,taskInternalID).getBatchQueueParam1ID().split("\\|");

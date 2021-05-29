@@ -34,22 +34,16 @@ public class Launcher {
 		try {
 			logger.info("********Integration Starts*********");
 			
-			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-			
-			logger.info("Starting BatchQueue Testing.....");
-			
+			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");		
 			IntegratorMgr mppIntegration = (MppIntegrationImpl) context.getBean("MppIntegration", MppIntegrationImpl.class);
 			
 //			mppIntegration.test();
-			
 			mppIntegration.process(taskInternalID);
 			
-			logger.info("----> Time taken : " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));
-			
+			logger.info("----> Time taken : " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
 			logger.info("********Integration End*********");
 			
 			((ClassPathXmlApplicationContext) context).close();
-			
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -58,8 +52,6 @@ public class Launcher {
 		}
 	
 		System.exit(error_code);
-		
-
 	}
 
 }
