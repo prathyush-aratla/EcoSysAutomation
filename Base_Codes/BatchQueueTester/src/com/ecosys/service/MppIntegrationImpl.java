@@ -26,10 +26,10 @@ import net.sf.mpxj.reader.ProjectReader;
 
 public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr {
 	
-	String costObjectID = null; 
+	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("23350");
+		process("23014");
 	}
 	
 
@@ -48,7 +48,9 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		switch (integrationType){
 		
 		case "Import Project Structure": {
+			logInfo("Starting update Project Structure...");
 			importProjectStructure(arguments[1]);
+			logInfo("Update project structure completed.");
 			break;
 			
 			}
@@ -59,13 +61,18 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		}
 		
 		case "Import Progress":{
-			
+			updateProgress(arguments[1], arguments[2]);
 			break;
 		}
 		
 		case "Import ETC Hours": {		
+			logInfo("Updating Project Structure started..");
 			importProjectStructure(arguments[1]);
+			logInfo("Project Structure Update completed.");
+			logInfo("ETC Hours Update started..");
 			importETCHours(arguments[1],arguments[2]);
+//			updateProgress(arguments[1], arguments[2]);
+			logInfo("ETC Hours update completed.");
 			break;
 		}
 		
@@ -81,7 +88,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 	
 	
 	
-	//Method to create/update Project Structure in EcoSys from MPP File
+	// Method to create/update Project Structure in EcoSys from MPP File
 	private void importProjectStructure(String prjInternalID) throws SystemException {
 		
 		// TODO Auto-generated method stub
@@ -93,29 +100,49 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
 			
+		// The below process to enumerate WBS with CCL=Yes
+			HashMap<String , String> cMap = new HashMap<String, String>();
+			for(Task task : project.getTasks()) {
+				if (task.getActive() == true & !task.hasChildTasks() & task.getResourceAssignments().size() > 0) {
+				cMap.put(costObjectID +"." + task.getParentTask().getWBS(), costObjectID +"." + task.getWBS() );
+
+				}
+			}
+//			cMap.forEach((key,value) -> System.out.println(key + " <--- " + value));
+
+			
 			for(Task task : project.getTasks()) {
 				
-				if (task.getResourceAssignments().size()==0  & task.getActive() == true) {
+				if (task.getResourceAssignments().size() == 0 ) {
 					MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
+					String costControlLevel = "";
 					String strWBS = task.getWBS();
 					String pathID = "";
+					
 					if (strWBS.contains(costObjectID)) {
 						pathID = strWBS;
 					}
 					else {
 						pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
 					}
-					String strID = strWBS.substring(strWBS.lastIndexOf(".") + 1);
-					String strName = task.getName();
+					
+					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
+					String wbsName = task.getName();
+					
+					if (cMap.containsKey(pathID)) {
+						costControlLevel = "Y";
+					}
+									
 					wbsRecord.setPathID(pathID);
-					wbsRecord.setID(strID);
-					wbsRecord.setName(strName);
+					wbsRecord.setID(wbsID);
+					wbsRecord.setName(wbsName);
+					wbsRecord.setCostControlLevel(costControlLevel);
 					
 					if (task.getOutlineLevel()!=0) {
 						
 						lstUpdateWBS.add(wbsRecord);
 						
-						logDebug("Record added - PathID: " + pathID + " Task Name: "+ strName);
+						logDebug("Record added - PathID: " + pathID + ", Name: "+ wbsName + ", CCL=" + costControlLevel);
 					}	
 				}
 			}
@@ -124,10 +151,12 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			logError(e);
+			System.exit(-1);
 		}
 		
-		logInfo("Count of WBS Items : " + String.valueOf(lstUpdateWBS.size()));
+		logInfo("Count of WBS Items updated : " + String.valueOf(lstUpdateWBS.size()));
 		
+		//Push WBS Records to EcoSys
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
 		parameterMap.put("RootCostObject", prjInternalID);
 		
@@ -143,6 +172,48 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 				logDebug("Cost Object Internal ID : " + ort.getInternalId() + " Created/Updated");
 			}
 		}
+	}
+	
+	//Method to update progress
+	private void updateProgress(String prjInternalID, String minorPeriodID) throws SystemException {
+		String mppFilePath="";
+		List<MSPPutMppStructureType> lstProgressItems = new ArrayList<MSPPutMppStructureType>();
+			
+		
+		try {
+			mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
+			InputStream input = new URL(mppFilePath).openStream();
+			ProjectReader reader = new MPPReader();
+			ProjectFile project = reader.read(input);
+			
+			HashMap<String , Number> progressMap = new HashMap<String, Number>();
+			
+			for(Task task : project.getTasks()) {
+				if (task.getActive()== true & !task.hasChildTasks()) {
+//				logDebug(costObjectID + "." + task.getWBS() + ", " +
+//						task.hasChildTasks() + " | " +
+//						costObjectID +"." +task.getParentTask().getWBS() + ", " +
+//						task.getParentTask().getPercentageComplete());
+				progressMap.put(costObjectID +"." +task.getParentTask().getWBS(), 
+						task.getParentTask().getPercentageComplete());
+				}
+			}
+			progressMap.forEach((key,value) -> System.out.println(key + " = " + value));
+//			progressMap.forEach((key,value) -> {
+//			MSPPutMppStructureType objRecord = new MSPPutMppStructureType();	
+//				objRecord.setPathID(key);
+//				objRecord.setCostControlLevel("Y");
+//				
+//				lstProgressItems.add(objRecord);
+//			});
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			logError(e);
+			System.exit(-1);
+		}
+		
 	}
 	
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
@@ -229,6 +300,8 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		
 		logInfo("Count of Transactions created : " + String.valueOf(lstETCRecords.size()));
 		
+		
+		//Push ETC Records to EcoSys
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
 		parameterMap.put("RootCostObject", prjInternalID);
 		parameterMap.put("ProjectPeriod", minorPeriodID);
