@@ -29,7 +29,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("23014");
+		process("23544");
 	}
 	
 
@@ -66,9 +66,9 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		}
 		
 		case "Import ETC Hours": {		
-			logInfo("Updating Project Structure started..");
-			importProjectStructure(arguments[1]);
-			logInfo("Project Structure Update completed.");
+//			logInfo("Updating Project Structure started..");
+//			importProjectStructure(arguments[1]);
+//			logInfo("Project Structure Update completed.");
 			logInfo("ETC Hours Update started..");
 			importETCHours(arguments[1],arguments[2]);
 //			updateProgress(arguments[1], arguments[2]);
@@ -151,7 +151,6 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			logError(e);
-			System.exit(-1);
 		}
 		
 		logInfo("Count of WBS Items updated : " + String.valueOf(lstUpdateWBS.size()));
@@ -177,7 +176,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 	//Method to update progress
 	private void updateProgress(String prjInternalID, String minorPeriodID) throws SystemException {
 		String mppFilePath="";
-		List<MSPPutMppStructureType> lstProgressItems = new ArrayList<MSPPutMppStructureType>();
+//		List<MSPPutMppStructureType> lstProgressItems = new ArrayList<MSPPutMppStructureType>();
 			
 		
 		try {
@@ -211,7 +210,7 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
-			System.exit(-1);
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
 		}
 		
 	}
@@ -296,10 +295,12 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
 		}
 		
-		logInfo("Count of Transactions created : " + String.valueOf(lstETCRecords.size()));
+		logInfo("Count of Transactions prepared : " + String.valueOf(lstETCRecords.size()));
 		
+		int passCnt=0 , failCnt=0;
 		
 		//Push ETC Records to EcoSys
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
@@ -314,9 +315,16 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 				if(!ort.isSuccessFlag()) {
 					String message = this.epcRestMgr.getErrorMessage(com.ecosys.putetchrs.ObjectResultType.class, com.ecosys.putetchrs.ResultMessageType.class, ort);
 					logError(ort.getExternalId(), message);
+					failCnt++;
 				}
-				logDebug("ETC Tansaction : " + ort.getInternalId() + " Created");
+				else {
+					logDebug("ETC Tansaction : " + ort.getInternalId() + " Created");
+					passCnt++;
+				}
+				
 			}
 		}
+    	
+    	logInfo("Total created Items = " + passCnt + ", Failed Items = " + failCnt);
 	}
 }

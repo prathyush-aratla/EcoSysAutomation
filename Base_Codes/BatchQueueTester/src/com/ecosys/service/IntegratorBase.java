@@ -1,5 +1,6 @@
 package com.ecosys.service;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -157,7 +158,7 @@ public abstract class IntegratorBase {
 	}
 	
 	// get MPP file for retrieve ETC Data
-	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
+	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException, IOException {
 		String mppFilePath = null;
 		
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
@@ -191,10 +192,12 @@ public abstract class IntegratorBase {
 			} catch (URISyntaxException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				System.exit(1);
 			}
 		}
 		else {
-			logError("Could not find the mpp file to create ETC data for Project");
+			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			throw new IOException("File not Found");
 		}
 		
 		return mppFilePath;
@@ -238,7 +241,8 @@ public abstract class IntegratorBase {
 			}
 		}
 		else {
-			logError("Could not find the mpp file to create Project Structure for Project");
+			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			throw new SystemException("File not Found");
 			
 		}
 		

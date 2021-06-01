@@ -21,34 +21,40 @@ public class Launcher {
 
 	public static void main(String[] args)  throws Exception{
 		// TODO Auto-generated method stub
-		
-		String taskInternalID;
-		
-		taskInternalID = args[0];
-		
+				
 		Stopwatch timerTotal = new Stopwatch();
 		timerTotal.start();
 		
 		int error_code = 0;
 		
 		try {
-			logger.info("********Integration Starts*********");
+			logger.info("Starting Microsoft Project Data Import Process...");
 			
 			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");		
 			IntegratorMgr mppIntegration = (MppIntegrationImpl) context.getBean("MppIntegration", MppIntegrationImpl.class);
 			
-//			mppIntegration.test();
-			mppIntegration.process(taskInternalID);
+			if (args.length == 0 ) {
+				
+				mppIntegration.test();
+				
+			}
+			else {
+				
+				String taskInternalID = args[0];
+				
+				mppIntegration.process(taskInternalID);
+				
+			}
 			
-			logger.info("----> Time taken : " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
-			logger.info("********Integration End*********");
+			logger.info("Completed Microsoft Project Data Import Process... " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
 			
 			((ClassPathXmlApplicationContext) context).close();
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			error_code = -1;
+			logger.error(e.getMessage());
+			error_code = 1;
 		}
 	
 		System.exit(error_code);
