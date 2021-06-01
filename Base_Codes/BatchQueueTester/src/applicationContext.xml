@@ -45,5 +45,10 @@ class="com.ecosys.service.BatchQueueMgrImpl">
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
 </bean>
 
+ <bean id="MppProgressImport" class="com.ecosys.service.MppProgressImportMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
+
 
 </beans>

@@ -182,6 +182,8 @@ public abstract class IntegratorBase {
 
 		com.ecosys.getmetcfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
 		
+		this.logDebug("Document loaded : " + document.getTitle().toString());
+		
 		if (document.getTitle() != null) {
 			
 			String strHRefDoc = document.getLink().getHref();

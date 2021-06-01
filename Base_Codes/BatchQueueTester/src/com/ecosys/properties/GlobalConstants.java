@@ -23,6 +23,7 @@ public class GlobalConstants {
 	public static String EPC_API_GETMPRJFILE;
 	public static String EPC_API_UPDATEWBS;
 	public static String EPC_API_UPDATEETC;
+	public static String EPC_API_UPDATEPROGRESS;
 	
 	public static String BATCH_QUEUE_STATUS_ERROR;
 	
@@ -35,14 +36,11 @@ public class GlobalConstants {
 		
 		EPC_REST_USERNAME = this.appProperties.getProperty("epc.rest.username");
 		EPC_REST_PASSWORD = this.appProperties.getProperty("epc.rest.password");
-				
 		EPC_REST_PROTOCOL = this.appProperties.getProperty("epc.rest.protocol");
 		EPC_REST_SERVER = this.appProperties.getProperty("epc.rest.server");
 		EPC_REST_PORT = this.appProperties.getProperty("epc.rest.port");
 		EPC_REST_BASEURI = this.appProperties.getProperty("epc.rest.baseuri");
-		
 		EPC_REST_BATCHSIZE = Integer.parseInt(this.appProperties.getProperty("epc.rest.batchsize"));
-		
 		EPC_REST_Uri = GlobalConstants.EPC_REST_PROTOCOL + "://" + GlobalConstants.EPC_REST_SERVER + ":" + GlobalConstants.EPC_REST_PORT + "/" + GlobalConstants.EPC_REST_BASEURI;
 		
 		EPC_HIERARCHY_SEPARATOR = this.appProperties.getProperty("epc.hierarchy.separator");
@@ -52,12 +50,10 @@ public class GlobalConstants {
 		EPC_API_GETMPRJFILE = this.appProperties.getProperty("epc.api.getmprjfile");
 		EPC_API_UPDATEWBS = this.appProperties.getProperty("epc.api.updateWBS");
 		EPC_API_UPDATEETC = this.appProperties.getProperty("epc.api.updateETC");
+		EPC_API_UPDATEPROGRESS = this.appProperties.getProperty("epc.api.updateprogress");
 		
 		BATCH_QUEUE_STATUS_ERROR = this.appProperties.getProperty("batchqueue.status.error");
 		
-		
-		
 	}
-
 
 }
