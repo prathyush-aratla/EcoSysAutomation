@@ -50,5 +50,15 @@ class="com.ecosys.service.BatchQueueMgrImpl">
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
 </bean>
 
+ <bean id="MppEtcImport" class="com.ecosys.service.MppEtcImportMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
+
+ <bean id="MppWbsImport" class="com.ecosys.service.MppWbsImportMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
+
 
 </beans>

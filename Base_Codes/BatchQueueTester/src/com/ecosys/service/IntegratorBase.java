@@ -148,6 +148,7 @@ public abstract class IntegratorBase {
 		return arguments;
 	}
 	
+	// Method to return the Integration Type
 	protected String getIntegrationType(String taskInternalID) throws SystemException {
 		
 		String integrationType = batchQueueMgr.readTask(client,taskInternalID).getBatchQueueIntegrationTypeID();
@@ -157,7 +158,7 @@ public abstract class IntegratorBase {
 		return integrationType;
 	}
 	
-	// get MPP file for retrieve ETC Data
+	// Method to get MPP file - Period Specific
 	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException, IOException {
 		String mppFilePath = null;
 		
@@ -166,7 +167,7 @@ public abstract class IntegratorBase {
 		parameterMap.put("ProjectPeriod", minorPeriodID);
 
 		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_GETMETCFILE, null, parameterMap, true);
-		this.logger.debug("HTTP status code: " + response.getStatus());
+//		this.logger.debug("HTTP status code: " + response.getStatus());
 		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
 		if(sessionCookie != null)
 			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
@@ -182,7 +183,7 @@ public abstract class IntegratorBase {
 
 		com.ecosys.getmetcfile.DocumentValueType document = lstMSPType.get(0).getAttachment();
 		
-		this.logDebug("Document loaded : " + document.getTitle().toString());
+//		this.logDebug("Document loaded : " + String.valueOf(document.getTitle()));
 		
 		if (document.getTitle() != null) {
 			
@@ -199,14 +200,15 @@ public abstract class IntegratorBase {
 		}
 		else {
 			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
-			throw new IOException("File not Found");
+			throw new SystemException("File not Found");
+			
 		}
 		
 		return mppFilePath;
 		
 	}
 	
-	// get MPP file for retrieve Project Structure Data
+	// Method to get MPP file - Project wide
 	protected String getMPPFile (Client client, String projectID) throws SystemException {
 		String mppFilePath = null;
 		

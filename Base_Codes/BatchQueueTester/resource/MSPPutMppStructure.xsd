@@ -25,9 +25,7 @@
             <xs:element name="Name" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="Type" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="CostControlLevel" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="TimePhasingMethod" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="WBSType" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="Billable" type="xs:boolean"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="ExternalKey" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ObjectResultType">

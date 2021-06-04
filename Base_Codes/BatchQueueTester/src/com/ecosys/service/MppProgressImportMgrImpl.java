@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import com.ecosys.exception.SystemException;
+import com.ecosys.mpupdateprogress.MSPUpdateProjectProgressRequestType;
+import com.ecosys.mpupdateprogress.MSPUpdateProjectProgressResultType;
+import com.ecosys.mpupdateprogress.MSPUpdateProjectProgressType;
 import com.ecosys.properties.GlobalConstants;
-import com.ecosys.updateprogress.MSPUpdateProjectProgressRequestType;
-import com.ecosys.updateprogress.MSPUpdateProjectProgressResultType;
-import com.ecosys.updateprogress.MSPUpdateProjectProgressType;
 
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Task;
@@ -21,7 +21,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("23545");
+		process("23742");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -103,12 +103,12 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 			parameterMap.put("RootCostObject", prjInternalID);
 			
 			List<MSPUpdateProjectProgressResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateProgress, MSPUpdateProjectProgressRequestType.class,
-					MSPUpdateProjectProgressResultType.class, com.ecosys.updateprogress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
+					MSPUpdateProjectProgressResultType.class, com.ecosys.mpupdateprogress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 			
 	    	for(MSPUpdateProjectProgressResultType result : resultList) {
-				for(com.ecosys.updateprogress.ObjectResultType ort : result.getObjectResult()) {
+				for(com.ecosys.mpupdateprogress.ObjectResultType ort : result.getObjectResult()) {
 					if(!ort.isSuccessFlag()) {
-						String message = this.epcRestMgr.getErrorMessage(com.ecosys.updateprogress.ObjectResultType.class, com.ecosys.putetchrs.ResultMessageType.class, ort);
+						String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdateprogress.ObjectResultType.class, com.ecosys.mpupdateetc.ResultMessageType.class, ort);
 						logError(ort.getExternalId(), message);
 						failCnt++;
 					}

@@ -6,12 +6,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.ecosys.properties.AppProperties;
 import com.ecosys.service.IntegratorMgr;
-import com.ecosys.service.MppProgressImportMgrImpl;
+import com.ecosys.service.MppEtcImportMgrImpl;
 import com.ecosys.util.Stopwatch;
 
-public class MppProgressImport {
+public class MppEtcImport {
 	
-	protected static Logger logger = Logger.getLogger(MppProgressImport.class);
+	protected static Logger logger = Logger.getLogger(MppEtcImport.class);
 	
 	private static ApplicationContext springctx;
 	@SuppressWarnings("unused")
@@ -27,13 +27,13 @@ public class MppProgressImport {
 		int error_code = 0;
 		
 		try {
-			logger.info("Start Import Progress from Microsoft Project file");
+			logger.info("Start Import ETC from Microsoft Project file");
 			
 			springctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 			
 			appProperties = (AppProperties) springctx.getBean("appProperties",AppProperties.class);
 			
-			IntegratorMgr mppImportMgr = (MppProgressImportMgrImpl) springctx.getBean("MppProgressImport", MppProgressImportMgrImpl.class);
+			IntegratorMgr mppImportMgr = (MppEtcImportMgrImpl) springctx.getBean("MppEtcImport", MppEtcImportMgrImpl.class);
 			
 			if (args.length == 0 ) {
 				mppImportMgr.test();
@@ -43,7 +43,7 @@ public class MppProgressImport {
 				mppImportMgr.process(taskInternalID);
 			}
 			
-			logger.info("Completed Microsoft Project Progress Import Process... " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
+			logger.info("Completed ETC Import Process... " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
 			
 			((ClassPathXmlApplicationContext) springctx).close();
 		}
@@ -53,6 +53,8 @@ public class MppProgressImport {
 			logger.error(e.getMessage());
 			error_code = 1;
 		}
+		
+		logger.info(error_code);
 	
 		System.exit(error_code);
 
