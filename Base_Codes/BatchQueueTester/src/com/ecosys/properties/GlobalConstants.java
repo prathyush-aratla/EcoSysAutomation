@@ -19,6 +19,7 @@ public class GlobalConstants {
 	public static String EPC_HIERARCHY_SEPARATOR;
 	
 	public static String EPC_API_INVOICE;
+	public static String EPC_API_RESOURCE;
 	public static String EPC_API_GETMETCFILE;
 	public static String EPC_API_GETMPRJFILE;
 	public static String EPC_API_UPDATEWBS;
@@ -51,6 +52,7 @@ public class GlobalConstants {
 		EPC_API_UPDATEWBS = this.appProperties.getProperty("epc.api.updateWBS");
 		EPC_API_UPDATEETC = this.appProperties.getProperty("epc.api.updateETC");
 		EPC_API_UPDATEPROGRESS = this.appProperties.getProperty("epc.api.updateprogress");
+		EPC_API_RESOURCE = this.appProperties.getProperty("epc.api.resources");
 		
 		BATCH_QUEUE_STATUS_ERROR = this.appProperties.getProperty("batchqueue.status.error");
 		

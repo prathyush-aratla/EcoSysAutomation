@@ -23,6 +23,8 @@ import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
 import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.BatchQueueConstants;
 import com.ecosys.properties.GlobalConstants;
+import com.ecosys.resources.ResourcesResultType;
+import com.ecosys.resources.ResourcesType;
 import com.ecosys.rest.BatchQueueRead.BatchQueueReadType;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -119,6 +121,25 @@ public abstract class IntegratorBase {
 	
 	//Custom Implementations for client starts Here
 	
+	protected List<ResourcesType> epcResources;
+	
+	
+	public List<ResourcesType> getEpcResources() {
+		
+		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_RESOURCE, null, null, true);
+//		this.logger.debug("HTTP status code: " + response.getStatus());
+		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
+		if(sessionCookie != null)
+			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
+		
+		ResourcesResultType result = this.epcRestMgr.responseToObject(response,ResourcesResultType.class);
+		
+		epcResources = result.getResources();
+		
+		return epcResources;
+	}
+
+
 	protected XMLGregorianCalendar dateToXMLGregorianCalendar(Date dateToConvert) {
 		
 		XMLGregorianCalendar xmlDate = null;
@@ -147,6 +168,7 @@ public abstract class IntegratorBase {
 		
 		return arguments;
 	}
+	
 	
 	// Method to return the Integration Type
 	protected String getIntegrationType(String taskInternalID) throws SystemException {

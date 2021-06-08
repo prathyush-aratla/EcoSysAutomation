@@ -58,19 +58,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
 			
-		// The below process to enumerate WBS with CCL=Yes
-			HashMap<String , String> cMap = new HashMap<String, String>();
-			for(Task task : project.getTasks()) {
-				if (task.getActive() == true & !task.hasChildTasks() & task.getResourceAssignments().size() > 0) {
-				cMap.put(costObjectID +"." + task.getParentTask().getWBS(), costObjectID +"." + task.getWBS() );
-
-				}
-			}
-//			cMap.forEach((key,value) -> System.out.println(key + " <--- " + value));
-
-			
-			for(Task task : project.getTasks()) {
-				
+			for(Task task : project.getTasks()) {				
 				if (task.getResourceAssignments().size() == 0 ) {
 					MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
 					String costControlLevel = "";
@@ -87,8 +75,11 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 					String wbsName = task.getName();
 					
-					if (cMap.containsKey(pathID)) {
-						costControlLevel = "Y";
+					List<Task> lstChildTasks = task.getChildTasks();
+					for (Task childTask : lstChildTasks) {
+						if (!childTask.hasChildTasks()) {
+							costControlLevel = "Y";
+						}
 					}
 									
 					wbsRecord.setPathID(pathID);

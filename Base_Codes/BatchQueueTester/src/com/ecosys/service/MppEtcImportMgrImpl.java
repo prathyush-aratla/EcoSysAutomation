@@ -13,6 +13,7 @@ import com.ecosys.mpupdateetc.MSPPutMppDataRequestType;
 import com.ecosys.mpupdateetc.MSPPutMppDataResultType;
 import com.ecosys.mpupdateetc.MSPPutMppDataType;
 import com.ecosys.properties.GlobalConstants;
+import com.ecosys.resources.ResourcesType;
 
 import net.sf.mpxj.MPXJException;
 import net.sf.mpxj.ProjectFile;
@@ -45,6 +46,12 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
 	private void importETCHours(String prjInternalID, String minorPeriodID) throws SystemException {
+		
+//		List<ResourcesType> m_resources = getEpcResources();
+//		
+//		for (ResourcesType presource : m_resources) {
+//			logDebug(presource.getID() + " | " + presource.getName() + " | " + presource.getInternalID());
+//		}
 		
 		// TODO Auto-generated method stub
 		
