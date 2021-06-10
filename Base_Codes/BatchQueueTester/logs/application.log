@@ -1,423 +1,864 @@
-2021-06-07 18:56:46,076 INFO  com.ecosys.startup.MppWbsImport.main:30 - Start Import WBS from Microsoft Project file
-2021-06-07 18:56:46,557 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
-2021-06-07 18:56:46,562 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
-2021-06-07 18:56:46,755 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:46,756 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,C26F8EFFC7BD5B5D3F2F5699297BF587
-2021-06-07 18:56:46,779 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:28:44,826 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-10 11:28:45,507 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:28:45,511 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24144
+2021-06-10 11:28:45,696 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:28:45,697 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2121926ECF45566E0086B26F0564B9B7
+2021-06-10 11:28:45,720 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:46,942 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
-2021-06-07 18:56:46,942 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
-2021-06-07 18:56:46,997 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:46,997 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,B2E471D29980C171D67D7BFAD85CD41C
-2021-06-07 18:56:47,007 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:28:45,888 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:28:45,888 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24144
+2021-06-10 11:28:45,941 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:28:45,941 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,D7288D3045C5FFF078A40B468731B5A5
+2021-06-10 11:28:45,952 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:47,008 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-1 : PRX2
-2021-06-07 18:56:47,008 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-2 : 39280
-2021-06-07 18:56:47,008 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Starting update Project Structure...
-2021-06-07 18:56:47,009 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39280
-2021-06-07 18:56:47,390 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:47,391 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:241 - HTTP status code: 200
-2021-06-07 18:56:47,392 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,9B4A3DDE306CCE78A943D44BB28A71BB
-2021-06-07 18:56:47,402 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:28:45,953 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-1 : GUAR2002IMP
+2021-06-10 11:28:45,953 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-2 : 40486
+2021-06-10 11:28:45,953 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-3 : 666
+2021-06-10 11:28:45,953 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import begins...
+2021-06-10 11:28:45,954 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40486
+2021-06-10 11:28:46,092 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:28:46,092 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,EE6FFB0E45CDC2B3F22E98106A8623D1
+2021-06-10 11:28:46,103 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1, Name: Major Phase 1, CCL=
-2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1, Name: Site A, CCL=
-2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1.1, Name: Contr 1, CCL=Y
-2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1.2, Name: Contr 2, CCL=Y
-2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1.3, Name: Contr 3, CCL=Y
-2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2, Name: Site B, CCL=
-2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.1, Name: Contr 1, CCL=Y
-2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.2, Name: Contr 2, CCL=Y
-2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3, Name: Contr 3, CCL=Y
-2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3.5, Name: Spill Way Works, CCL=
-2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3.5.1, Name: Contractor A, CCL=Y
-2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3.5.2, Name: Contractor B, CCL=Y
-2021-06-07 18:56:47,882 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Count of WBS Items to Update: 12
-2021-06-07 18:56:47,885 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppStructure - batch size: 2000 - true
-2021-06-07 18:56:47,885 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:12
-2021-06-07 18:56:48,266 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:48,287 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,D5E962C120D6F6894309BAB1F4331E5C
-2021-06-07 18:56:48,300 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppStructure - elapsed time: PT0.402S for 12 records
-2021-06-07 18:56:48,301 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppStructure - elapsed time: PT0.416S
-2021-06-07 18:56:48,311 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:28:47,164 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : null | Outline : 1.1.1 | Rem Hrs: 28.0h | 
+2021-06-10 11:28:47,169 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Monitor and Control                                | WBS : null | Outline : 1.1.2 | Rem Hrs: 140.0h | 
+2021-06-10 11:28:47,169 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review SOW                                         | WBS : null | Outline : 1.1.3.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,169 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Setup Project Internally                           | WBS : null | Outline : 1.1.3.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,170 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Draft Project Execution Plan (PEP)                 | WBS : null | Outline : 1.1.3.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,170 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for PM, PLAN, and DEFINE phases | WBS : null | Outline : 1.1.3.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,170 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | WBS : null | Outline : 1.1.4.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,170 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Execution Plan (PEP)              | WBS : null | Outline : 1.1.4.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,170 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review PEP with Customer                           | WBS : null | Outline : 1.1.4.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,170 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 1 Planning                                  | WBS : null | Outline : 1.3.3.11 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,171 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 2 Planning                                  | WBS : null | Outline : 1.3.3.12 | Rem Hrs: 3.6002459520765404h | 
+2021-06-10 11:28:47,172 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 3 Planning                                  | WBS : null | Outline : 1.3.3.13 | Rem Hrs: 72.0h | 
+2021-06-10 11:28:47,173 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  RD COMPLETE                            | WBS : null | Outline : 1.3.3.14 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,173 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - BIM 360                                   | WBS : null | Outline : 1.4.2.4 | Rem Hrs: 67.2h | 
+2021-06-10 11:28:47,174 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - ERP                                       | WBS : null | Outline : 1.4.2.5 | Rem Hrs: 4.0h | 
+2021-06-10 11:28:47,174 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - MS Project                                | WBS : null | Outline : 1.4.2.6 | Rem Hrs: 15.0h | 
+2021-06-10 11:28:47,175 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Qlik                                      | WBS : null | Outline : 1.4.2.7 | Rem Hrs: 2.0h | 
+2021-06-10 11:28:47,175 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : null | Outline : 1.5.1 | Rem Hrs: 57.00001659885809h | 
+2021-06-10 11:28:47,176 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Technical Lead or Lead Consultant Oversight        | WBS : null | Outline : 1.5.2 | Rem Hrs: 23.0h | 
+2021-06-10 11:28:47,177 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : BIM 360 - Configuration and Unit Testing           | WBS : null | Outline : 1.5.4.1 | Rem Hrs: 277.99980833333336h | 
+2021-06-10 11:28:47,177 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : ERP - Configuration and Unit Testing               | WBS : null | Outline : 1.5.4.2 | Rem Hrs: 15.91h | 
+2021-06-10 11:28:47,178 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MS Project - Configuration and Unit Testing        | WBS : null | Outline : 1.5.4.3 | Rem Hrs: 79.0h | 
+2021-06-10 11:28:47,178 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Qlik - Configuration and Unit Testing              | WBS : null | Outline : 1.5.4.4 | Rem Hrs: 45.5h | 
+2021-06-10 11:28:47,178 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 1                                  | WBS : null | Outline : 1.5.19.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,179 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 1            | WBS : null | Outline : 1.5.19.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,179 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 1              | WBS : null | Outline : 1.5.19.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,179 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 1                             | WBS : null | Outline : 1.5.19.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,179 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 2                                  | WBS : null | Outline : 1.5.20.1 | Rem Hrs: 39.60007329856145h | 
+2021-06-10 11:28:47,180 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 2            | WBS : null | Outline : 1.5.20.2 | Rem Hrs: 290.4011650631012h | 
+2021-06-10 11:28:47,181 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 2              | WBS : null | Outline : 1.5.20.3 | Rem Hrs: 15.604204331072863h | 
+2021-06-10 11:28:47,182 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 2                             | WBS : null | Outline : 1.5.20.4 | Rem Hrs: 67.2h | 
+2021-06-10 11:28:47,183 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 3                                  | WBS : null | Outline : 1.5.21.1 | Rem Hrs: 72.0h | 
+2021-06-10 11:28:47,183 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 3            | WBS : null | Outline : 1.5.21.2 | Rem Hrs: 460.0h | 
+2021-06-10 11:28:47,184 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 3              | WBS : null | Outline : 1.5.21.3 | Rem Hrs: 24.0h | 
+2021-06-10 11:28:47,185 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 3                             | WBS : null | Outline : 1.5.21.4 | Rem Hrs: 48.0h | 
+2021-06-10 11:28:47,186 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Discovery - Forecast Re-Write                      | WBS : null | Outline : 1.5.22.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,186 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Forecast Re-Write                         | WBS : null | Outline : 1.5.22.2 | Rem Hrs: 12.00058823529412h | 
+2021-06-10 11:28:47,186 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Forecast Re-Write   | WBS : null | Outline : 1.5.22.3 | Rem Hrs: 42.22372549019608h | 
+2021-06-10 11:28:47,187 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  CONFIGURATION AND UNIT TESTING COMPLETE | WBS : null | Outline : 1.5.29 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,187 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Analysis of Workflows in the Software to Identify Scenarios to Automate | WBS : null | Outline : 1.6.2.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,187 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Data Volume Testing on Customer's Environment      | WBS : null | Outline : 1.6.2.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,187 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  PERFORMANCE TESTING COMPLETE           | WBS : null | Outline : 1.6.2.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,188 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  TRAINING COMPLETE                      | WBS : null | Outline : 1.6.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,188 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 1                                     | WBS : null | Outline : 1.6.6.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,188 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 2                                     | WBS : null | Outline : 1.6.6.2 | Rem Hrs: 120.0h | 
+2021-06-10 11:28:47,189 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 3                                     | WBS : null | Outline : 1.6.6.3 | Rem Hrs: 36.0h | 
+2021-06-10 11:28:47,189 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 1                               | WBS : null | Outline : 1.6.6.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,190 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 2                               | WBS : null | Outline : 1.6.6.5 | Rem Hrs: 36.0h | 
+2021-06-10 11:28:47,190 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 3                               | WBS : null | Outline : 1.6.6.6 | Rem Hrs: 36.0h | 
+2021-06-10 11:28:47,191 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Testing Support - Integration                  | WBS : null | Outline : 1.6.8 | Rem Hrs: 8.0h | 
+2021-06-10 11:28:47,192 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  USER ACCEPTANCE TESTING COMPLETE       | WBS : null | Outline : 1.6.10 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,192 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 1                  | WBS : null | Outline : 1.6.11.1.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,192 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 2                  | WBS : null | Outline : 1.6.11.1.2 | Rem Hrs: 33.6h | 
+2021-06-10 11:28:47,193 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 3                  | WBS : null | Outline : 1.6.11.1.3 | Rem Hrs: 48.0h | 
+2021-06-10 11:28:47,193 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Integration               | WBS : null | Outline : 1.6.11.1.4 | Rem Hrs: 8.0h | 
+2021-06-10 11:28:47,194 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - 2.3.1                                 | WBS : null | Outline : 1.6.11.3.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,194 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 1                              | WBS : null | Outline : 1.6.11.3.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,194 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 2                              | WBS : null | Outline : 1.6.11.3.3 | Rem Hrs: 34.00315315315315h | 
+2021-06-10 11:28:47,195 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 3                              | WBS : null | Outline : 1.6.11.3.4 | Rem Hrs: 40.0h | 
+2021-06-10 11:28:47,195 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Integration BIM 360                   | WBS : null | Outline : 1.6.11.3.5 | Rem Hrs: 6.0h | 
+2021-06-10 11:28:47,196 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - ERP                                   | WBS : null | Outline : 1.6.11.3.6 | Rem Hrs: 2.0h | 
+2021-06-10 11:28:47,196 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - MS Project                            | WBS : null | Outline : 1.6.11.3.7 | Rem Hrs: 2.0h | 
+2021-06-10 11:28:47,196 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Qlik                                  | WBS : null | Outline : 1.6.11.3.8 | Rem Hrs: 2.0h | 
+2021-06-10 11:28:47,197 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  SOLUTION DEPLOYED AND LIVE             | WBS : null | Outline : 1.6.12 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,197 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 2.3.1                                      | WBS : null | Outline : 1.6.13.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,197 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0                                        | WBS : null | Outline : 1.6.13.2 | Rem Hrs: 66.00000000000001h | 
+2021-06-10 11:28:47,198 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0.1                                      | WBS : null | Outline : 1.6.13.3 | Rem Hrs: 50.0h | 
+2021-06-10 11:28:47,198 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.1                                        | WBS : null | Outline : 1.6.13.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,198 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Lessons Learned Exercise with the Customer | WBS : null | Outline : 1.6.14.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,198 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Internal Lessons Learned Exercise         | WBS : null | Outline : 1.6.14.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Phase Closure Videos                      | WBS : null | Outline : 1.6.14.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Transition to Support Document            | WBS : null | Outline : 1.6.14.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Initiate Transition to Support Process             | WBS : null | Outline : 1.6.14.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct Internal Transition Meeting with Support   | WBS : null | Outline : 1.6.14.6 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct External Transition Meeting with Support and Customer | WBS : null | Outline : 1.6.14.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Close-Out Report                  | WBS : null | Outline : 1.6.14.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Perform Internal Administrative Tasks to Close Project Internally | WBS : null | Outline : 1.6.14.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,200 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : TRAVEL                                             | WBS : null | Outline : 1.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:28:47,200 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : CONTINGENCY                                        | WBS : null | Outline : 1.8 | Rem Hrs: 20.0h | 
+2021-06-10 11:28:47,200 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Count of Transactions prepared : 84
+2021-06-10 11:28:47,202 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppData - batch size: 2000 - true
+2021-06-10 11:28:47,202 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:84
+2021-06-10 11:28:47,895 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:28:47,906 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,4693A77D9C13EE1961F47602BEE0C4EF
+2021-06-10 11:28:47,918 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppData - elapsed time: PT0.703S for 84 records
+2021-06-10 11:28:47,918 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppData - elapsed time: PT0.716S
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:48,311 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39311 Created/Updated
-2021-06-07 18:56:48,311 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39312 Created/Updated
-2021-06-07 18:56:48,311 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39314 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39315 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39316 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39313 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39317 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39318 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39319 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 40084 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 40085 Created/Updated
-2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 40086 Created/Updated
-2021-06-07 18:56:48,313 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Total created Items = 12, Failed Items = 0
-2021-06-07 18:56:48,313 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Update project structure completed.
-2021-06-07 18:56:48,313 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
-2021-06-07 18:56:48,320 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
-2021-06-07 18:56:48,320 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
-2021-06-07 18:56:48,596 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:48,611 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,4E9F87EA007E98C9EB6B65CF98D9752D
-2021-06-07 18:56:48,611 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.291S for 4 records
-2021-06-07 18:56:48,611 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.291S
-2021-06-07 18:56:48,624 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101408 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101409 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101410 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101411 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101412 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101413 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101414 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101415 Created
+2021-06-10 11:28:47,928 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101416 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101417 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101418 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101419 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101420 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101421 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101422 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101423 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101424 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101425 Created
+2021-06-10 11:28:47,929 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101426 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101427 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101428 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101429 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101430 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101431 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101432 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101433 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101434 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101435 Created
+2021-06-10 11:28:47,930 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101436 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101437 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101438 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101439 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101440 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101441 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101442 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101443 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101444 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101445 Created
+2021-06-10 11:28:47,931 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101446 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101447 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101448 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101449 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101450 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101451 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101452 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101453 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101454 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101455 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101456 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101457 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101458 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101459 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101460 Created
+2021-06-10 11:28:47,932 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101461 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101462 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101463 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101464 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101465 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101466 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101467 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101468 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101469 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101470 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101471 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101472 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101473 Created
+2021-06-10 11:28:47,933 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101474 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101475 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101476 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101477 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101478 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101479 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101480 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101481 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101482 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101483 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101484 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101485 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101486 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101487 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101488 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101489 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101490 Created
+2021-06-10 11:28:47,934 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101491 Created
+2021-06-10 11:28:47,934 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Total created Items = 84, Failed Items = 0
+2021-06-10 11:28:47,935 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import ends...
+2021-06-10 11:28:47,935 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-10 11:28:47,936 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-10 11:28:47,936 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-10 11:28:48,113 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:28:48,121 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,05708FFA3BD64E44AF9C8FC75D1AC249
+2021-06-10 11:28:48,121 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.185S for 4 records
+2021-06-10 11:28:48,121 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.185S
+2021-06-10 11:28:48,138 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:48,625 INFO  com.ecosys.startup.MppWbsImport.main:46 - Completed WBS Import Process... P0000-00-00T00:00:02.603
-2021-06-07 18:56:58,510 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
-2021-06-07 18:56:58,980 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
-2021-06-07 18:56:58,984 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
-2021-06-07 18:56:59,095 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:59,096 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,51C2CE7A44A132C2EAD6FD9758912EFB
-2021-06-07 18:56:59,109 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:28:48,138 INFO  com.ecosys.startup.MppEtcImport.main:46 - Completed ETC Import Process... P0000-00-00T00:00:03.369
+2021-06-10 11:29:37,745 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-10 11:29:38,216 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:29:38,220 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24144
+2021-06-10 11:29:38,321 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:29:38,323 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,3D3C171B55199ECA56C9040A639D2CEE
+2021-06-10 11:29:38,336 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:59,264 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
-2021-06-07 18:56:59,265 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
-2021-06-07 18:56:59,313 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:59,314 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2C4A9999E22A88D09C38ABB5D3119DEB
-2021-06-07 18:56:59,324 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:29:38,465 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:29:38,465 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24144
+2021-06-10 11:29:38,524 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:29:38,525 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,292A4E3F81244BBB2B40FBC3F5D3FE1A
+2021-06-10 11:29:38,534 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-1 : PRJ-000262
-2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-2 : 40285
-2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-3 : 666
-2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import begins...
-2021-06-07 18:56:59,326 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/Resources/
-2021-06-07 18:56:59,451 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:59,451 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,377B551535783DA0B91E626547CD0AB4
-2021-06-07 18:56:59,463 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:29:38,535 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-1 : GUAR2002IMP
+2021-06-10 11:29:38,535 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-2 : 40486
+2021-06-10 11:29:38,535 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-3 : 666
+2021-06-10 11:29:38,536 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import begins...
+2021-06-10 11:29:38,536 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40486
+2021-06-10 11:29:38,604 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:29:38,605 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,51EEC61A5730004229AA710D7F0F01BD
+2021-06-10 11:29:38,616 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lfabrant | ABRANTES Luiz | 6838
-2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - yadler | ADLER Yuval | 6054
-2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - admin | admin | 7866
-2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - raguirre | AGUIRRE Rodolfo | 6852
-2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - snakarap | AKARAPU Sailakshmi (Nikitha) | 5449
-2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rkakula | AKULA Rajeev K | 7869
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adsulliv-CFVIAHByTsSJwenvbGn+WQ | Alan SULLIVAN | 8864
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - daldunate | ALDUNATE Diego | 6806
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kpalexan | ALEXANDER Kevin P | 6076
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - raliaga | ALIAGA Ramiro | 6851
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jrpalmei | ALMEIDA Johnnathan | 6829
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bbalves | ALVES Bruno | 6824
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - taalves | ALVES Thiago | 6833
-2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - analyst-sa | Analyst SA | 7058
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bmankam | ANKAM Bindu M | 6062
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aparesource | APA Team Resource | 8060
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aapte | APTE Abhijit D | 5671
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - garakawa | ARAKAWA Gustavo | 5853
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - architect-sa | Architect SA | 7055
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aarenas | ARENAS Alberto | 6810
-2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aaristimuno | ARISTIMUNO Angelica | 6872
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - drasselt | ASSELTA Daniel | 6826
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - javila | AVILA Jorge | 6072
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dfazeved | AZEVEDO Danilo | 6827
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - gbackes | BACKES Georg | 5648
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sbailey1 | BAILEY Summer | 8866
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vbarabucci | BARABUCCI Virginia | 6860
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - obarrios | BARRIOS Oswaldo | 6808
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mbartel | BARTEL Mark | 8667
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kbashab | BASHABOINA Krishna | 7872
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jbaumer | BAUMER Joseph C (Joe) | 6073
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbaxter | BAXTER Ryan | 6081
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adbenavi | BENAVIDES Andres | 6861
-2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mfbeynon | BEYNON Michael F (Mike) | 6077
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mbhadbha | BHADBHADE Mithila | 5696
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ljbigott | BIGOTT CAMACHO Leonardo J | 7864
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbbillup | BILLUPS Robert (Brent) | 6082
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ebinder | BINDER Erica | 6069
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rtblack | BLACK Robert T (Tom) | 6084
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - BOM | Boilermaker | 1628
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pjbote | BOTE Pratap J | 7868
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ebotteri | BOTTERILL Ewan | 6254
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmbowlin | BOWLING John M | 5670
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbritton | BRITTON Rodney S | 5659
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bbrown | BROWN Bernard | 5851
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - tbrown | BROWN Thomas D | 5666
-2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - tsbrule | BRULE Tony S | 6088
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - csburrou | BURROUGHS Christopher S | 5852
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bcampodo | CAMPODONICO Bruno | 6884
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - acanero | CANERO Agustina | 6457
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcardenas | CARDENAS Jorge | 6854
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dcarey | CAREY Dennis M | 5678
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ncarr | CARR Neil | 6452
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ecarrasco | CARRASCO Eduardo | 6814
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fcastillo | CASTILLO Fernando | 6815
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - schalla | CHALLA Srinivas Reddy (Houston) | 6085
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rchandwa | CHANDWANI Rajesh | 6083
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pcheng | CHENG Patrick O (Pat) | 5701
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pchittip | CHITTIPEDDI Pavan Kumar | 5450
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - achumako | CHUMAKOVA Anna | 5859
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fciarlie | CIARLIERO Francisco | 6883
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lcifuent | CIFUENTES Luis | 6802
-2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - CV-ENG | Civil Engineer | 1637
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lcoderre | CODERRE Landen | 5694
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - CO-SUP | Construction Manager | 1634
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - consultant-sa | Consultant SA | 7056
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jacontat | CONTAT Jakob | 5683
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcontat | CONTAT Jared | 5684
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - flimadac | COSTA Flavio | 8463
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dcraig | CRAIG Danielle R | 5653
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcuadra | CUADRA J. Santos | 5660
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ndlcuadra | CUADRA Nicolas | 6820
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ecumming | CUMMING Eliana | 6876
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcupid | CUPID Jordan | 8061
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - CSM | Customer Success Manager | 5652
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vbdamerl | DAMERLA Venkata B | 7871
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sdaripal | DARIPALLI Sandeep Kumar | 6055
-2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - skdas | DAS Sanjeeb K | 5705
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vdavda | DAVDA Vikash | 6655
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mfdelgad | DELGADO OLIVEROS Maria F | 6078
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - andelogu | DELOGU Andrea | 6862
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pdepix | DEPIX Pablo | 6821
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adesilet | DESILETS Alexandre | 7859
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jodiaz | DIAZ Jorge | 6818
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ydiaz | DIAZ Yulexis | 6853
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - csdiniz | DINIZ Cassiano | 6835
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rdixon | DIXON Rebecca | 5702
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sdoosa | DOOSA Sudhakar | 8263
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bdunnam | DUNNAM Bryce | 7060
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jdunnam | DUNNAM Jan K | 5668
-2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rdwivedi | DWIVEDI Rajnish | 5856
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - EL-ENG | Electrical Engineer | 1641
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - EXT | External Resource | 221
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dfernandez | FERNANDEZ Diego | 6813
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jrfijas | FIJAS Jeffrey (Jeff) | 6075
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - amfoard | FOARD Adam M (Adam) | 5858
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cfogle | FOGLE Clare | 5675
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cfrost | FORSYTH Cath | 5850
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - agaray | GARAY Alejandro | 6257
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vgarcia1 | GARCIA Veronica | 8462
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jgarrido | GARRIDO Javier | 6817
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aghanem | GHANEM Amar | 6051
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hghumran | GHUMRAN Hassan | 6894
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - tdgianni | GIANNI Tiago | 6844
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - arbgil | GIL Andre | 6867
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - oglauber | GLAUBERMAN Olga | 6459
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - egonzalez | Gonzalez Efren | 6255
-2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kgrawe | GRAWE Kurt | 6855
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jkgriffi | GRIFFITH Jesse K | 6052
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rgrover | GROVER-MADHAVAN Rachna | 5703
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - srguirli | GUIRLINGER Scott R | 6086
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rguizzar | GUIZZARDI Rodrigo | 6841
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - agupta1 | GUPTA Aditya | 5451
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kgupta | GUPTA Ketan A | 5690
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vgupta | GUPTA Vineesh | 6893
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fguzman | GUZMAN Freddys | 6857
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ehaberla | HABERLACH Eduard (Eddie) | 6057
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - echaerr | HAERR Eugene (Chip) | 6070
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - whardin | HARDIN John W (Wes) | 6056
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - gharvey | HARVEY Gary | 5682
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sthassui | HASSUI Sergio | 6843
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ahernandez | HERNANDEZ Anabel | 6871
-2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ohernand | HERNANDEZ Oscar | 5658
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hsmit-OqYfFN+OSUKRVkHFBzp5Ng | Hugo Smit | 8063
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ahyche | HYCHE Adam | 6460
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc1 | IISDC Resource #1 | 5661
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc2 | IISDC Resource #2 | 5662
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc3 | IISDC Resource #3 | 5663
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc4 | IISDC Resource #4 | 5664
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc5 | IISDC Resource #5 | 5665
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - InSource | Insource Partner | 7861
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - riyer | IYER Rohit | 5704
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sjadhav | JADHAV Shashi | 6053
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ljaimovi | JAIMOVICH Leonardo | 6888
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cjanzen | JANZEN Christine | 5860
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mjanzen | JANZEN Matthew | 5697
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jarunnin-faLJrVrhTFezUn3F5Ekbtw | Jon Running | 8065
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kjones | JONES Kevin P | 5691
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rjonnala | JONNALAGADDA Ravi S | 5448
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcupid-kv+SCe+GRk+mcWWAzOdBAw | Jordan Cupid | 8062
-2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcbjunio | JUNIOR Jose | 6873
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pkaleem | KALEEM Paul | 8267
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pmackenzie | KENZIE Pamela | 6858
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mtkihara | KIHARA Marcos | 6839
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - joking | KING Jocelyn | 6892
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - abkondr1 | KONDRAKUNTA Anada | 7658
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - wkoo | KOO Waimun | 5649
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ikorok | KOROKHOV Igor | 6050
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - okotylar | KOTLYAR Olga | 6453
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - akumar5 | KUMAR Aaditya | 7860
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - plamelas | LAMELAS Maria Paula | 6879
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ljbigott-Lnf8XkVaR0+RYspRkmNIcA | Leonardo BIGOTT | 8865
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - klezama | LEZAMA Kevin | 6880
-2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dongli | LI Dong | 5679
-2021-06-07 18:56:59,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jlinares1 | LINARES Joyce | 6849
-2021-06-07 18:56:59,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - malopez | LOPEZ Elena | 7862
-2021-06-07 18:56:59,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sluker | LUKER Seth E | 5706
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rvmandap | MANDAPATI Ranjit | 5447
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - wmandiku | MANDIKUMBA Wimbai | 6258
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pvmantra | MANTRARATNAM Venkata N (Prasad) | 5854
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - msfmarce | MARCELINO Mateus | 6831
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - matorres | Marco Torres | 8664
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - maasouza-+sqZ54arTdem+xYzI7pg7A | Marcos Souza | 8665
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mbartel-yEXGMXgkRO+PaMATSb1AGw | Mark Bartel | 8668
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kmarlow | MARLOW Kurtis A | 5692
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmartin | MARTIN Julian | 6889
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fmartinez | MARTINEZ Fernando | 6816
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fsmartin | MARTINS Fernando | 6864
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rmashal | MASHAL Ruben | 6885
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - resmatto | MATTOS Raphael | 6832
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - krmcdonn | MCDONNELL Kevin R | 5857
-2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmcgraw | MCGRAW Jeremy | 5686
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bmckeon | MCKEON Brian A | 6063
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bgmcknig | MCKNIGHT Bobby G (Bobby) | 5673
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ME-ENG | Mechanical Engineer | 1653
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmescal | MESCAL Jeffery S | 5687
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mmogollon | MOGOLLON Mariola | 6819
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kmontiza | MONTIZAAN Kristian J | 5693
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pmoore | MOORE Paul A | 6080
-2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cefmorae | MORAES Carlos | 6869
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rlmouril | MOURILLA Ricardo | 6800
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmoya | MOYA Javier | 6807
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - amukala | MUKALA Anusha | 7867
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - anath | NATH Aditya (A.d.) | 6061
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bnewsom | NEWSOM Brent | 6064
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cokubo | OKUBO Christopher | 5676
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mrcolive | OLIVEIRA Mauro | 6865
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vortega | ORTEGA Victor | 6803
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cortiz | ORTIZ Carlos | 6458
-2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vosteico | OSTEICOECHEA Virgilio (Virgil) | 5667
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jowen | OWEN Salah J (James) | 5688
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dpadgett | PADGETT David A | 5680
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - japape | PAPE James A (Jimmy) | 5655
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - apardo | PARDO Alejandra | 6881
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mparra | PARRA Maritza | 6874
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pnpathar | PATHARE Prachi | 7256
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - prsekhar | PATHIVADA Raja S (Raj) | 6058
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rpatnaik | PATNAIK Ramesh Chanda | 7062
-2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mpaulin | PAULIN Marc | 6090
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lpavia | PAVIA Ledwis | 6850
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - apazos | PAZOS Andres | 6804
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sperez | PEREZ Sebastian | 6809
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mperron | PERRON Michael R | 5698
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - nmpeshma | PESHMAN Nicholas M | 6079
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jphan | PHAN Huy N | 5689
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lphan | PHAN Linh (Lynn) | 5695
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mnpires | PIRES Marcos | 6840
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pbaratla | Prathyush Aratla | 6454
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - apredige | PREDIGER Agustin | 6886
-2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pkprodda | PRODDATURI Pradeep | 8266
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - PC-MGR | Project Controls Manager | 1659
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - PJ-MGR | Project Manager | 1662
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jlpruitt | PRUITT Jeremy L (Jeremy) | 6074
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aramchan | RAMCHANDANI Abhishek | 5672
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cereis | REIS Carlos | 6863
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jricotta | RICOTTA John | 5855
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rktest | RK Test | 7863
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - varocha | ROCHA Vinicius | 6847
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vfrodrig | RODRIGUES Vanessa | 6846
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - crodriguez | RODRIGUEZ Cristian | 6805
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jjrodrig | RODRIGUEZ Joel J | 5656
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - nrodrigu | RODRIGUEZ Norma | 6654
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - narogers | ROGERS Neil A | 5669
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - erosario | ROSARIO FERNANDEZ Ruth E (Esther) | 6071
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mrotherh | ROTHERHAM Matthew A | 5699
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sroy | ROY Sayan | 8264
-2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lgruivo | RUIVO Leonardo | 6830
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - druiz | RUIZ Daniel | 6868
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jarunnin | RUNNING Jon | 8064
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - esalerno | SALERNO Ezequiel | 6882
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sksamudr | SAMUDRALA Santhosh K | 7870
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - faasanto | SANTOS Fernando | 6837
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rcsantos | SANTOS Roberto | 6870
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vsantos | SANTOS Vancler R (Van) | 6089
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - asepulve | SEPULVEDA Arturo | 6811
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kshanmug | SHANMUGABALU Krishnaveni | 7061
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sshantanu | SHANTANU Shubham | 8262
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ascherle | SHERLE Andrea | 7457
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cshort | SHORT Corey | 5677
-2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - edasilva | SILVA Elver | 6256
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbbsilva | SILVA Rodrigo | 6842
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sfsilva | SILVA Sebastian | 6866
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vrlsilva | SILVA Valter | 6845
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - esilver | SILVER Eric | 5681
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jdsimmon | SIMMONS John D | 5685
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmsingur | SINGURU Jagan | 8265
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bjlsique | SIQUEIRA Bruno | 6825
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - drsiquei | SIQUEIRA Douglas | 6836
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hsmit | SMIT Hugo | 5861
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - csmith1 | SMITH Christopher (Chris) | 5651
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - msmith | SMITH Matthew D | 5700
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - msokol | SOKOL Mario | 5657
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - isoto | SOTO Ivan | 6801
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - alsouza | SOUZA Andre | 6823
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - maasouza | SOUZA Marcos | 6878
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - specialist-sa | Specialist SA | 7057
-2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - SPIresource | SPI Resource (Generic) | 8261
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ssreedha | SREEDHARA Suresh | 8663
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lsreeram | SREERAM Lavanya | 7258
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adstande | STANDER Alan D | 6060
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adsulliv | SULLIVAN Alan | 6653
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dwtanner | TANNER Douglas W | 6068
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hteftal | TEFTAL Hassan | 5654
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sthakral | THAKRAL Siddartha | 6253
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - atoro | TORO Angelica | 6848
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - thstotar | TOTARO Thiago | 6834
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bturnbul | TURNBULL Briana C | 6065
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cwtyson | TYSON Charles W | 6066
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - unassigned | UNASSIGNED - NA | 6251
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vursic | URSIC Vladimir | 6822
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - svacca | VACCA Sofia | 6890
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mvarela | VARELA Marcos | 6877
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - uvarshne | VARSHNEY Umang | 7257
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - grvasque | VASQUEZ Giovanny | 6828
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fvega | VEGA Felipe | 6891
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - evenezu | VENEZUELA Eduardo S | 5650
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - svenkate | VENKATESWARA Santosh Kumar (Santosh) | 6087
-2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ilvieira | VIEIRA Iuri | 6887
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Rvigna | VIGNA Rodrigo | 7865
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - wcwallac | WALLACE William | 7059
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bwavle | WAVLE William | 5674
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dpwellin | WELLINGTON Darren P | 6067
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dpwillia | WILLIAMS Dan | 6461
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rwittmann | WITTMANN Ramiro | 6859
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - arzeff | ZEFF Andrew R (Andrew) | 6059
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - xzhang2 | ZHANG Xin | 5849
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fzhou | ZHOU Feng (Stephen) | 6252
-2021-06-07 18:56:59,529 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40285
-2021-06-07 18:56:59,602 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:59,602 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,06244A08CD0A4C5182A79A270352976D
-2021-06-07 18:56:59,616 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:29:39,565 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : 1.1.1 | Outline : 1.1.1 | Rem Hrs: 28.0h | 
+2021-06-10 11:29:39,569 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Monitor and Control                                | WBS : 1.1.2 | Outline : 1.1.2 | Rem Hrs: 140.0h | 
+2021-06-10 11:29:39,570 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review SOW                                         | WBS : 1.1.3.1 | Outline : 1.1.3.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,570 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Setup Project Internally                           | WBS : 1.1.3.4 | Outline : 1.1.3.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,570 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Draft Project Execution Plan (PEP)                 | WBS : 1.1.3.7 | Outline : 1.1.3.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,570 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for PM, PLAN, and DEFINE phases | WBS : 1.1.3.8 | Outline : 1.1.3.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,571 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | WBS : 1.1.4.7 | Outline : 1.1.4.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,571 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Execution Plan (PEP)              | WBS : 1.1.4.8 | Outline : 1.1.4.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,571 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review PEP with Customer                           | WBS : 1.1.4.9 | Outline : 1.1.4.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,571 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 1 Planning                                  | WBS : 1.3.3.11 | Outline : 1.3.3.11 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,572 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 2 Planning                                  | WBS : 1.3.3.12 | Outline : 1.3.3.12 | Rem Hrs: 3.6002459520765404h | 
+2021-06-10 11:29:39,573 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 3 Planning                                  | WBS : 1.3.3.13 | Outline : 1.3.3.13 | Rem Hrs: 72.0h | 
+2021-06-10 11:29:39,575 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  RD COMPLETE                            | WBS : 1.3.3.14 | Outline : 1.3.3.14 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,575 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - BIM 360                                   | WBS : 1.4.2.4 | Outline : 1.4.2.4 | Rem Hrs: 67.2h | 
+2021-06-10 11:29:39,575 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - ERP                                       | WBS : 1.4.2.5 | Outline : 1.4.2.5 | Rem Hrs: 4.0h | 
+2021-06-10 11:29:39,576 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - MS Project                                | WBS : 1.4.2.6 | Outline : 1.4.2.6 | Rem Hrs: 15.0h | 
+2021-06-10 11:29:39,577 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Qlik                                      | WBS : 1.4.2.7 | Outline : 1.4.2.7 | Rem Hrs: 2.0h | 
+2021-06-10 11:29:39,577 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : 1.5.1 | Outline : 1.5.1 | Rem Hrs: 57.00001659885809h | 
+2021-06-10 11:29:39,578 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Technical Lead or Lead Consultant Oversight        | WBS : 1.5.2 | Outline : 1.5.2 | Rem Hrs: 23.0h | 
+2021-06-10 11:29:39,579 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : BIM 360 - Configuration and Unit Testing           | WBS : 1.5.4.1 | Outline : 1.5.4.1 | Rem Hrs: 277.99980833333336h | 
+2021-06-10 11:29:39,579 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : ERP - Configuration and Unit Testing               | WBS : 1.5.4.2 | Outline : 1.5.4.2 | Rem Hrs: 15.91h | 
+2021-06-10 11:29:39,580 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MS Project - Configuration and Unit Testing        | WBS : 1.5.4.3 | Outline : 1.5.4.3 | Rem Hrs: 79.0h | 
+2021-06-10 11:29:39,580 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Qlik - Configuration and Unit Testing              | WBS : 1.5.4.4 | Outline : 1.5.4.4 | Rem Hrs: 45.5h | 
+2021-06-10 11:29:39,580 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 1                                  | WBS : 1.5.19.1 | Outline : 1.5.19.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,581 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 1            | WBS : 1.5.19.2 | Outline : 1.5.19.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,581 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 1              | WBS : 1.5.19.3 | Outline : 1.5.19.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,581 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 1                             | WBS : 1.5.19.4 | Outline : 1.5.19.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,581 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 2                                  | WBS : 1.5.20.1 | Outline : 1.5.20.1 | Rem Hrs: 39.60007329856145h | 
+2021-06-10 11:29:39,582 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 2            | WBS : 1.5.20.2 | Outline : 1.5.20.2 | Rem Hrs: 290.4011650631012h | 
+2021-06-10 11:29:39,583 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 2              | WBS : 1.5.20.3 | Outline : 1.5.20.3 | Rem Hrs: 15.604204331072863h | 
+2021-06-10 11:29:39,584 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 2                             | WBS : 1.5.20.4 | Outline : 1.5.20.4 | Rem Hrs: 67.2h | 
+2021-06-10 11:29:39,585 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 3                                  | WBS : 1.5.21.1 | Outline : 1.5.21.1 | Rem Hrs: 72.0h | 
+2021-06-10 11:29:39,585 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 3            | WBS : 1.5.21.2 | Outline : 1.5.21.2 | Rem Hrs: 460.0h | 
+2021-06-10 11:29:39,586 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 3              | WBS : 1.5.21.3 | Outline : 1.5.21.3 | Rem Hrs: 24.0h | 
+2021-06-10 11:29:39,588 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 3                             | WBS : 1.5.21.4 | Outline : 1.5.21.4 | Rem Hrs: 48.0h | 
+2021-06-10 11:29:39,588 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Discovery - Forecast Re-Write                      | WBS : 1.5.22.1 | Outline : 1.5.22.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,588 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Forecast Re-Write                         | WBS : 1.5.22.2 | Outline : 1.5.22.2 | Rem Hrs: 12.00058823529412h | 
+2021-06-10 11:29:39,589 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Forecast Re-Write   | WBS : 1.5.22.3 | Outline : 1.5.22.3 | Rem Hrs: 42.22372549019608h | 
+2021-06-10 11:29:39,590 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  CONFIGURATION AND UNIT TESTING COMPLETE | WBS : 1.5.29 | Outline : 1.5.29 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,590 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Analysis of Workflows in the Software to Identify Scenarios to Automate | WBS : 1.6.2.3 | Outline : 1.6.2.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,590 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Data Volume Testing on Customer's Environment      | WBS : 1.6.2.5 | Outline : 1.6.2.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,591 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  PERFORMANCE TESTING COMPLETE           | WBS : 1.6.2.8 | Outline : 1.6.2.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,591 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  TRAINING COMPLETE                      | WBS : 1.6.5 | Outline : 1.6.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,591 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 1                                     | WBS : 1.6.6.1 | Outline : 1.6.6.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,591 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 2                                     | WBS : 1.6.6.2 | Outline : 1.6.6.2 | Rem Hrs: 120.0h | 
+2021-06-10 11:29:39,592 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 3                                     | WBS : 1.6.6.3 | Outline : 1.6.6.3 | Rem Hrs: 36.0h | 
+2021-06-10 11:29:39,594 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 1                               | WBS : 1.6.6.4 | Outline : 1.6.6.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,594 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 2                               | WBS : 1.6.6.5 | Outline : 1.6.6.5 | Rem Hrs: 36.0h | 
+2021-06-10 11:29:39,595 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 3                               | WBS : 1.6.6.6 | Outline : 1.6.6.6 | Rem Hrs: 36.0h | 
+2021-06-10 11:29:39,595 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Testing Support - Integration                  | WBS : 1.6.8 | Outline : 1.6.8 | Rem Hrs: 8.0h | 
+2021-06-10 11:29:39,596 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  USER ACCEPTANCE TESTING COMPLETE       | WBS : 1.6.10 | Outline : 1.6.10 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,596 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 1                  | WBS : 1.6.11.1.1 | Outline : 1.6.11.1.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,596 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 2                  | WBS : 1.6.11.1.2 | Outline : 1.6.11.1.2 | Rem Hrs: 33.6h | 
+2021-06-10 11:29:39,597 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 3                  | WBS : 1.6.11.1.3 | Outline : 1.6.11.1.3 | Rem Hrs: 48.0h | 
+2021-06-10 11:29:39,597 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Integration               | WBS : 1.6.11.1.4 | Outline : 1.6.11.1.4 | Rem Hrs: 8.0h | 
+2021-06-10 11:29:39,598 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - 2.3.1                                 | WBS : 1.6.11.3.1 | Outline : 1.6.11.3.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,598 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 1                              | WBS : 1.6.11.3.2 | Outline : 1.6.11.3.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,598 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 2                              | WBS : 1.6.11.3.3 | Outline : 1.6.11.3.3 | Rem Hrs: 34.00315315315315h | 
+2021-06-10 11:29:39,599 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 3                              | WBS : 1.6.11.3.4 | Outline : 1.6.11.3.4 | Rem Hrs: 40.0h | 
+2021-06-10 11:29:39,600 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Integration BIM 360                   | WBS : 1.6.11.3.5 | Outline : 1.6.11.3.5 | Rem Hrs: 6.0h | 
+2021-06-10 11:29:39,600 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - ERP                                   | WBS : 1.6.11.3.6 | Outline : 1.6.11.3.6 | Rem Hrs: 2.0h | 
+2021-06-10 11:29:39,600 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - MS Project                            | WBS : 1.6.11.3.7 | Outline : 1.6.11.3.7 | Rem Hrs: 2.0h | 
+2021-06-10 11:29:39,601 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Qlik                                  | WBS : 1.6.11.3.8 | Outline : 1.6.11.3.8 | Rem Hrs: 2.0h | 
+2021-06-10 11:29:39,601 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  SOLUTION DEPLOYED AND LIVE             | WBS : 1.6.12 | Outline : 1.6.12 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,601 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 2.3.1                                      | WBS : 1.6.13.1 | Outline : 1.6.13.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,601 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0                                        | WBS : 1.6.13.2 | Outline : 1.6.13.2 | Rem Hrs: 66.00000000000001h | 
+2021-06-10 11:29:39,602 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0.1                                      | WBS : 1.6.13.3 | Outline : 1.6.13.3 | Rem Hrs: 50.0h | 
+2021-06-10 11:29:39,602 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.1                                        | WBS : 1.6.13.4 | Outline : 1.6.13.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Lessons Learned Exercise with the Customer | WBS : 1.6.14.1 | Outline : 1.6.14.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Internal Lessons Learned Exercise         | WBS : 1.6.14.2 | Outline : 1.6.14.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Phase Closure Videos                      | WBS : 1.6.14.3 | Outline : 1.6.14.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Transition to Support Document            | WBS : 1.6.14.4 | Outline : 1.6.14.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Initiate Transition to Support Process             | WBS : 1.6.14.5 | Outline : 1.6.14.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct Internal Transition Meeting with Support   | WBS : 1.6.14.6 | Outline : 1.6.14.6 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,603 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct External Transition Meeting with Support and Customer | WBS : 1.6.14.7 | Outline : 1.6.14.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,604 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Close-Out Report                  | WBS : 1.6.14.8 | Outline : 1.6.14.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,604 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Perform Internal Administrative Tasks to Close Project Internally | WBS : 1.6.14.9 | Outline : 1.6.14.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,604 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : TRAVEL                                             | WBS : 1.7 | Outline : 1.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:29:39,604 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : CONTINGENCY                                        | WBS : 1.8 | Outline : 1.8 | Rem Hrs: 20.0h | 
+2021-06-10 11:29:39,605 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Count of Transactions prepared : 84
+2021-06-10 11:29:39,607 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppData - batch size: 2000 - true
+2021-06-10 11:29:39,607 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:84
+2021-06-10 11:29:39,929 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:29:39,941 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,20A34CD72A96797E98FB28BF258DF224
+2021-06-10 11:29:39,949 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppData - elapsed time: PT0.334S for 84 records
+2021-06-10 11:29:39,949 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppData - elapsed time: PT0.342S
+2021-06-10 11:29:39,959 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:59,723 ERROR com.ecosys.service.IntegratorBase.logError:81 - net.sf.mpxj.MPXJException: Error reading file
-2021-06-07 18:56:59,723 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Import Terminated due to Errors
-2021-06-07 18:56:59,723 INFO  com.ecosys.service.BatchQueueMgrImpl.info:? - Update Task Status to Error for 23755
-2021-06-07 18:56:59,724 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueUpdate - batch size: 2000 - true
-2021-06-07 18:56:59,724 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:1
-2021-06-07 18:56:59,827 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:59,845 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,88C86088DB87D97CA7C9E248DD3FC635
-2021-06-07 18:56:59,853 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueUpdate - elapsed time: PT0.121S for 1 records
-2021-06-07 18:56:59,853 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueUpdate - elapsed time: PT0.129S
-2021-06-07 18:56:59,863 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101496 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101497 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101498 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101499 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101500 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101501 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101502 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101503 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101504 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101505 Created
+2021-06-10 11:29:39,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101506 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101507 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101508 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101509 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101510 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101511 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101512 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101513 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101514 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101515 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101516 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101517 Created
+2021-06-10 11:29:39,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101518 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101519 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101520 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101521 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101522 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101523 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101524 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101525 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101526 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101527 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101528 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101529 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101530 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101531 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101532 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101533 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101534 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101535 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101536 Created
+2021-06-10 11:29:39,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101537 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101538 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101539 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101540 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101541 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101542 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101543 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101544 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101545 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101546 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101547 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101548 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101549 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101550 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101551 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101552 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101553 Created
+2021-06-10 11:29:39,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101554 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101555 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101556 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101557 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101558 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101559 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101560 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101561 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101562 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101563 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101564 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101565 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101566 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101567 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101568 Created
+2021-06-10 11:29:39,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101569 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101570 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101571 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101572 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101573 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101574 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101575 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101576 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101577 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101578 Created
+2021-06-10 11:29:39,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101579 Created
+2021-06-10 11:29:39,965 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Total created Items = 84, Failed Items = 0
+2021-06-10 11:29:39,966 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import ends...
+2021-06-10 11:29:39,966 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-10 11:29:39,967 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-10 11:29:39,968 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-10 11:29:40,038 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:29:40,047 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,19B22FB25BBA87DAE47B6AB518CD0EF5
+2021-06-10 11:29:40,047 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.079S for 4 records
+2021-06-10 11:29:40,047 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.079S
+2021-06-10 11:29:40,058 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-07 18:56:59,863 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
-2021-06-07 18:56:59,866 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
-2021-06-07 18:56:59,866 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:3
-2021-06-07 18:56:59,948 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
-2021-06-07 18:56:59,962 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,BEFAD2DFE398FBC736617DE93F983BCB
-2021-06-07 18:56:59,963 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.096S for 3 records
-2021-06-07 18:56:59,963 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.097S
-2021-06-07 18:56:59,973 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-06-10 11:29:40,059 INFO  com.ecosys.startup.MppEtcImport.main:46 - Completed ETC Import Process... P0000-00-00T00:00:02.350
+2021-06-10 11:44:34,526 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-10 11:44:35,029 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:44:35,034 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24144
+2021-06-10 11:44:35,141 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:44:35,142 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,482198A68ED24E8EC1A9CAA54C3F4739
+2021-06-10 11:44:35,153 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
+2021-06-10 11:44:35,289 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:44:35,289 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24144
+2021-06-10 11:44:35,340 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:44:35,340 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,7750E1772FDE4FB8FE21B820F924BB8B
+2021-06-10 11:44:35,350 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:44:35,351 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-1 : GUAR2002IMP
+2021-06-10 11:44:35,351 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-2 : 40486
+2021-06-10 11:44:35,351 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-3 : 666
+2021-06-10 11:44:35,351 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import begins...
+2021-06-10 11:44:35,351 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40486
+2021-06-10 11:44:35,429 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:44:35,430 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,07A7C734BCFC46537C994719BF0A3A7E
+2021-06-10 11:44:35,440 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:44:36,487 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : 1.1.1 | Outline : 1.1.1 | WBS Code : null | Rem Hrs: 28.0h | 
+2021-06-10 11:44:36,492 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Monitor and Control                                | WBS : 1.1.2 | Outline : 1.1.2 | WBS Code : null | Rem Hrs: 140.0h | 
+2021-06-10 11:44:36,493 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review SOW                                         | WBS : 1.1.3.1 | Outline : 1.1.3.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,493 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Setup Project Internally                           | WBS : 1.1.3.4 | Outline : 1.1.3.4 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,494 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Draft Project Execution Plan (PEP)                 | WBS : 1.1.3.7 | Outline : 1.1.3.7 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,494 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for PM, PLAN, and DEFINE phases | WBS : 1.1.3.8 | Outline : 1.1.3.8 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,494 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | WBS : 1.1.4.7 | Outline : 1.1.4.7 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,494 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Execution Plan (PEP)              | WBS : 1.1.4.8 | Outline : 1.1.4.8 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,494 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review PEP with Customer                           | WBS : 1.1.4.9 | Outline : 1.1.4.9 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,495 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 1 Planning                                  | WBS : 1.3.3.11 | Outline : 1.3.3.11 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,495 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 2 Planning                                  | WBS : 1.3.3.12 | Outline : 1.3.3.12 | WBS Code : null | Rem Hrs: 3.6002459520765404h | 
+2021-06-10 11:44:36,496 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 3 Planning                                  | WBS : 1.3.3.13 | Outline : 1.3.3.13 | WBS Code : null | Rem Hrs: 72.0h | 
+2021-06-10 11:44:36,497 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  RD COMPLETE                            | WBS : 1.3.3.14 | Outline : 1.3.3.14 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,498 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - BIM 360                                   | WBS : 1.4.2.4 | Outline : 1.4.2.4 | WBS Code : null | Rem Hrs: 67.2h | 
+2021-06-10 11:44:36,498 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - ERP                                       | WBS : 1.4.2.5 | Outline : 1.4.2.5 | WBS Code : null | Rem Hrs: 4.0h | 
+2021-06-10 11:44:36,499 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - MS Project                                | WBS : 1.4.2.6 | Outline : 1.4.2.6 | WBS Code : null | Rem Hrs: 15.0h | 
+2021-06-10 11:44:36,500 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Qlik                                      | WBS : 1.4.2.7 | Outline : 1.4.2.7 | WBS Code : null | Rem Hrs: 2.0h | 
+2021-06-10 11:44:36,500 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : 1.5.1 | Outline : 1.5.1 | WBS Code : null | Rem Hrs: 57.00001659885809h | 
+2021-06-10 11:44:36,501 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Technical Lead or Lead Consultant Oversight        | WBS : 1.5.2 | Outline : 1.5.2 | WBS Code : null | Rem Hrs: 23.0h | 
+2021-06-10 11:44:36,502 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : BIM 360 - Configuration and Unit Testing           | WBS : 1.5.4.1 | Outline : 1.5.4.1 | WBS Code : null | Rem Hrs: 277.99980833333336h | 
+2021-06-10 11:44:36,502 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : ERP - Configuration and Unit Testing               | WBS : 1.5.4.2 | Outline : 1.5.4.2 | WBS Code : null | Rem Hrs: 15.91h | 
+2021-06-10 11:44:36,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MS Project - Configuration and Unit Testing        | WBS : 1.5.4.3 | Outline : 1.5.4.3 | WBS Code : null | Rem Hrs: 79.0h | 
+2021-06-10 11:44:36,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Qlik - Configuration and Unit Testing              | WBS : 1.5.4.4 | Outline : 1.5.4.4 | WBS Code : null | Rem Hrs: 45.5h | 
+2021-06-10 11:44:36,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 1                                  | WBS : 1.5.19.1 | Outline : 1.5.19.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 1            | WBS : 1.5.19.2 | Outline : 1.5.19.2 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 1              | WBS : 1.5.19.3 | Outline : 1.5.19.3 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 1                             | WBS : 1.5.19.4 | Outline : 1.5.19.4 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 2                                  | WBS : 1.5.20.1 | Outline : 1.5.20.1 | WBS Code : null | Rem Hrs: 39.60007329856145h | 
+2021-06-10 11:44:36,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 2            | WBS : 1.5.20.2 | Outline : 1.5.20.2 | WBS Code : null | Rem Hrs: 290.4011650631012h | 
+2021-06-10 11:44:36,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 2              | WBS : 1.5.20.3 | Outline : 1.5.20.3 | WBS Code : null | Rem Hrs: 15.604204331072863h | 
+2021-06-10 11:44:36,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 2                             | WBS : 1.5.20.4 | Outline : 1.5.20.4 | WBS Code : null | Rem Hrs: 67.2h | 
+2021-06-10 11:44:36,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 3                                  | WBS : 1.5.21.1 | Outline : 1.5.21.1 | WBS Code : null | Rem Hrs: 72.0h | 
+2021-06-10 11:44:36,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 3            | WBS : 1.5.21.2 | Outline : 1.5.21.2 | WBS Code : null | Rem Hrs: 460.0h | 
+2021-06-10 11:44:36,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 3              | WBS : 1.5.21.3 | Outline : 1.5.21.3 | WBS Code : null | Rem Hrs: 24.0h | 
+2021-06-10 11:44:36,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 3                             | WBS : 1.5.21.4 | Outline : 1.5.21.4 | WBS Code : null | Rem Hrs: 48.0h | 
+2021-06-10 11:44:36,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Discovery - Forecast Re-Write                      | WBS : 1.5.22.1 | Outline : 1.5.22.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Forecast Re-Write                         | WBS : 1.5.22.2 | Outline : 1.5.22.2 | WBS Code : null | Rem Hrs: 12.00058823529412h | 
+2021-06-10 11:44:36,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Forecast Re-Write   | WBS : 1.5.22.3 | Outline : 1.5.22.3 | WBS Code : null | Rem Hrs: 42.22372549019608h | 
+2021-06-10 11:44:36,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  CONFIGURATION AND UNIT TESTING COMPLETE | WBS : 1.5.29 | Outline : 1.5.29 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Analysis of Workflows in the Software to Identify Scenarios to Automate | WBS : 1.6.2.3 | Outline : 1.6.2.3 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Data Volume Testing on Customer's Environment      | WBS : 1.6.2.5 | Outline : 1.6.2.5 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  PERFORMANCE TESTING COMPLETE           | WBS : 1.6.2.8 | Outline : 1.6.2.8 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,515 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  TRAINING COMPLETE                      | WBS : 1.6.5 | Outline : 1.6.5 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,515 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 1                                     | WBS : 1.6.6.1 | Outline : 1.6.6.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,515 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 2                                     | WBS : 1.6.6.2 | Outline : 1.6.6.2 | WBS Code : null | Rem Hrs: 120.0h | 
+2021-06-10 11:44:36,516 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 3                                     | WBS : 1.6.6.3 | Outline : 1.6.6.3 | WBS Code : null | Rem Hrs: 36.0h | 
+2021-06-10 11:44:36,517 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 1                               | WBS : 1.6.6.4 | Outline : 1.6.6.4 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,518 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 2                               | WBS : 1.6.6.5 | Outline : 1.6.6.5 | WBS Code : null | Rem Hrs: 36.0h | 
+2021-06-10 11:44:36,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 3                               | WBS : 1.6.6.6 | Outline : 1.6.6.6 | WBS Code : null | Rem Hrs: 36.0h | 
+2021-06-10 11:44:36,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Testing Support - Integration                  | WBS : 1.6.8 | Outline : 1.6.8 | WBS Code : null | Rem Hrs: 8.0h | 
+2021-06-10 11:44:36,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  USER ACCEPTANCE TESTING COMPLETE       | WBS : 1.6.10 | Outline : 1.6.10 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 1                  | WBS : 1.6.11.1.1 | Outline : 1.6.11.1.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 2                  | WBS : 1.6.11.1.2 | Outline : 1.6.11.1.2 | WBS Code : null | Rem Hrs: 33.6h | 
+2021-06-10 11:44:36,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 3                  | WBS : 1.6.11.1.3 | Outline : 1.6.11.1.3 | WBS Code : null | Rem Hrs: 48.0h | 
+2021-06-10 11:44:36,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Integration               | WBS : 1.6.11.1.4 | Outline : 1.6.11.1.4 | WBS Code : null | Rem Hrs: 8.0h | 
+2021-06-10 11:44:36,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - 2.3.1                                 | WBS : 1.6.11.3.1 | Outline : 1.6.11.3.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 1                              | WBS : 1.6.11.3.2 | Outline : 1.6.11.3.2 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 2                              | WBS : 1.6.11.3.3 | Outline : 1.6.11.3.3 | WBS Code : null | Rem Hrs: 34.00315315315315h | 
+2021-06-10 11:44:36,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 3                              | WBS : 1.6.11.3.4 | Outline : 1.6.11.3.4 | WBS Code : null | Rem Hrs: 40.0h | 
+2021-06-10 11:44:36,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Integration BIM 360                   | WBS : 1.6.11.3.5 | Outline : 1.6.11.3.5 | WBS Code : null | Rem Hrs: 6.0h | 
+2021-06-10 11:44:36,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - ERP                                   | WBS : 1.6.11.3.6 | Outline : 1.6.11.3.6 | WBS Code : null | Rem Hrs: 2.0h | 
+2021-06-10 11:44:36,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - MS Project                            | WBS : 1.6.11.3.7 | Outline : 1.6.11.3.7 | WBS Code : null | Rem Hrs: 2.0h | 
+2021-06-10 11:44:36,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Qlik                                  | WBS : 1.6.11.3.8 | Outline : 1.6.11.3.8 | WBS Code : null | Rem Hrs: 2.0h | 
+2021-06-10 11:44:36,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  SOLUTION DEPLOYED AND LIVE             | WBS : 1.6.12 | Outline : 1.6.12 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 2.3.1                                      | WBS : 1.6.13.1 | Outline : 1.6.13.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0                                        | WBS : 1.6.13.2 | Outline : 1.6.13.2 | WBS Code : null | Rem Hrs: 66.00000000000001h | 
+2021-06-10 11:44:36,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0.1                                      | WBS : 1.6.13.3 | Outline : 1.6.13.3 | WBS Code : null | Rem Hrs: 50.0h | 
+2021-06-10 11:44:36,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.1                                        | WBS : 1.6.13.4 | Outline : 1.6.13.4 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Lessons Learned Exercise with the Customer | WBS : 1.6.14.1 | Outline : 1.6.14.1 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Internal Lessons Learned Exercise         | WBS : 1.6.14.2 | Outline : 1.6.14.2 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Phase Closure Videos                      | WBS : 1.6.14.3 | Outline : 1.6.14.3 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Transition to Support Document            | WBS : 1.6.14.4 | Outline : 1.6.14.4 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Initiate Transition to Support Process             | WBS : 1.6.14.5 | Outline : 1.6.14.5 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct Internal Transition Meeting with Support   | WBS : 1.6.14.6 | Outline : 1.6.14.6 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct External Transition Meeting with Support and Customer | WBS : 1.6.14.7 | Outline : 1.6.14.7 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Close-Out Report                  | WBS : 1.6.14.8 | Outline : 1.6.14.8 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Perform Internal Administrative Tasks to Close Project Internally | WBS : 1.6.14.9 | Outline : 1.6.14.9 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : TRAVEL                                             | WBS : 1.7 | Outline : 1.7 | WBS Code : null | Rem Hrs: 0.0h | 
+2021-06-10 11:44:36,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : CONTINGENCY                                        | WBS : 1.8 | Outline : 1.8 | WBS Code : null | Rem Hrs: 20.0h | 
+2021-06-10 11:44:36,529 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Count of Transactions prepared : 84
+2021-06-10 11:44:36,531 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppData - batch size: 2000 - true
+2021-06-10 11:44:36,531 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:84
+2021-06-10 11:44:36,927 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:44:36,938 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,A880822E476CEC7FC4285D48C47F3312
+2021-06-10 11:44:36,947 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppData - elapsed time: PT0.407S for 84 records
+2021-06-10 11:44:36,948 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppData - elapsed time: PT0.416S
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101584 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101585 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101586 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101587 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101588 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101589 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101590 Created
+2021-06-10 11:44:36,960 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101591 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101592 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101593 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101594 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101595 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101596 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101597 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101598 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101599 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101600 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101601 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101602 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101603 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101604 Created
+2021-06-10 11:44:36,961 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101605 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101606 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101607 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101608 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101609 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101610 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101611 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101612 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101613 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101614 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101615 Created
+2021-06-10 11:44:36,962 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101616 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101617 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101618 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101619 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101620 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101621 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101622 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101623 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101624 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101625 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101626 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101627 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101628 Created
+2021-06-10 11:44:36,963 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101629 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101630 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101631 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101632 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101633 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101634 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101635 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101636 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101637 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101638 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101639 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101640 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101641 Created
+2021-06-10 11:44:36,964 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101642 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101643 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101644 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101645 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101646 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101647 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101648 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101649 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101650 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101651 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101652 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101653 Created
+2021-06-10 11:44:36,965 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101654 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101655 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101656 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101657 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101658 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101659 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101660 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101661 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101662 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101663 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101664 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101665 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101666 Created
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101667 Created
+2021-06-10 11:44:36,966 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Total created Items = 84, Failed Items = 0
+2021-06-10 11:44:36,966 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import ends...
+2021-06-10 11:44:36,966 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-10 11:44:36,968 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-10 11:44:36,968 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-10 11:44:37,028 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:44:37,036 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,C9AD1811E749FCDB5A0B357901B271D3
+2021-06-10 11:44:37,036 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.068S for 4 records
+2021-06-10 11:44:37,036 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.068S
+2021-06-10 11:44:37,048 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:44:37,049 INFO  com.ecosys.startup.MppEtcImport.main:46 - Completed ETC Import Process... P0000-00-00T00:00:02.559
+2021-06-10 11:47:46,026 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-10 11:47:46,565 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:47:46,569 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24546
+2021-06-10 11:47:46,663 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:47:46,664 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F335A702697E124CA5265BCB9F030FB7
+2021-06-10 11:47:46,677 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:47:46,810 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-10 11:47:46,811 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24546
+2021-06-10 11:47:46,875 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:47:46,875 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,1A24F77D867738429B36B36156D1EEAE
+2021-06-10 11:47:46,885 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:47:46,887 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-1 : PRJ-000264
+2021-06-10 11:47:46,887 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-2 : 43512
+2021-06-10 11:47:46,887 INFO  com.ecosys.service.IntegratorBase.getArguments:173 - Argument-3 : 666
+2021-06-10 11:47:46,887 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import begins...
+2021-06-10 11:47:46,887 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=43512
+2021-06-10 11:47:46,980 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:47:46,981 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,939947BC7781BA619CB912E077FB52C8
+2021-06-10 11:47:46,995 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:47:48,098 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : 1.1.1 | Outline : 1.1.1 | WBS Code : GEORG010CON.1.1.1 | Rem Hrs: 28.0h | 
+2021-06-10 11:47:48,102 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Monitor and Control                                | WBS : 1.1.2 | Outline : 1.1.2 | WBS Code : GEORG010CON.1.1.2 | Rem Hrs: 140.0h | 
+2021-06-10 11:47:48,102 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review SOW                                         | WBS : 1.1.3.1 | Outline : 1.1.3.1 | WBS Code : GEORG010CON.1.1.3.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Setup Project Internally                           | WBS : 1.1.3.4 | Outline : 1.1.3.4 | WBS Code : GEORG010CON.1.1.3.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Draft Project Execution Plan (PEP)                 | WBS : 1.1.3.7 | Outline : 1.1.3.7 | WBS Code : GEORG010CON.1.1.3.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for PM, PLAN, and DEFINE phases | WBS : 1.1.3.8 | Outline : 1.1.3.8 | WBS Code : GEORG010CON.1.1.3.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | WBS : 1.1.4.7 | Outline : 1.1.4.7 | WBS Code : GEORG010CON.1.1.4.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Execution Plan (PEP)              | WBS : 1.1.4.8 | Outline : 1.1.4.8 | WBS Code : GEORG010CON.1.1.4.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Review PEP with Customer                           | WBS : 1.1.4.9 | Outline : 1.1.4.9 | WBS Code : GEORG010CON.1.1.4.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,103 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 1 Planning                                  | WBS : 1.3.3.11 | Outline : 1.3.3.11 | WBS Code : GEORG010CON.1.3.3.150 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,104 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 2 Planning                                  | WBS : 1.3.3.12 | Outline : 1.3.3.12 | WBS Code : GEORG010CON.1.3.3.17 | Rem Hrs: 3.6002459520765404h | 
+2021-06-10 11:47:48,105 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint 3 Planning                                  | WBS : 1.3.3.13 | Outline : 1.3.3.13 | WBS Code : GEORG010CON.1.3.3.188 | Rem Hrs: 72.0h | 
+2021-06-10 11:47:48,106 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  RD COMPLETE                            | WBS : 1.3.3.14 | Outline : 1.3.3.14 | WBS Code : GEORG010CON.1.3.3.11 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,106 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - BIM 360                                   | WBS : 1.4.2.4 | Outline : 1.4.2.4 | WBS Code : GEORG010CON.1.4.2.6 | Rem Hrs: 67.2h | 
+2021-06-10 11:47:48,106 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - ERP                                       | WBS : 1.4.2.5 | Outline : 1.4.2.5 | WBS Code : GEORG010CON.1.4.2.5 | Rem Hrs: 4.0h | 
+2021-06-10 11:47:48,107 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - MS Project                                | WBS : 1.4.2.6 | Outline : 1.4.2.6 | WBS Code : GEORG010CON.1.4.2.4 | Rem Hrs: 15.0h | 
+2021-06-10 11:47:48,107 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Qlik                                      | WBS : 1.4.2.7 | Outline : 1.4.2.7 | WBS Code : GEORG010CON.1.4.2.7 | Rem Hrs: 2.0h | 
+2021-06-10 11:47:48,108 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Project Meetings                                   | WBS : 1.5.1 | Outline : 1.5.1 | WBS Code : GEORG010CON.1.5.1 | Rem Hrs: 57.00001659885809h | 
+2021-06-10 11:47:48,109 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Technical Lead or Lead Consultant Oversight        | WBS : 1.5.2 | Outline : 1.5.2 | WBS Code : GEORG010CON.1.5.2 | Rem Hrs: 23.0h | 
+2021-06-10 11:47:48,109 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : BIM 360 - Configuration and Unit Testing           | WBS : 1.5.4.1 | Outline : 1.5.4.1 | WBS Code : GEORG010CON.1.5.4.1 | Rem Hrs: 277.99980833333336h | 
+2021-06-10 11:47:48,109 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : ERP - Configuration and Unit Testing               | WBS : 1.5.4.2 | Outline : 1.5.4.2 | WBS Code : GEORG010CON.1.5.4.2 | Rem Hrs: 15.91h | 
+2021-06-10 11:47:48,110 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MS Project - Configuration and Unit Testing        | WBS : 1.5.4.3 | Outline : 1.5.4.3 | WBS Code : GEORG010CON.1.5.4.3 | Rem Hrs: 79.0h | 
+2021-06-10 11:47:48,110 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Qlik - Configuration and Unit Testing              | WBS : 1.5.4.4 | Outline : 1.5.4.4 | WBS Code : GEORG010CON.1.5.4.4 | Rem Hrs: 45.5h | 
+2021-06-10 11:47:48,110 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 1                                  | WBS : 1.5.19.1 | Outline : 1.5.19.1 | WBS Code : GEORG010CON.1.5.19.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,111 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 1            | WBS : 1.5.19.2 | Outline : 1.5.19.2 | WBS Code : GEORG010CON.1.5.19.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,111 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 1              | WBS : 1.5.19.3 | Outline : 1.5.19.3 | WBS Code : GEORG010CON.1.5.19.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,111 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 1                             | WBS : 1.5.19.4 | Outline : 1.5.19.4 | WBS Code : GEORG010CON.1.5.19.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,111 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 2                                  | WBS : 1.5.20.1 | Outline : 1.5.20.1 | WBS Code : GEORG010CON.1.5.20.1 | Rem Hrs: 39.60007329856145h | 
+2021-06-10 11:47:48,112 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 2            | WBS : 1.5.20.2 | Outline : 1.5.20.2 | WBS Code : GEORG010CON.1.5.20.2 | Rem Hrs: 290.4011650631012h | 
+2021-06-10 11:47:48,113 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 2              | WBS : 1.5.20.3 | Outline : 1.5.20.3 | WBS Code : GEORG010CON.1.5.20.3 | Rem Hrs: 15.604204331072863h | 
+2021-06-10 11:47:48,114 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 2                             | WBS : 1.5.20.4 | Outline : 1.5.20.4 | WBS Code : GEORG010CON.1.5.20.4 | Rem Hrs: 67.2h | 
+2021-06-10 11:47:48,114 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Sprint 3                                  | WBS : 1.5.21.1 | Outline : 1.5.21.1 | WBS Code : GEORG010CON.1.5.21.1 | Rem Hrs: 72.0h | 
+2021-06-10 11:47:48,115 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Sprint 3            | WBS : 1.5.21.2 | Outline : 1.5.21.2 | WBS Code : GEORG010CON.1.5.21.2 | Rem Hrs: 460.0h | 
+2021-06-10 11:47:48,116 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Sprint Review and Approval - Sprint 3              | WBS : 1.5.21.3 | Outline : 1.5.21.3 | WBS Code : GEORG010CON.1.5.21.3 | Rem Hrs: 24.0h | 
+2021-06-10 11:47:48,117 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : E2E Testing - Sprint 3                             | WBS : 1.5.21.4 | Outline : 1.5.21.4 | WBS Code : GEORG010CON.1.5.21.4 | Rem Hrs: 48.0h | 
+2021-06-10 11:47:48,117 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Discovery - Forecast Re-Write                      | WBS : 1.5.22.1 | Outline : 1.5.22.1 | WBS Code : GEORG010CON.1.5.22.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,117 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Design - Forecast Re-Write                         | WBS : 1.5.22.2 | Outline : 1.5.22.2 | WBS Code : GEORG010CON.1.5.22.2 | Rem Hrs: 12.00058823529412h | 
+2021-06-10 11:47:48,118 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Configuration & Unit Testing - Forecast Re-Write   | WBS : 1.5.22.3 | Outline : 1.5.22.3 | WBS Code : GEORG010CON.1.5.22.3 | Rem Hrs: 42.22372549019608h | 
+2021-06-10 11:47:48,118 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  CONFIGURATION AND UNIT TESTING COMPLETE | WBS : 1.5.29 | Outline : 1.5.29 | WBS Code : GEORG010CON.1.5.29 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,119 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Analysis of Workflows in the Software to Identify Scenarios to Automate | WBS : 1.6.2.3 | Outline : 1.6.2.3 | WBS Code : GEORG010CON.1.6.2.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,119 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Data Volume Testing on Customer's Environment      | WBS : 1.6.2.5 | Outline : 1.6.2.5 | WBS Code : GEORG010CON.1.6.2.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,119 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  PERFORMANCE TESTING COMPLETE           | WBS : 1.6.2.8 | Outline : 1.6.2.8 | WBS Code : GEORG010CON.1.6.2.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,119 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  TRAINING COMPLETE                      | WBS : 1.6.5 | Outline : 1.6.5 | WBS Code : GEORG010CON.1.6.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,119 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 1                                     | WBS : 1.6.6.1 | Outline : 1.6.6.1 | WBS Code : GEORG010CON.1.6.6.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,119 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 2                                     | WBS : 1.6.6.2 | Outline : 1.6.6.2 | WBS Code : GEORG010CON.1.6.6.2 | Rem Hrs: 120.0h | 
+2021-06-10 11:47:48,120 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT - Sprint 3                                     | WBS : 1.6.6.3 | Outline : 1.6.6.3 | WBS Code : GEORG010CON.1.6.6.3 | Rem Hrs: 36.0h | 
+2021-06-10 11:47:48,121 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 1                               | WBS : 1.6.6.4 | Outline : 1.6.6.4 | WBS Code : GEORG010CON.1.6.6.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,121 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 2                               | WBS : 1.6.6.5 | Outline : 1.6.6.5 | WBS Code : GEORG010CON.1.6.6.5 | Rem Hrs: 36.0h | 
+2021-06-10 11:47:48,121 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Fixes - Sprint 3                               | WBS : 1.6.6.6 | Outline : 1.6.6.6 | WBS Code : GEORG010CON.1.6.6.6 | Rem Hrs: 36.0h | 
+2021-06-10 11:47:48,122 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : UAT Testing Support - Integration                  | WBS : 1.6.8 | Outline : 1.6.8 | WBS Code : GEORG010CON.1.6.7 | Rem Hrs: 8.0h | 
+2021-06-10 11:47:48,122 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  USER ACCEPTANCE TESTING COMPLETE       | WBS : 1.6.10 | Outline : 1.6.10 | WBS Code : GEORG010CON.1.6.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,122 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 1                  | WBS : 1.6.11.1.1 | Outline : 1.6.11.1.1 | WBS Code : GEORG010CON.1.6.10.1.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,122 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 2                  | WBS : 1.6.11.1.2 | Outline : 1.6.11.1.2 | WBS Code : GEORG010CON.1.6.10.1.2 | Rem Hrs: 33.6h | 
+2021-06-10 11:47:48,122 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Sprint 3                  | WBS : 1.6.11.1.3 | Outline : 1.6.11.1.3 | WBS Code : GEORG010CON.1.6.10.1.3 | Rem Hrs: 48.0h | 
+2021-06-10 11:47:48,123 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment Preparation - Integration               | WBS : 1.6.11.1.4 | Outline : 1.6.11.1.4 | WBS Code : GEORG010CON.1.6.10.1.4 | Rem Hrs: 8.0h | 
+2021-06-10 11:47:48,123 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - 2.3.1                                 | WBS : 1.6.11.3.1 | Outline : 1.6.11.3.1 | WBS Code : GEORG010CON.1.6.10.3.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,123 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 1                              | WBS : 1.6.11.3.2 | Outline : 1.6.11.3.2 | WBS Code : GEORG010CON.1.6.10.3.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,124 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 2                              | WBS : 1.6.11.3.3 | Outline : 1.6.11.3.3 | WBS Code : GEORG010CON.1.6.10.3.3 | Rem Hrs: 34.00315315315315h | 
+2021-06-10 11:47:48,124 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Sprint 3                              | WBS : 1.6.11.3.4 | Outline : 1.6.11.3.4 | WBS Code : GEORG010CON.1.6.10.3.4 | Rem Hrs: 40.0h | 
+2021-06-10 11:47:48,125 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Integration BIM 360                   | WBS : 1.6.11.3.5 | Outline : 1.6.11.3.5 | WBS Code : GEORG010CON.1.6.10.3.5 | Rem Hrs: 6.0h | 
+2021-06-10 11:47:48,125 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - ERP                                   | WBS : 1.6.11.3.6 | Outline : 1.6.11.3.6 | WBS Code : GEORG010CON.1.6.10.3.6 | Rem Hrs: 2.0h | 
+2021-06-10 11:47:48,125 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - MS Project                            | WBS : 1.6.11.3.7 | Outline : 1.6.11.3.7 | WBS Code : GEORG010CON.1.6.10.3.7 | Rem Hrs: 2.0h | 
+2021-06-10 11:47:48,126 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Deployment - Qlik                                  | WBS : 1.6.11.3.8 | Outline : 1.6.11.3.8 | WBS Code : GEORG010CON.1.6.10.3.8 | Rem Hrs: 2.0h | 
+2021-06-10 11:47:48,126 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : MILESTONE:  SOLUTION DEPLOYED AND LIVE             | WBS : 1.6.12 | Outline : 1.6.12 | WBS Code : GEORG010CON.1.6.11 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,126 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 2.3.1                                      | WBS : 1.6.13.1 | Outline : 1.6.13.1 | WBS Code : GEORG010CON.1.6.12.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,126 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0                                        | WBS : 1.6.13.2 | Outline : 1.6.13.2 | WBS Code : GEORG010CON.1.6.12.2 | Rem Hrs: 66.00000000000001h | 
+2021-06-10 11:47:48,127 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.0.1                                      | WBS : 1.6.13.3 | Outline : 1.6.13.3 | WBS Code : GEORG010CON.1.6.12.3 | Rem Hrs: 50.0h | 
+2021-06-10 11:47:48,127 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Release 3.1                                        | WBS : 1.6.13.4 | Outline : 1.6.13.4 | WBS Code : GEORG010CON.1.6.12.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,127 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Lessons Learned Exercise with the Customer | WBS : 1.6.14.1 | Outline : 1.6.14.1 | WBS Code : GEORG010CON.1.6.13.1 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,127 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Internal Lessons Learned Exercise         | WBS : 1.6.14.2 | Outline : 1.6.14.2 | WBS Code : GEORG010CON.1.6.13.2 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Phase Closure Videos                      | WBS : 1.6.14.3 | Outline : 1.6.14.3 | WBS Code : GEORG010CON.1.6.13.3 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Transition to Support Document            | WBS : 1.6.14.4 | Outline : 1.6.14.4 | WBS Code : GEORG010CON.1.6.13.4 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Initiate Transition to Support Process             | WBS : 1.6.14.5 | Outline : 1.6.14.5 | WBS Code : GEORG010CON.1.6.13.5 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct Internal Transition Meeting with Support   | WBS : 1.6.14.6 | Outline : 1.6.14.6 | WBS Code : GEORG010CON.1.6.13.6 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Conduct External Transition Meeting with Support and Customer | WBS : 1.6.14.7 | Outline : 1.6.14.7 | WBS Code : GEORG010CON.1.6.13.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Complete Project Close-Out Report                  | WBS : 1.6.14.8 | Outline : 1.6.14.8 | WBS Code : GEORG010CON.1.6.13.8 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : Perform Internal Administrative Tasks to Close Project Internally | WBS : 1.6.14.9 | Outline : 1.6.14.9 | WBS Code : GEORG010CON.1.6.13.9 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : TRAVEL                                             | WBS : 1.7 | Outline : 1.7 | WBS Code : GEORG010CON.1.7 | Rem Hrs: 0.0h | 
+2021-06-10 11:47:48,128 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Name : CONTINGENCY                                        | WBS : 1.8 | Outline : 1.8 | WBS Code : GEORG010CON.1.8 | Rem Hrs: 20.0h | 
+2021-06-10 11:47:48,129 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Count of Transactions prepared : 84
+2021-06-10 11:47:48,131 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppData - batch size: 2000 - true
+2021-06-10 11:47:48,131 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:84
+2021-06-10 11:47:48,362 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:47:48,372 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,1CF524B255AF022EC052EA4B765A8341
+2021-06-10 11:47:48,383 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppData - elapsed time: PT0.241S for 84 records
+2021-06-10 11:47:48,383 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppData - elapsed time: PT0.252S
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101760 Created
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101761 Created
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101762 Created
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101763 Created
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101764 Created
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101765 Created
+2021-06-10 11:47:48,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101766 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101767 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101768 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101769 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101770 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101771 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101772 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101773 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101774 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101775 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101776 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101777 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101778 Created
+2021-06-10 11:47:48,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101779 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101780 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101781 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101782 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101783 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101784 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101785 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101786 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101787 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101788 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101789 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101790 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101791 Created
+2021-06-10 11:47:48,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101792 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101793 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101794 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101795 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101796 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101797 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101798 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101799 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101800 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101801 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101802 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101803 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101804 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101805 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101806 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101807 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101808 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101809 Created
+2021-06-10 11:47:48,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101810 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101811 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101812 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101813 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101814 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101815 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101816 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101817 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101818 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101819 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101820 Created
+2021-06-10 11:47:48,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101821 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101822 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101823 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101824 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101825 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101826 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101827 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101828 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101829 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101830 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101831 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101832 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101833 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101834 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101835 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101836 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101837 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101838 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101839 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101840 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101841 Created
+2021-06-10 11:47:48,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101842 Created
+2021-06-10 11:47:48,400 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ETC Tansaction : 6101843 Created
+2021-06-10 11:47:48,400 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Total created Items = 84, Failed Items = 0
+2021-06-10 11:47:48,400 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import ends...
+2021-06-10 11:47:48,400 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-10 11:47:48,401 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-10 11:47:48,401 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-10 11:47:48,459 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-10 11:47:48,466 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,8C854D873A3B293791601293B2DB5102
+2021-06-10 11:47:48,467 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.066S for 4 records
+2021-06-10 11:47:48,467 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.066S
+2021-06-10 11:47:48,476 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-10 11:47:48,476 INFO  com.ecosys.startup.MppEtcImport.main:46 - Completed ETC Import Process... P0000-00-00T00:00:02.488

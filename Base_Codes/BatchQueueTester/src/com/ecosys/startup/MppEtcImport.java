@@ -53,8 +53,6 @@ public class MppEtcImport {
 			logger.error(e.getMessage());
 			error_code = 1;
 		}
-		
-		logger.info(error_code);
 	
 		System.exit(error_code);
 

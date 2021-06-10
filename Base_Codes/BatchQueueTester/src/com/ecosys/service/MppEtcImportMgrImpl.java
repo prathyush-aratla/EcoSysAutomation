@@ -13,22 +13,24 @@ import com.ecosys.mpupdateetc.MSPPutMppDataRequestType;
 import com.ecosys.mpupdateetc.MSPPutMppDataResultType;
 import com.ecosys.mpupdateetc.MSPPutMppDataType;
 import com.ecosys.properties.GlobalConstants;
-import com.ecosys.resources.ResourcesType;
-
 import net.sf.mpxj.MPXJException;
+import net.sf.mpxj.ProjectConfig;
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Resource;
 import net.sf.mpxj.ResourceAssignment;
 import net.sf.mpxj.Task;
+import net.sf.mpxj.TaskField;
 import net.sf.mpxj.mpp.MPPReader;
 import net.sf.mpxj.reader.ProjectReader;
 
 public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr  {
 	
+	
+	
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("23755");
+		process("24546");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -63,11 +65,21 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
 			
+			ProjectConfig config = project.getProjectConfig();
+			
+			config.setAutoWBS(false);
+			
+			
+//			project.getTasks().synchronizeTaskIDToHierarchy();
+			
 			for(Task task : project.getTasks()) {
 				
-				if (task.getResourceAssignments().size() > 0 & task.getActive() == true ) {
+				if (task.getActive() == true && task.getResourceAssignments().size() > 0  ) {
 					
+					@SuppressWarnings("unused")
 					String resourceName = "", resourceAlias = "", strWBS = "", wbsPathID = "", origWBS= "";
+					@SuppressWarnings("unused")
+					String externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
 					int resCount;
 					double totalRemHrs;
 					
@@ -77,15 +89,23 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					origWBS = task.getWBS();
 					strWBS = task.getParentTask().getWBS();
 					
-					if(strWBS.contains(costObjectID)) {
-						wbsPathID = strWBS;
+					if(origWBS.contains(costObjectID)) {
+						wbsPathID = origWBS;
 					}
 					else {
-						wbsPathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
+						wbsPathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + origWBS; 
 					}
 					
 					resCount = task.getResourceAssignments().size();			
 					totalRemHrs = Double.valueOf(task.getRemainingWork().toString().replace("h", ""));
+					
+					logDebug(
+							"Name : " +  padRight(task.getName(), 50)  +
+							" | WBS : " + task.getWBS() +
+							" | Outline : " + task.getOutlineNumber() +
+							" | WBS Code : " + task.getFieldByAlias("WBS Code") +
+							" | Rem Hrs: " + task.getRemainingWork() +
+							" | " );
 					
 					if (totalRemHrs > 0) {
 						
@@ -98,15 +118,14 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 							if (objResource != null) {
 								
 								resourceName = String.valueOf(objResource.getName());	
-								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));							
+								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));
 							}
 							
-							logDebug("Record Details : " + origWBS + ", " +
-											resourceName + ", " +
-											resourceAlias + ", " +
-											(totalRemHrs/resCount) + " hrs, " +
-											dateToXMLGregorianCalendar(startDate).toString() + ", " +
-											dateToXMLGregorianCalendar(endDate).toString());
+//							logDebug("Record Details : " + origWBS + ", " +
+//											resourceName + ", " +
+//											resourceAlias + ", " +
+//											(totalRemHrs/resCount) + " hrs, "
+//											);
 							
 							etcRecord.setObjectPathID(wbsPathID);
 							etcRecord.setResource(resourceAlias);
@@ -120,7 +139,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 						
 					}
 					else {
-						logDebug("Resources in Path ID " + wbsPathID + " skipped due to no hours left.");
+//						logDebug("Resources in Path ID " + wbsPathID + " skipped due to no hours left.");
 					}
 				}	
 			}

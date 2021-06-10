@@ -25,7 +25,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("23546");
+		process("24366");
 	}
 	
 
@@ -58,48 +58,71 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
 			
-			for(Task task : project.getTasks()) {				
-				if (task.getResourceAssignments().size() == 0 ) {
-					MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
-					String costControlLevel = "";
-					String strWBS = task.getWBS();
-					String pathID = "";
-					
-					if (strWBS.contains(costObjectID)) {
-						pathID = strWBS;
-					}
-					else {
-						pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
-					}
-					
-					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
-					String wbsName = task.getName();
-					
-					List<Task> lstChildTasks = task.getChildTasks();
-					for (Task childTask : lstChildTasks) {
-						if (!childTask.hasChildTasks()) {
-							costControlLevel = "Y";
-						}
-					}
+			for(Task task : project.getTasks()) {
+
+//					List<Task> lstChildTasks = task.getChildTasks();					
+//					for (Task childTask : lstChildTasks) {
+//						if (!childTask.hasChildTasks()) {
+//							costControlLevel = "Y";
+//						}
+//					}
 									
-					wbsRecord.setPathID(pathID);
-					wbsRecord.setID(wbsID);
-					wbsRecord.setName(wbsName);
-					wbsRecord.setCostControlLevel(costControlLevel);
-					
-					if (task.getOutlineLevel()!=0) {
+//	Get only tasks which are active and non-milestone tasks.
+//				!task.getMilestone() && task.getActive()
+				
+					if (task.getActive()) {
+						MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
+						String costControlLevel = "";
+						String strWBS = task.getWBS();
+						String pathID = "";
+						String externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
 						
-						lstUpdateWBS.add(wbsRecord);
+						if (strWBS.contains(costObjectID)) {
+							pathID = strWBS;
+						} else {
+							pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS;
+						}
 						
-						logDebug("Record added - PathID: " + pathID + ", Name: "+ wbsName + ", CCL=" + costControlLevel);
+						String wbsID = strWBS
+								.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
+						String wbsName = task.getName();
+						
+//						String cclFlg = String.valueOf(task.getFieldByAlias("Cost Control Level"));
+						
+						/* Auto Build logic to determine cost control level. for iPM Cost Control Level is defined in the mpp file*/						
+//						if (!task.hasChildTasks() && task.getResourceAssignments().size() > 0 && !task.getMilestone()) {
+//							costControlLevel = "Y";
+//							wbsRecord.setType("Work Package");
+//						}
+						
+						if(!task.getSummary() && !task.getMilestone() ) {
+							costControlLevel = "Y";
+							wbsRecord.setType("Work Package");							
+						}
+						
+						wbsRecord.setPathID(pathID);
+						wbsRecord.setID(wbsID);
+						wbsRecord.setName(wbsName);
+						wbsRecord.setCostControlLevel(costControlLevel);
+						wbsRecord.setExternalKey(externalKey);
+						if (task.getOutlineLevel() != 0) {
+							lstUpdateWBS.add(wbsRecord);
+							logDebug("Record added - PathID: " + pathID +
+									", Name: " + wbsName +
+									", ExternalID: " + externalKey +
+									", CCL=" + costControlLevel);
+						} 
 					}	
-				}
 			}
 		} 
 		catch (SystemException | IOException | MPXJException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			logError(e);
+			logInfo("Import Terminated due to Errors");
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
+			System.exit(1);
 		}
 		
 		logInfo("Count of WBS Items to Update: " + String.valueOf(lstUpdateWBS.size()));

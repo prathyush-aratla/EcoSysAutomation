@@ -21,7 +21,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("23742");
+		process("24347");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -52,15 +52,13 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 			
 			for(Task task : project.getTasks()) {
 				
-				String cclFlag = "";
+//				String cclFlag = "";
 				
-				cclFlag = String.valueOf(task.getFieldByAlias("Cost Control Level"));
+//				cclFlag = String.valueOf(task.getFieldByAlias("Cost Control Level"));
 
-				if (cclFlag.equals("Yes") & task.getPercentageComplete().doubleValue() > 0 ) {
+//				if (cclFlag.equals("Yes") & task.getPercentageComplete().doubleValue() > 0 ) {
 					
-					logDebug("Task Record :" + task.getWBS() + "\t |" +
-							task.getFieldByAlias("Cost Control Level") + "\t |" +
-						task.getPercentageComplete());
+				if (task.getActive() && !task.getSummary() && !task.getMilestone() && task.getPercentageComplete().doubleValue() > 0 ) {					
 					
 					MSPUpdateProjectProgressType progressRecord = new MSPUpdateProjectProgressType();
 					
@@ -84,7 +82,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 					progressRecord.setObjectID(wbsID);
 					progressRecord.setProgressPercent(progressValue);
 					
-					logDebug("Data Record : " + progressRecord.getObjectPathID() + "\t |" +
+					logDebug("Data Record : " + padRight(progressRecord.getObjectPathID(), 20)  + "\t |" +
 							progressRecord.getObjectID() + "\t |" + 
 							progressRecord.getProgressPercent());
 					
@@ -92,10 +90,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 				}
 			}
 			
-			
 			logInfo("Total Records prepared for update = " + lstUpdateProgress.size());
-
-
 			
 //			Update EcoSys Progress
 			int passCnt=0 , failCnt=0;

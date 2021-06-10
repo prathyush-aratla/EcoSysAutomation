@@ -121,6 +121,14 @@ public abstract class IntegratorBase {
 	
 	//Custom Implementations for client starts Here
 	
+	public static String padRight(String s, int n) {
+	     return String.format("%-" + n + "s", s);  
+	}
+
+	public static String padLeft(String s, int n) {
+	    return String.format("%" + n + "s", s);  
+	}
+	
 	protected List<ResourcesType> epcResources;
 	
 	
