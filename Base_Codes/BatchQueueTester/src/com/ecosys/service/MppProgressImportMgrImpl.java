@@ -21,7 +21,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("24347");
+		process("23342");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -58,7 +58,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 
 //				if (cclFlag.equals("Yes") & task.getPercentageComplete().doubleValue() > 0 ) {
 					
-				if (task.getActive() && !task.getSummary() && !task.getMilestone() && task.getPercentageComplete().doubleValue() > 0 ) {					
+				if (task.getActive() && !task.getSummary() && !task.getMilestone() && task.getPercentageWorkComplete().doubleValue() > 0 ) {					
 					
 					MSPUpdateProjectProgressType progressRecord = new MSPUpdateProjectProgressType();
 					
@@ -76,51 +76,55 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 					
 					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 					
-					progressValue = (double) task.getPercentageComplete();
+					progressValue = (double) task.getPercentageWorkComplete();
 					
 					progressRecord.setObjectPathID(pathID);
 					progressRecord.setObjectID(wbsID);
 					progressRecord.setProgressPercent(progressValue);
 					
-					logDebug("Data Record : " + padRight(progressRecord.getObjectPathID(), 20)  + "\t |" +
-							progressRecord.getObjectID() + "\t |" + 
+					logDebug("Data Record : " + padRight(progressRecord.getObjectPathID(), 20)  + " | " +
+							padRight(task.getName(), 40) + " | " + 
+							progressRecord.getObjectID() + " | " + 
 							progressRecord.getProgressPercent());
 					
 					lstUpdateProgress.add(progressRecord);
 				}
 			}
 			
-			logInfo("Total Records prepared for update = " + lstUpdateProgress.size());
-			
-//			Update EcoSys Progress
-			int passCnt=0 , failCnt=0;
-			HashMap<String, String> parameterMap = new HashMap<String, String>();
-			parameterMap.put("RootCostObject", prjInternalID);
-			
-			List<MSPUpdateProjectProgressResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateProgress, MSPUpdateProjectProgressRequestType.class,
-					MSPUpdateProjectProgressResultType.class, com.ecosys.mpupdateprogress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
-			
-	    	for(MSPUpdateProjectProgressResultType result : resultList) {
-				for(com.ecosys.mpupdateprogress.ObjectResultType ort : result.getObjectResult()) {
-					if(!ort.isSuccessFlag()) {
-						String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdateprogress.ObjectResultType.class, com.ecosys.mpupdateetc.ResultMessageType.class, ort);
-						logError(ort.getExternalId(), message);
-						failCnt++;
-					}
-					else {
-						logDebug("Cost Object with Internal ID : " + ort.getInternalId() + " updated");
-						passCnt++;
-					}
-					
-				}
-				logInfo("Total created Items = " + passCnt + ", Failed Items = " + failCnt);
-			}
-			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
-			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);			
+			logInfo("Import Terminated due to Errors");
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
+			System.exit(1);		
+		}
+		
+		logInfo("Total Records prepared for update = " + lstUpdateProgress.size());
+		
+//		Update EcoSys Progress
+		int passCnt=0 , failCnt=0;
+		HashMap<String, String> parameterMap = new HashMap<String, String>();
+		parameterMap.put("RootCostObject", prjInternalID);
+		
+		List<MSPUpdateProjectProgressResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateProgress, MSPUpdateProjectProgressRequestType.class,
+				MSPUpdateProjectProgressResultType.class, com.ecosys.mpupdateprogress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
+		
+    	for(MSPUpdateProjectProgressResultType result : resultList) {
+			for(com.ecosys.mpupdateprogress.ObjectResultType ort : result.getObjectResult()) {
+				if(!ort.isSuccessFlag()) {
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdateprogress.ObjectResultType.class, com.ecosys.mpupdateetc.ResultMessageType.class, ort);
+					logError(ort.getExternalId(), message);
+					failCnt++;
+				}
+				else {
+					logDebug("Cost Object with Internal ID : " + ort.getInternalId() + " updated");
+					passCnt++;
+				}
+				
+			}
+			logInfo("Total created Items = " + passCnt + ", Failed Items = " + failCnt);
 		}
 		
 	}

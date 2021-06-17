@@ -25,7 +25,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 	String costObjectID = ""; 
 	
 	public void test() throws SystemException {
-		process("24366");
+		process("23556");
 	}
 	
 
@@ -95,10 +95,19 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 //							wbsRecord.setType("Work Package");
 //						}
 						
+						
 						if(!task.getSummary() && !task.getMilestone() ) {
 							costControlLevel = "Y";
 							wbsRecord.setType("Work Package");							
 						}
+						
+						logDebug(
+								"Name: " +  padRight(task.getName(), 25)  +
+								" | WBS: " + task.getWBS() +
+								" | Outline: " + task.getOutlineNumber() +
+								" | WBS Code: " + task.getFieldByAlias("WBS Code") +
+								" | Rem Hrs: " + task.getRemainingWork() +
+								" | " );
 						
 						wbsRecord.setPathID(pathID);
 						wbsRecord.setID(wbsID);
@@ -107,10 +116,10 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 						wbsRecord.setExternalKey(externalKey);
 						if (task.getOutlineLevel() != 0) {
 							lstUpdateWBS.add(wbsRecord);
-							logDebug("Record added - PathID: " + pathID +
-									", Name: " + wbsName +
-									", ExternalID: " + externalKey +
-									", CCL=" + costControlLevel);
+//							logDebug("Record added - PathID: " + pathID +
+//									", Name: " + wbsName +
+//									", ExternalID: " + externalKey +
+//									", CCL=" + costControlLevel);
 						} 
 					}	
 			}

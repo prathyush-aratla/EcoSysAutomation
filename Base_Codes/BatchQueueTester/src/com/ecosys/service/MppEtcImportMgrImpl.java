@@ -13,19 +13,16 @@ import com.ecosys.mpupdateetc.MSPPutMppDataRequestType;
 import com.ecosys.mpupdateetc.MSPPutMppDataResultType;
 import com.ecosys.mpupdateetc.MSPPutMppDataType;
 import com.ecosys.properties.GlobalConstants;
+
 import net.sf.mpxj.MPXJException;
-import net.sf.mpxj.ProjectConfig;
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Resource;
 import net.sf.mpxj.ResourceAssignment;
 import net.sf.mpxj.Task;
-import net.sf.mpxj.TaskField;
 import net.sf.mpxj.mpp.MPPReader;
 import net.sf.mpxj.reader.ProjectReader;
 
 public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr  {
-	
-	
 	
 	String costObjectID = ""; 
 	
@@ -37,9 +34,10 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
-		String arguments[] = getArguments(taskInternalID);
 		
+		String arguments[] = getArguments(taskInternalID);
 		costObjectID = arguments[0];
+		
 		logInfo("Progress Import begins...");
 		importETCHours(arguments[1], arguments[2]);
 		logInfo("Progress Import ends...");
@@ -48,13 +46,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
 	private void importETCHours(String prjInternalID, String minorPeriodID) throws SystemException {
-		
-//		List<ResourcesType> m_resources = getEpcResources();
-//		
-//		for (ResourcesType presource : m_resources) {
-//			logDebug(presource.getID() + " | " + presource.getName() + " | " + presource.getInternalID());
-//		}
-		
+				
 		// TODO Auto-generated method stub
 		
 		List<MSPPutMppDataType> lstETCRecords = new ArrayList<MSPPutMppDataType>();
@@ -64,13 +56,6 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			InputStream input = new URL(mppFilePath).openStream();
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
-			
-			ProjectConfig config = project.getProjectConfig();
-			
-			config.setAutoWBS(false);
-			
-			
-//			project.getTasks().synchronizeTaskIDToHierarchy();
 			
 			for(Task task : project.getTasks()) {
 				
@@ -100,10 +85,10 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					totalRemHrs = Double.valueOf(task.getRemainingWork().toString().replace("h", ""));
 					
 					logDebug(
-							"Name : " +  padRight(task.getName(), 50)  +
-							" | WBS : " + task.getWBS() +
-							" | Outline : " + task.getOutlineNumber() +
-							" | WBS Code : " + task.getFieldByAlias("WBS Code") +
+							"Name: " +  padRight(task.getName(), 50)  +
+							" | WBS: " + task.getWBS() +
+							" | Outline: " + task.getOutlineNumber() +
+							" | WBS Code: " + task.getFieldByAlias("WBS Code") +
 							" | Rem Hrs: " + task.getRemainingWork() +
 							" | " );
 					
@@ -120,13 +105,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 								resourceName = String.valueOf(objResource.getName());	
 								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));
 							}
-							
-//							logDebug("Record Details : " + origWBS + ", " +
-//											resourceName + ", " +
-//											resourceAlias + ", " +
-//											(totalRemHrs/resCount) + " hrs, "
-//											);
-							
+													
 							etcRecord.setObjectPathID(wbsPathID);
 							etcRecord.setResource(resourceAlias);
 							etcRecord.setMPPETC(totalRemHrs/resCount);
