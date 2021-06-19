@@ -23,12 +23,11 @@ import net.sf.mpxj.reader.ProjectReader;
 public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr {
 	
 	String costObjectID, costObjectInternalID ;
-	
+
 	public void test() throws SystemException {
 		process("23561");
 	}
 	
-
 	public void process(String taskInternalID) throws SystemException{
 		
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
@@ -39,8 +38,6 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		costObjectInternalID = arguments[1];
 		
 		boolean bvalidFile;
-		
-		
 		logInfo("Starting validation");
 		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID));		
 		logInfo("Valdation Ends");
@@ -53,9 +50,6 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 	}
-	
-	
-	
 	
 	// Method to create/update Project Structure in EcoSys from MPP File
 	private void importProjectStructure(String prjInternalID) throws SystemException {
