@@ -6,12 +6,12 @@ import java.util.List;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import com.ecosys.exception.SystemException;
 
-import com.ecosys.mpupdatewbs.MSPPutMppStructureRequestType;
-import com.ecosys.mpupdatewbs.MSPPutMppStructureResultType;
-import com.ecosys.mpupdatewbs.MSPPutMppStructureType;
-import com.ecosys.mpupdatewbs.ObjectFactory;
+import com.ecosys.ImportWBS.MSPPutMppStructureRequestType;
+import com.ecosys.ImportWBS.MSPPutMppStructureResultType;
+import com.ecosys.ImportWBS.MSPPutMppStructureType;
+import com.ecosys.ImportWBS.ObjectFactory;
+import com.ecosys.exception.SystemException;
 import com.ecosys.properties.GlobalConstants;
 
 import net.sf.mpxj.MPXJException;
@@ -25,7 +25,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 	String costObjectID, costObjectInternalID ;
 
 	public void test() throws SystemException {
-		process("23561");
+		process("24366");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -43,9 +43,9 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		logInfo("Valdation Ends");
 		
 		if (bvalidFile) {			
-			logInfo("Starting update Project Structure...");
+			logInfo("Begin Project Structure Import...");
 			importProjectStructure(arguments[1]);
-			logInfo("Update project structure completed.");			
+			logInfo("Project structure Import completed.");			
 		}
 		
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
@@ -54,10 +54,10 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 	// Method to create/update Project Structure in EcoSys from MPP File
 	private void importProjectStructure(String prjInternalID) throws SystemException {
 		
-		// TODO Auto-generated method stub
 		List<MSPPutMppStructureType> lstUpdateWBS = new ArrayList<MSPPutMppStructureType>();
 		String mppFilePath;
 		String mppProjectPrefix;
+		
 		try {
 			mppFilePath = getMPPFile(client, prjInternalID);
 			InputStream input = new URL(mppFilePath).openStream();
@@ -66,6 +66,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			
 			Task rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
+			
 			logDebug("Project Prefix : " + mppProjectPrefix);
 			
 			logDebug(
@@ -76,37 +77,24 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					padRight("Rem Hrs",10) );			
 			
 			for(Task task : project.getTasks()) {				
-//	Get only tasks which are active and non-milestone tasks.
+//				Get Tasks which are Active. iPM currently including the milestone tasks as well.
 //				!task.getMilestone() && task.getActive()
 					if (task.getActive()) {
 						MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
 						
-						String strWBS, wbsID , wbsName, pathID, costControlLevel = null ;
-						String externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
-						
-//						if (strWBS.contains(costObjectID)) {
-//							pathID = strWBS;
-//						} else {
-//							pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS;
-//						}
-//						
-//						wbsID = strWBS
-//								.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
-						
-						
-//						String cclFlg = String.valueOf(task.getFieldByAlias("Cost Control Level"));
-						
-						/* Auto Build logic to determine cost control level. for iPM Cost Control Level is defined in the mpp file*/						
-//						if (!task.hasChildTasks() && task.getResourceAssignments().size() > 0 && !task.getMilestone()) {
-//							costControlLevel = "Y";
-//							wbsRecord.setType("Work Package");
-//						}
-						
-						strWBS = (String) task.getFieldByAlias("WBS Path ID");
+						String strWBS, wbsID , wbsName, pathID, externalKey, costControlLevel = null ;
+										
+						strWBS = String.valueOf(task.getFieldByAlias("WBS Path ID"));
 						pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
 						wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 						wbsName = task.getName();
+						externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
 						
+						if (strWBS.equals("null")) {
+							throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+						}
+						
+// Logic to determine cost control level. for iPM Cost Control Level is defined in the mpp file	
 						
 						if(!task.getSummary() && !task.getMilestone() ) {
 							costControlLevel = "Y";
@@ -155,10 +143,26 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 				MSPPutMppStructureResultType.class, ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEWBS, GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 		
     	for(MSPPutMppStructureResultType result : resultList) {
-			for(com.ecosys.mpupdatewbs.ObjectResultType ort : result.getObjectResult()) {
+			for(com.ecosys.ImportWBS.ObjectResultType ort : result.getObjectResult()) {
 				if(!ort.isSuccessFlag()) {
-					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdatewbs.ObjectResultType.class, com.ecosys.mpupdatewbs.ResultMessageType.class, ort);
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.ImportWBS.ObjectResultType.class, com.ecosys.ImportWBS.ResultMessageType.class, ort);
 					logError(ort.getExternalId() + " " +   message);
+					
+					for(MSPPutMppStructureType rec : lstUpdateWBS) {
+						
+						if (rec.getExternalKey().equals(ort.getExternalId())) {
+							
+							logDebug(
+									padRight(rec.getPathID(), 25)  + " | " +
+									padRight(rec.getID(),5) + " | " +
+									padRight(rec.getName(),75) + " | " +
+									padRight(rec.getCostControlLevel(),5)  + " | " +
+									padRight(rec.getExternalKey(),10) ); 
+							
+						}
+						
+					}
+					
 					failCnt++;
 				}
 				else {

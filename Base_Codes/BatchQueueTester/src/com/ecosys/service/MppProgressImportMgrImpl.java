@@ -5,10 +5,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import com.ecosys.ImportProgress.MSPUpdateProjectProgressRequestType;
+import com.ecosys.ImportProgress.MSPUpdateProjectProgressResultType;
+import com.ecosys.ImportProgress.MSPUpdateProjectProgressType;
 import com.ecosys.exception.SystemException;
-import com.ecosys.mpupdateprogress.MSPUpdateProjectProgressRequestType;
-import com.ecosys.mpupdateprogress.MSPUpdateProjectProgressResultType;
-import com.ecosys.mpupdateprogress.MSPUpdateProjectProgressType;
 import com.ecosys.properties.GlobalConstants;
 
 import net.sf.mpxj.ProjectFile;
@@ -74,37 +75,24 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 					"Percent Work Complete");
 			
 			for(Task task : project.getTasks()) {
-				
-//				String cclFlag = "";
-				
-//				cclFlag = String.valueOf(task.getFieldByAlias("Cost Control Level"));
-
-//				if (cclFlag.equals("Yes") & task.getPercentageComplete().doubleValue() > 0 ) {
-					
+									
 				if (task.getActive() && !task.getSummary() && !task.getMilestone() && task.getPercentageWorkComplete().doubleValue() > 0 ) {					
 					
 					MSPUpdateProjectProgressType progressRecord = new MSPUpdateProjectProgressType();
-					
+	
 					@SuppressWarnings("unused")
 					String strWBS , pathID , wbsID , wbsName ;
 					double progressValue;
-					
-//					strWBS = task.getWBS();
-//					
-//					if (strWBS.contains(costObjectID)) {
-//						pathID = strWBS;
-//					}
-//					else {
-//						pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
-//					}
-//					
-//					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
-					
+										
 					strWBS = (String) task.getFieldByAlias("WBS Path ID");
 					pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
 					wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 					wbsName = task.getName();
 					progressValue = (double) task.getPercentageWorkComplete();
+					
+					if (strWBS.equals("null")) {
+						throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+					}
 					
 					progressRecord.setObjectPathID(pathID);
 					progressRecord.setObjectID(wbsID);
@@ -137,12 +125,12 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 		parameterMap.put("RootCostObject", prjInternalID);
 		
 		List<MSPUpdateProjectProgressResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateProgress, MSPUpdateProjectProgressRequestType.class,
-				MSPUpdateProjectProgressResultType.class, com.ecosys.mpupdateprogress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
+				MSPUpdateProjectProgressResultType.class, com.ecosys.ImportProgress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 		
     	for(MSPUpdateProjectProgressResultType result : resultList) {
-			for(com.ecosys.mpupdateprogress.ObjectResultType ort : result.getObjectResult()) {
+			for(com.ecosys.ImportProgress.ObjectResultType ort : result.getObjectResult()) {
 				if(!ort.isSuccessFlag()) {
-					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdateprogress.ObjectResultType.class, com.ecosys.mpupdateetc.ResultMessageType.class, ort);
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.ImportProgress.ObjectResultType.class, com.ecosys.ImportETC.ResultMessageType.class, ort);
 					logError(ort.getExternalId(), message);
 					failCnt++;
 				}

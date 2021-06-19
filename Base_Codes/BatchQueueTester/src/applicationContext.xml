@@ -50,4 +50,9 @@ class="com.ecosys.service.BatchQueueMgrImpl">
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
 </bean>
 
+ <bean id="MppBudgetImport" class="com.ecosys.service.MppBudgetImportMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
+
 </beans>

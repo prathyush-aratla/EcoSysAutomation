@@ -7,14 +7,15 @@ import java.util.List;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+
+import com.ecosys.ImportETC.MSPPutMppDataRequestType;
+import com.ecosys.ImportETC.MSPPutMppDataResultType;
+import com.ecosys.ImportETC.MSPPutMppDataType;
+import com.ecosys.ImportWBS.MSPPutMppStructureRequestType;
+import com.ecosys.ImportWBS.MSPPutMppStructureResultType;
+import com.ecosys.ImportWBS.MSPPutMppStructureType;
+import com.ecosys.ImportWBS.ObjectFactory;
 import com.ecosys.exception.SystemException;
-import com.ecosys.mpupdateetc.MSPPutMppDataRequestType;
-import com.ecosys.mpupdateetc.MSPPutMppDataResultType;
-import com.ecosys.mpupdateetc.MSPPutMppDataType;
-import com.ecosys.mpupdatewbs.MSPPutMppStructureRequestType;
-import com.ecosys.mpupdatewbs.MSPPutMppStructureResultType;
-import com.ecosys.mpupdatewbs.MSPPutMppStructureType;
-import com.ecosys.mpupdatewbs.ObjectFactory;
 import com.ecosys.properties.GlobalConstants;
 
 import net.sf.mpxj.MPXJException;
@@ -164,9 +165,9 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 				MSPPutMppStructureResultType.class, ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEWBS, GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 		
     	for(MSPPutMppStructureResultType result : resultList) {
-			for(com.ecosys.mpupdatewbs.ObjectResultType ort : result.getObjectResult()) {
+			for(com.ecosys.ImportWBS.ObjectResultType ort : result.getObjectResult()) {
 				if(!ort.isSuccessFlag()) {
-					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdatewbs.ObjectResultType.class, com.ecosys.mpupdatewbs.ResultMessageType.class, ort);
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.ImportWBS.ObjectResultType.class, com.ecosys.ImportWBS.ResultMessageType.class, ort);
 					logError(ort.getExternalId(), message);
 				}
 				logDebug("Cost Object Internal ID : " + ort.getInternalId() + " Created/Updated");
@@ -309,12 +310,12 @@ public class MppIntegrationImpl extends IntegratorBase implements IntegratorMgr 
 		parameterMap.put("ProjectPeriod", minorPeriodID);
 		
 		List<MSPPutMppDataResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstETCRecords, MSPPutMppDataRequestType.class,
-				MSPPutMppDataResultType.class, com.ecosys.mpupdateetc.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEETC , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
+				MSPPutMppDataResultType.class, com.ecosys.ImportETC.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEETC , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 		
     	for(MSPPutMppDataResultType result : resultList) {
-			for(com.ecosys.mpupdateetc.ObjectResultType ort : result.getObjectResult()) {
+			for(com.ecosys.ImportETC.ObjectResultType ort : result.getObjectResult()) {
 				if(!ort.isSuccessFlag()) {
-					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdateetc.ObjectResultType.class, com.ecosys.mpupdateetc.ResultMessageType.class, ort);
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.ImportETC.ObjectResultType.class, com.ecosys.ImportETC.ResultMessageType.class, ort);
 					logError(ort.getExternalId(), message);
 					failCnt++;
 				}

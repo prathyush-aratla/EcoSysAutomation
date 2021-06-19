@@ -237,7 +237,7 @@ public abstract class IntegratorBase {
 		}
 		else {
 			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
-			throw new SystemException("File not Found");
+			throw new SystemException("error100 : File not Found");
 			
 		}
 		
@@ -283,13 +283,14 @@ public abstract class IntegratorBase {
 		}
 		else {
 			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
-			throw new SystemException("File not Found");
+			throw new SystemException("error100 : File not Found");
 			
 		}
 		
 		return mppFilePath;
 	}
 
+	//WBS Path builder to replace the MS Project Prefix code with EcoSys Project ID
 	protected String pathIdBuilder (String costObjectID, String mppWbsPrefix, String mppWbsPath) throws SystemException{
 		String wbsPathID = "";
 		
@@ -306,6 +307,7 @@ public abstract class IntegratorBase {
 		return wbsPathID;
 	}
 	
+	//
 	protected boolean validateProjectFile (String filePath) throws SystemException {
 		
 		boolean bValid = false;
@@ -329,14 +331,14 @@ public abstract class IntegratorBase {
 					 bValid = true;
 				 }
 				 else {
-					logError("WBS Path ID not defined in mpp File");
-					throw new Exception("Custom Field Not Defined");
+					logError("error101 : WBS Path ID custom field not defined in mpp File");
+					throw new Exception("Task Custom Field Not Defined");
 				}
 				 
 			 }
 			 else {
-					logError("Resource Alias not defined in mpp File");
-					throw new Exception("Custom Field Not Defined");
+					logError("error102 : Resource Alias custom field not defined in mpp File");
+					throw new Exception("Resource Custom Field Not Defined");
 			 }
 			
 			logDebug("Total Custom Fields : " + String.valueOf(atts.size()));
