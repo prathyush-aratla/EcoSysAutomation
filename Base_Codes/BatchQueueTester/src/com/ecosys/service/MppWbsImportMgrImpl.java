@@ -22,10 +22,10 @@ import net.sf.mpxj.reader.ProjectReader;
 
 public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr {
 	
-	String costObjectID = ""; 
+	String costObjectID, costObjectInternalID ;
 	
 	public void test() throws SystemException {
-		process("23556");
+		process("23561");
 	}
 	
 
@@ -36,13 +36,24 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		
 		String arguments[] = getArguments(taskInternalID);
 		costObjectID = arguments[0];
+		costObjectInternalID = arguments[1];
 		
-		logInfo("Starting update Project Structure...");
-		importProjectStructure(arguments[1]);
-		logInfo("Update project structure completed.");
+		boolean bvalidFile;
+		
+		
+		logInfo("Starting validation");
+		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID));		
+		logInfo("Valdation Ends");
+		
+		if (bvalidFile) {			
+			logInfo("Starting update Project Structure...");
+			importProjectStructure(arguments[1]);
+			logInfo("Update project structure completed.");			
+		}
 		
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 	}
+	
 	
 	
 	
@@ -52,40 +63,42 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		// TODO Auto-generated method stub
 		List<MSPPutMppStructureType> lstUpdateWBS = new ArrayList<MSPPutMppStructureType>();
 		String mppFilePath;
+		String mppProjectPrefix;
 		try {
 			mppFilePath = getMPPFile(client, prjInternalID);
 			InputStream input = new URL(mppFilePath).openStream();
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
 			
-			for(Task task : project.getTasks()) {
-
-//					List<Task> lstChildTasks = task.getChildTasks();					
-//					for (Task childTask : lstChildTasks) {
-//						if (!childTask.hasChildTasks()) {
-//							costControlLevel = "Y";
-//						}
-//					}
-									
+			Task rootTask = project.getTaskByID(Integer.valueOf(0));
+			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
+			logDebug("Project Prefix : " + mppProjectPrefix);
+			
+			logDebug(
+					padRight("WBS Path ID",25) +  " | " +
+					padRight("ID",5) +  " | " + 
+					padRight("Description",50) +  " | " +
+					padRight("CCL ",5) +  " | " + 
+					padRight("Rem Hrs",10) );			
+			
+			for(Task task : project.getTasks()) {				
 //	Get only tasks which are active and non-milestone tasks.
 //				!task.getMilestone() && task.getActive()
-				
 					if (task.getActive()) {
 						MSPPutMppStructureType wbsRecord = new MSPPutMppStructureType();
-						String costControlLevel = "";
-						String strWBS = task.getWBS();
-						String pathID = "";
+						
+						String strWBS, wbsID , wbsName, pathID, costControlLevel = null ;
 						String externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
 						
-						if (strWBS.contains(costObjectID)) {
-							pathID = strWBS;
-						} else {
-							pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS;
-						}
+//						if (strWBS.contains(costObjectID)) {
+//							pathID = strWBS;
+//						} else {
+//							pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS;
+//						}
+//						
+//						wbsID = strWBS
+//								.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 						
-						String wbsID = strWBS
-								.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
-						String wbsName = task.getName();
 						
 //						String cclFlg = String.valueOf(task.getFieldByAlias("Cost Control Level"));
 						
@@ -95,6 +108,11 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 //							wbsRecord.setType("Work Package");
 //						}
 						
+						strWBS = (String) task.getFieldByAlias("WBS Path ID");
+						pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
+						wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
+						wbsName = task.getName();
+						
 						
 						if(!task.getSummary() && !task.getMilestone() ) {
 							costControlLevel = "Y";
@@ -102,24 +120,22 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 						}
 						
 						logDebug(
-								"Name: " +  padRight(task.getName(), 25)  +
-								" | WBS: " + task.getWBS() +
-								" | Outline: " + task.getOutlineNumber() +
-								" | WBS Code: " + task.getFieldByAlias("WBS Code") +
-								" | Rem Hrs: " + task.getRemainingWork() +
-								" | " );
+								padRight(pathID, 25)  + " | " +
+								padRight(wbsID,5) + " | " +
+								padRight(wbsName,50) + " | " +
+								padRight(costControlLevel,5)  + " | " +
+								padRight(String.valueOf(task.getRemainingWork()),10) + " | " + 
+								padRight(String.valueOf(task.getOutlineLevel()), 5));
 						
 						wbsRecord.setPathID(pathID);
 						wbsRecord.setID(wbsID);
 						wbsRecord.setName(wbsName);
 						wbsRecord.setCostControlLevel(costControlLevel);
 						wbsRecord.setExternalKey(externalKey);
-						if (task.getOutlineLevel() != 0) {
+						
+						if (task.getOutlineLevel() > 0) {
 							lstUpdateWBS.add(wbsRecord);
-//							logDebug("Record added - PathID: " + pathID +
-//									", Name: " + wbsName +
-//									", ExternalID: " + externalKey +
-//									", CCL=" + costControlLevel);
+
 						} 
 					}	
 			}
@@ -148,7 +164,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			for(com.ecosys.mpupdatewbs.ObjectResultType ort : result.getObjectResult()) {
 				if(!ort.isSuccessFlag()) {
 					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdatewbs.ObjectResultType.class, com.ecosys.mpupdatewbs.ResultMessageType.class, ort);
-					logError(ort.getExternalId(), message);
+					logError(ort.getExternalId() + " " +   message);
 					failCnt++;
 				}
 				else {

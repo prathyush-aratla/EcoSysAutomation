@@ -1,8 +1,8 @@
 package com.ecosys.service;
-
-import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -28,6 +28,13 @@ import com.ecosys.resources.ResourcesType;
 import com.ecosys.rest.BatchQueueRead.BatchQueueReadType;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
+
+import net.sf.mpxj.CustomFieldContainer;
+import net.sf.mpxj.FieldType;
+import net.sf.mpxj.FieldTypeClass;
+import net.sf.mpxj.ProjectFile;
+import net.sf.mpxj.mpp.MPPReader;
+import net.sf.mpxj.reader.ProjectReader;
 
 
 public abstract class IntegratorBase {
@@ -189,7 +196,7 @@ public abstract class IntegratorBase {
 	}
 	
 	// Method to get MPP file - Period Specific
-	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException, IOException {
+	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
 		String mppFilePath = null;
 		
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
@@ -283,5 +290,86 @@ public abstract class IntegratorBase {
 		return mppFilePath;
 	}
 
+	protected String pathIdBuilder (String costObjectID, String mppWbsPrefix, String mppWbsPath) throws SystemException{
+		String wbsPathID = "";
+		
+		try {
+			wbsPathID =costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + mppWbsPath.replace(mppWbsPrefix, "");
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		
+		return wbsPathID;
+	}
+	
+	protected boolean validateProjectFile (String filePath) throws SystemException {
+		
+		boolean bValid = false;
+		
+		try {
+			
+			InputStream input = new URL(filePath).openStream();
+			ProjectReader reader = new MPPReader();
+			ProjectFile project = reader.read(input);
+			
+			CustomFieldContainer atts = project.getCustomFields();		
+			
+			 FieldType resResourceAlias = atts.getFieldByAlias(FieldTypeClass.RESOURCE, "Resource Alias");
+			 
+			 FieldType tskWBSPathID = atts.getFieldByAlias(FieldTypeClass.TASK, "WBS Path ID");
+			 
+			 if (resResourceAlias != null)
+			 {
+				 if (tskWBSPathID != null)
+				 {
+					 bValid = true;
+				 }
+				 else {
+					logError("WBS Path ID not defined in mpp File");
+					throw new Exception("Custom Field Not Defined");
+				}
+				 
+			 }
+			 else {
+					logError("Resource Alias not defined in mpp File");
+					throw new Exception("Custom Field Not Defined");
+			 }
+			
+			logDebug("Total Custom Fields : " + String.valueOf(atts.size()));
+			
+//			for (CustomField cf : atts) {
+//				
+//				if (cf.getAlias().equals("Resource Alias") && cf.getFieldType().getFieldTypeClass().name().equals("RESOURCE")) {
+//						
+//						bValid = true;
+//
+//				}
+//				else if (cf.getAlias().equals("WBS") && cf.getFieldType().getFieldTypeClass().name().equals("RESOURCE")) {
+//					
+//				}
+//				
+////				logDebug(cf.getAlias() + " | " +
+////						cf.getFieldType().getFieldTypeClass().name());
+////				
+//				
+//			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			logError(e);
+			logInfo("Import Terminated due to Errors");
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
+			System.exit(1);
+			
+		}
+		
+		return bValid;
+	}
 
 }

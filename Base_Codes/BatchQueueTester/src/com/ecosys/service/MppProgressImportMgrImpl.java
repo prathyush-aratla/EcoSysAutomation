@@ -18,10 +18,10 @@ import net.sf.mpxj.reader.ProjectReader;
 
 public class MppProgressImportMgrImpl extends IntegratorBase implements IntegratorMgr {
 	
-	String costObjectID = ""; 
+	String costObjectID , costObjectInternalID, minorPeriodID ;
 	
 	public void test() throws SystemException {
-		process("23342");
+		process("23560");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -31,9 +31,22 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 		String arguments[] = getArguments(taskInternalID);
 		
 		costObjectID = arguments[0];
-		logInfo("Progress Import begins...");
-		importProgress(arguments[1], arguments[2]);
-		logInfo("Progress Import ends...");
+		costObjectInternalID = arguments[1];
+		minorPeriodID = arguments[2];
+		
+		boolean bvalidFile;
+		
+		
+		logInfo("Starting validation");
+		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID, minorPeriodID));		
+		logInfo("Valdation Ends");
+		
+		if (bvalidFile) {			
+			logInfo("Progress Import begins...");
+			importProgress(costObjectInternalID, minorPeriodID);
+			logInfo("Progress Import Completed");		
+		}
+
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 	}
 
@@ -43,12 +56,22 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 		
 		List<MSPUpdateProjectProgressType> lstUpdateProgress = new ArrayList<MSPUpdateProjectProgressType>();
 		String mppFilePath;
+		String mppProjectPrefix;
 		
 		try {
 			mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
 			InputStream input = new URL(mppFilePath).openStream();
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
+			
+			Task rootTask = project.getTaskByID(Integer.valueOf(0));
+			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
+			logDebug("Project Prefix : " + mppProjectPrefix);
+			
+			logDebug(padRight("Object Path ID", 25)  + " | " +
+					padRight("Description", 75) + " | " + 
+					padRight("ID",10) + " | " + 
+					"Percent Work Complete");
 			
 			for(Task task : project.getTasks()) {
 				
@@ -62,29 +85,34 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 					
 					MSPUpdateProjectProgressType progressRecord = new MSPUpdateProjectProgressType();
 					
-					String strWBS = "", pathID = "" ;
+					@SuppressWarnings("unused")
+					String strWBS , pathID , wbsID , wbsName ;
 					double progressValue;
 					
-					strWBS = task.getWBS();
+//					strWBS = task.getWBS();
+//					
+//					if (strWBS.contains(costObjectID)) {
+//						pathID = strWBS;
+//					}
+//					else {
+//						pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
+//					}
+//					
+//					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 					
-					if (strWBS.contains(costObjectID)) {
-						pathID = strWBS;
-					}
-					else {
-						pathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
-					}
-					
-					String wbsID = strWBS.substring(strWBS.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
-					
+					strWBS = (String) task.getFieldByAlias("WBS Path ID");
+					pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
+					wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
+					wbsName = task.getName();
 					progressValue = (double) task.getPercentageWorkComplete();
 					
 					progressRecord.setObjectPathID(pathID);
 					progressRecord.setObjectID(wbsID);
 					progressRecord.setProgressPercent(progressValue);
 					
-					logDebug("Data Record : " + padRight(progressRecord.getObjectPathID(), 20)  + " | " +
-							padRight(task.getName(), 40) + " | " + 
-							progressRecord.getObjectID() + " | " + 
+					logDebug(padRight(progressRecord.getObjectPathID(), 25)  + " | " +
+							padRight(task.getName(), 75) + " | " + 
+							padRight(progressRecord.getObjectID(),10) + " | " + 
 							progressRecord.getProgressPercent());
 					
 					lstUpdateProgress.add(progressRecord);
