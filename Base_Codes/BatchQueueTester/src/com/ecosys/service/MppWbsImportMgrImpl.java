@@ -85,7 +85,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 						String strWBS, wbsID , wbsName, pathID, externalKey, costControlLevel = null ;
 										
 						strWBS = String.valueOf(task.getFieldByAlias("WBS Path ID"));
-						pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
+						pathID = pathidBuilder(costObjectID, mppProjectPrefix, strWBS);
 						wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 						wbsName = task.getName();
 						externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
@@ -158,11 +158,8 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 									padRight(rec.getName(),75) + " | " +
 									padRight(rec.getCostControlLevel(),5)  + " | " +
 									padRight(rec.getExternalKey(),10) ); 
-							
 						}
-						
 					}
-					
 					failCnt++;
 				}
 				else {
@@ -170,9 +167,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					logDebug("Cost Object Internal ID : " + ort.getInternalId() + " Created/Updated");
 					passCnt++;
 				}
-				
 			}
-			
 			logInfo("Total created Items = " + passCnt + ", Failed Items = " + failCnt);
 		}
 	}

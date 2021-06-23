@@ -7,7 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.ecosys.properties.AppProperties;
 import com.ecosys.service.IntegratorMgr;
 import com.ecosys.service.MppBudgetImportMgrImpl;
-import com.ecosys.service.MppEtcImportMgrImpl;
 import com.ecosys.util.Stopwatch;
 
 public class MppBudgetImport {

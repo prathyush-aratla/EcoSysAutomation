@@ -26,8 +26,10 @@ public class GlobalConstants {
 	public static String EPC_API_UPDATEETC;
 	public static String EPC_API_UPDATEPROGRESS;
 	public static String EPC_API_IMPORTBUDGET;
+	public static String EPC_API_IMPORTBUDGETDATES;
 	
 	public static String BATCH_QUEUE_STATUS_ERROR;
+	
 	
 	@Autowired
 	protected AppProperties appProperties;
@@ -55,6 +57,7 @@ public class GlobalConstants {
 		EPC_API_UPDATEPROGRESS = this.appProperties.getProperty("epc.api.updateprogress");
 		EPC_API_RESOURCE = this.appProperties.getProperty("epc.api.resources");
 		EPC_API_IMPORTBUDGET = this.appProperties.getProperty("epc.api.importbudget");
+		EPC_API_IMPORTBUDGETDATES = this.appProperties.getProperty("epc.api.importbudgetdates");
 		
 		BATCH_QUEUE_STATUS_ERROR = this.appProperties.getProperty("batchqueue.status.error");
 		

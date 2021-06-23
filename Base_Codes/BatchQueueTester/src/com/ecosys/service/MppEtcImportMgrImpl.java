@@ -1,8 +1,5 @@
 package com.ecosys.service;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,23 +8,24 @@ import java.util.List;
 import com.ecosys.ImportETC.MSPPutMppDataRequestType;
 import com.ecosys.ImportETC.MSPPutMppDataResultType;
 import com.ecosys.ImportETC.MSPPutMppDataType;
+
 import com.ecosys.exception.SystemException;
 import com.ecosys.properties.GlobalConstants;
 
-import net.sf.mpxj.MPXJException;
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Resource;
 import net.sf.mpxj.ResourceAssignment;
 import net.sf.mpxj.Task;
-import net.sf.mpxj.mpp.MPPReader;
-import net.sf.mpxj.reader.ProjectReader;
+
 
 public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr  {
 	
 	String costObjectID , costObjectInternalID, minorPeriodID ;
+	String mppFilePath;
+	ProjectFile mppProject;
 	
 	public void test() throws SystemException {
-		process("24546");
+		process("23567");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -40,16 +38,19 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		costObjectInternalID = arguments[1];
 		minorPeriodID = arguments[2];
 		
+		mppFilePath = getMPPFile(client, costObjectInternalID, minorPeriodID);
+		mppProject = getProjectFile(mppFilePath);
+		
 		boolean bvalidFile;
 		
 		
-		logInfo("Starting validation");
-		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID, minorPeriodID));		
-		logInfo("Valdation Ends");
+		logInfo("Validating Import file...");
+		bvalidFile = validateProjectFile(mppProject);		
+		logInfo("Validation ends");
 		
 		if (bvalidFile) {			
 			logInfo("ETC Import begins...");
-			importETCHours(costObjectInternalID, minorPeriodID);
+			importETCHours(mppProject);
 			logInfo("ETC Import completed");		
 		}
 
@@ -57,21 +58,16 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 	}
 
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
-	private void importETCHours(String prjInternalID, String minorPeriodID) throws SystemException {
-				
-		// TODO Auto-generated method stub
+	private void importETCHours(ProjectFile mppProjectFile) throws SystemException {
 		
 		List<MSPPutMppDataType> lstETCRecords = new ArrayList<MSPPutMppDataType>();
-		String mppFilePath;
+		
+		ProjectFile project = mppProjectFile;
 		String mppProjectPrefix;
+		Task rootTask;
 		
 		try {
-			mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
-			InputStream input = new URL(mppFilePath).openStream();
-			ProjectReader reader = new MPPReader();
-			ProjectFile project = reader.read(input);
-			
-			Task rootTask = project.getTaskByID(Integer.valueOf(0));
+			rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
 			logDebug("Project Prefix : " + mppProjectPrefix);
 			
@@ -79,36 +75,28 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					padRight("WBS Path ID", 25)  + " | " +
 					padRight("Description", 75)  + " | " +
 					padRight("WBS ID", 10)  + " | " +
+					padRight("Ext Key", 10)  + " | " +
 					padRight("Res. Count", 10)  + " | " +
 					padRight("Rem. Hours", 10)  );
 			
 			for(Task task : project.getTasks()) {
 				
-				if (task.getActive() && task.getResourceAssignments().size() > 0  ) {
-					
-					@SuppressWarnings("unused")
-					String strWBS , pathID , wbsID , wbsName, resourceName, resourceAlias = null   ;
-//					String resourceName = "", resourceAlias = "", strWBS = "", wbsPathID = "", origWBS= "";
-					@SuppressWarnings("unused")
-					String externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
-					int resCount;
-					double totalRemHrs;
-					
-					Date startDate = task.getStart();
-					Date endDate = task.getFinish();
-					
-//					origWBS = task.getWBS();
-//					strWBS = task.getParentTask().getWBS();
-//					
-//					if(origWBS.contains(costObjectID)) {
-//						wbsPathID = origWBS;
-//					}
-//					else {
-//						wbsPathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + origWBS; 
-//					}
-					
+				boolean bActive;
+				int resCount;
+				String strWBS , pathID , wbsID , wbsName, externalKey, resourceName = null, resourceAlias = null ;
+				Date startDate, endDate;
+				double totalRemHrs;
+				
+				bActive = task.getActive();
+				resCount = task.getResourceAssignments().size();
+				externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
+				startDate = task.getStart();
+				endDate = task.getFinish();
+				
+				
+				if ( bActive && resCount > 0 ) {
 					strWBS = (String) task.getFieldByAlias("WBS Path ID");
-					pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
+					pathID = pathidBuilder(costObjectID, mppProjectPrefix, strWBS);
 					wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 					wbsName = task.getName();
 					resCount = task.getResourceAssignments().size();			
@@ -122,6 +110,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 							padRight(pathID, 25)  + " | " +
 							padRight(wbsName, 75)  + " | " +
 							padRight(wbsID, 10)  + " | " +
+							padRight(externalKey, 10)  + " | " +
 							padRight(String.valueOf(resCount), 10)  + " | " +
 							padRight(String.valueOf(totalRemHrs), 10)  );
 					
@@ -141,6 +130,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 													
 							etcRecord.setObjectPathID(pathID);
 							etcRecord.setResource(resourceAlias);
+							etcRecord.setResourceAlias(resourceName + ", " + resourceAlias);
 							etcRecord.setMPPETC(totalRemHrs/resCount);
 							etcRecord.setStartDate(dateToXMLGregorianCalendar(startDate));
 							etcRecord.setEndDate(dateToXMLGregorianCalendar(endDate));
@@ -157,7 +147,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			}
 		}
 		
-		catch (SystemException | IOException | MPXJException e) {
+		catch (SystemException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
@@ -173,7 +163,7 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		
 		//Push ETC Records to EcoSys
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", prjInternalID);
+		parameterMap.put("RootCostObject", costObjectInternalID);
 		parameterMap.put("ProjectPeriod", minorPeriodID);
 		
 		List<MSPPutMppDataResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstETCRecords, MSPPutMppDataRequestType.class,

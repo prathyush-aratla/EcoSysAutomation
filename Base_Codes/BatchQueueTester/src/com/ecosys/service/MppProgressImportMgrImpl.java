@@ -1,7 +1,5 @@
 package com.ecosys.service;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,15 +12,16 @@ import com.ecosys.properties.GlobalConstants;
 
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Task;
-import net.sf.mpxj.mpp.MPPReader;
-import net.sf.mpxj.reader.ProjectReader;
+
 
 public class MppProgressImportMgrImpl extends IntegratorBase implements IntegratorMgr {
 	
 	String costObjectID , costObjectInternalID, minorPeriodID ;
+	String mppFilePath;
+	ProjectFile mppProject;
 	
 	public void test() throws SystemException {
-		process("23560");
+		process("23568");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -35,37 +34,36 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 		costObjectInternalID = arguments[1];
 		minorPeriodID = arguments[2];
 		
+		mppFilePath = getMPPFile(client, costObjectInternalID, minorPeriodID);
+		mppProject = getProjectFile(mppFilePath);
+		
 		boolean bvalidFile;
 		
 		
-		logInfo("Starting validation");
-		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID, minorPeriodID));		
-		logInfo("Valdation Ends");
+		logInfo("Validating Import file...");
+		bvalidFile = validateProjectFile(mppProject);		
+		logInfo("Validation ends");
 		
 		if (bvalidFile) {			
-			logInfo("Progress Import begins...");
-			importProgress(costObjectInternalID, minorPeriodID);
-			logInfo("Progress Import Completed");		
+			logInfo("ETC Import begins...");
+			importProgress(mppProject);
+			logInfo("ETC Import completed");		
 		}
 
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 	}
 
 //	This method will fetch the progress percent from the Microsoft Projects File and update the EcoSys Project.
-	private void importProgress(String prjInternalID, String minorPeriodID) throws SystemException {
-		// TODO Auto-generated method stub
+	private void importProgress(ProjectFile mppProjectFile) throws SystemException {
 		
 		List<MSPUpdateProjectProgressType> lstUpdateProgress = new ArrayList<MSPUpdateProjectProgressType>();
-		String mppFilePath;
+
+		ProjectFile project = mppProjectFile;
 		String mppProjectPrefix;
+		Task rootTask;
 		
 		try {
-			mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
-			InputStream input = new URL(mppFilePath).openStream();
-			ProjectReader reader = new MPPReader();
-			ProjectFile project = reader.read(input);
-			
-			Task rootTask = project.getTaskByID(Integer.valueOf(0));
+			rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
 			logDebug("Project Prefix : " + mppProjectPrefix);
 			
@@ -75,20 +73,23 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 					"Percent Work Complete");
 			
 			for(Task task : project.getTasks()) {
+				
+				boolean bActive = task.getActive();
+				boolean bSummary = task.getSummary();
+				boolean bMilestone = task.getMilestone();
+				double progressValue = task.getPercentageWorkComplete().doubleValue();
+				
+				String strWBS , pathID , wbsID , wbsName ;
 									
-				if (task.getActive() && !task.getSummary() && !task.getMilestone() && task.getPercentageWorkComplete().doubleValue() > 0 ) {					
+				if (bActive && !bSummary && !bMilestone && progressValue > 0 ) {					
 					
 					MSPUpdateProjectProgressType progressRecord = new MSPUpdateProjectProgressType();
-	
-					@SuppressWarnings("unused")
-					String strWBS , pathID , wbsID , wbsName ;
-					double progressValue;
-										
+																			
 					strWBS = (String) task.getFieldByAlias("WBS Path ID");
-					pathID = pathIdBuilder(costObjectID, mppProjectPrefix, strWBS);
+					pathID = pathidBuilder(costObjectID, mppProjectPrefix, strWBS);
 					wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
 					wbsName = task.getName();
-					progressValue = (double) task.getPercentageWorkComplete();
+					
 					
 					if (strWBS.equals("null")) {
 						throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
@@ -98,10 +99,10 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 					progressRecord.setObjectID(wbsID);
 					progressRecord.setProgressPercent(progressValue);
 					
-					logDebug(padRight(progressRecord.getObjectPathID(), 25)  + " | " +
-							padRight(task.getName(), 75) + " | " + 
-							padRight(progressRecord.getObjectID(),10) + " | " + 
-							progressRecord.getProgressPercent());
+					logDebug(padRight(pathID, 25)  + " | " +
+							padRight(wbsName, 75) + " | " + 
+							padRight(wbsID,10) + " | " + 
+							progressValue);
 					
 					lstUpdateProgress.add(progressRecord);
 				}
@@ -122,7 +123,7 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 //		Update EcoSys Progress
 		int passCnt=0 , failCnt=0;
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", prjInternalID);
+		parameterMap.put("RootCostObject", costObjectInternalID);
 		
 		List<MSPUpdateProjectProgressResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateProgress, MSPUpdateProjectProgressRequestType.class,
 				MSPUpdateProjectProgressResultType.class, com.ecosys.ImportProgress.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEPROGRESS , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);

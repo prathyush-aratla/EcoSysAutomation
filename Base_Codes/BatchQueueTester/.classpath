@@ -9,6 +9,7 @@
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/aopalliance.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/aspose-tasks-21.6-jdk18.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-collections4-4.1.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-dbcp-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/commons-lang.jar"/>
@@ -26,6 +27,7 @@
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-mapper-asl-1.9.2.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jackson-xc-1.9.2.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-impl-2.2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-impl-3.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-runtime-2.3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-xjc-2.2.6.jar"/>
@@ -38,9 +40,11 @@
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jettison-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/joda-time-1.6.2.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/junit.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/kafka_2.12-2.5.0.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/kafka-clients-2.5.0.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/mpxj.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/poi-4.1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/rtfparserkit-1.15.0.jar"/>
@@ -54,7 +58,5 @@
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-expression.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-jdbc.jar"/>
 	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/spring-transaction.jar"/>
-	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/mpxj.jar"/>
-	<classpathentry kind="lib" path="C:/Integrations/Integrator/lib/jaxb-impl-2.2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

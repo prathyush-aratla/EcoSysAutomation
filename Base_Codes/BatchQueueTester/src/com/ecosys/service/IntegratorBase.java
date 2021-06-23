@@ -289,9 +289,27 @@ public abstract class IntegratorBase {
 		
 		return mppFilePath;
 	}
+	
+	//Method to return the project object from the mpp file
+	protected ProjectFile getProjectFile(String mppFilePath) throws SystemException {
+		ProjectFile project = null;
+		
+		try {
+			InputStream input = new URL(mppFilePath).openStream();
+			ProjectReader reader = new MPPReader();
+			project = reader.read(input);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return project;
+		
+	}
 
 	//WBS Path builder to replace the MS Project Prefix code with EcoSys Project ID
-	protected String pathIdBuilder (String costObjectID, String mppWbsPrefix, String mppWbsPath) throws SystemException{
+	protected String pathidBuilder(String costObjectID, String mppWbsPrefix, String mppWbsPath) throws SystemException{
 		String wbsPathID = "";
 		
 		try {
@@ -317,6 +335,30 @@ public abstract class IntegratorBase {
 			InputStream input = new URL(filePath).openStream();
 			ProjectReader reader = new MPPReader();
 			ProjectFile project = reader.read(input);
+			
+			bValid = validateProjectFile(project);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			logError(e);
+			logInfo("Import Terminated due to Errors");
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
+			System.exit(1);
+			
+		}
+		
+		return bValid;
+	}
+	
+	protected boolean validateProjectFile (ProjectFile mppFile) throws SystemException {
+		
+		boolean bValid = false;
+		
+		try {
+
+			ProjectFile project = mppFile;
 			
 			CustomFieldContainer atts = project.getCustomFields();		
 			
