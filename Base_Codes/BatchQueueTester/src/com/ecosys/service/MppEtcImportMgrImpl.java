@@ -148,7 +148,6 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		}
 		
 		catch (SystemException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");

@@ -77,18 +77,17 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 			
 			logDebug(
 					padRight("WBS Path ID", 25)  + " | " +
-					padRight("Description", 75)  + " | " +
+					padRight("Description", 60)  + " | " +
 					padRight("WBS ID", 10)  + " | " +
-					padRight("Resource ID", 10)  + " | " +
+					padRight("Ext Key", 15)  + " | " +
+					padRight("Res Details", 35)  + " | " +
 					padRight("Budget Hours", 10)  );
 			
 			for(Task task : project.getTasks()) {
 				
 				if (task.getActive() && task.getResourceAssignments().size() > 0  ) {
 					
-					@SuppressWarnings("unused")
-					String strWBS , pathID , wbsID , wbsName, resourceName, resourceAlias = null ;
-					@SuppressWarnings("unused")
+					String strWBS , pathID , wbsID , wbsName, resourceName = null, resourceAlias = null ;
 					String externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
 					int resCount;
 					double budgetHours;
@@ -104,13 +103,6 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 						throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
 					}
 					
-					logDebug(
-							padRight(pathID, 25)  + " | " +
-							padRight(wbsName, 75)  + " | " +
-							padRight(wbsID, 10)  + " | " +
-							padRight(String.valueOf(resCount), 10)  + " | " +
-							padRight(String.valueOf(budgetHours), 10)  );
-					
 					if (budgetHours > 0) {
 						
 						for (ResourceAssignment assignment : task.getResourceAssignments()) {
@@ -125,8 +117,17 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));
 							}
 							
+							logDebug(
+									padRight(pathID, 25)  + " | " +
+									padRight(wbsName, 60)  + " | " +
+									padRight(wbsID, 10)  + " | " +
+									padRight(externalKey, 15)  + " | " +
+									padRight(resourceName + ", " + resourceAlias, 35)  + " | " +
+									padRight(String.valueOf(budgetHours/resCount), 10)  );
+							
 							budgetRecord.setObjectPathID(pathID);
 							budgetRecord.setResource(resourceAlias);
+							budgetRecord.setResourceAlias(resourceName + ", " + resourceAlias);
 							budgetRecord.setHours(budgetHours/resCount);
 							
 							lstBudgetRecords.add(budgetRecord);
@@ -138,7 +139,6 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 		}
 		
 		catch (SystemException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");
@@ -236,7 +236,6 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 				}
 			}
 		} catch (SystemException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");

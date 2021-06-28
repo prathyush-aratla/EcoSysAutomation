@@ -3,9 +3,6 @@ package com.ecosys.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 
 import com.ecosys.ImportWBS.MSPPutMppStructureRequestType;
 import com.ecosys.ImportWBS.MSPPutMppStructureResultType;
@@ -14,15 +11,14 @@ import com.ecosys.ImportWBS.ObjectFactory;
 import com.ecosys.exception.SystemException;
 import com.ecosys.properties.GlobalConstants;
 
-import net.sf.mpxj.MPXJException;
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Task;
-import net.sf.mpxj.mpp.MPPReader;
-import net.sf.mpxj.reader.ProjectReader;
 
 public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr {
 	
 	String costObjectID, costObjectInternalID ;
+	String mppFilePath;
+	ProjectFile mppProject;
 
 	public void test() throws SystemException {
 		process("24366");
@@ -37,14 +33,17 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		costObjectID = arguments[0];
 		costObjectInternalID = arguments[1];
 		
+		mppFilePath = getMPPFile(client, costObjectInternalID);
+		mppProject = getProjectFile(mppFilePath);
+		
 		boolean bvalidFile;
 		logInfo("Starting validation");
-		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID));		
+		bvalidFile = validateProjectFile(getMPPFile(client, costObjectInternalID));	
 		logInfo("Valdation Ends");
 		
 		if (bvalidFile) {			
 			logInfo("Begin Project Structure Import...");
-			importProjectStructure(arguments[1]);
+			importProjectStructure(mppProject);
 			logInfo("Project structure Import completed.");			
 		}
 		
@@ -52,19 +51,16 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 	}
 	
 	// Method to create/update Project Structure in EcoSys from MPP File
-	private void importProjectStructure(String prjInternalID) throws SystemException {
+	private void importProjectStructure(ProjectFile mppProjectFile) throws SystemException {
 		
 		List<MSPPutMppStructureType> lstUpdateWBS = new ArrayList<MSPPutMppStructureType>();
-		String mppFilePath;
+
+		ProjectFile project = mppProjectFile;
 		String mppProjectPrefix;
+		Task rootTask;
 		
 		try {
-			mppFilePath = getMPPFile(client, prjInternalID);
-			InputStream input = new URL(mppFilePath).openStream();
-			ProjectReader reader = new MPPReader();
-			ProjectFile project = reader.read(input);
-			
-			Task rootTask = project.getTaskByID(Integer.valueOf(0));
+			rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
 			
 			logDebug("Project Prefix : " + mppProjectPrefix);
@@ -122,8 +118,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 					}	
 			}
 		} 
-		catch (SystemException | IOException | MPXJException e) {
-			// TODO Auto-generated catch block
+		catch (SystemException e) {
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");
@@ -137,7 +132,7 @@ public class MppWbsImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		//Push WBS Records to EcoSys
 		int passCnt=0 , failCnt=0;
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", prjInternalID);
+		parameterMap.put("RootCostObject", costObjectInternalID);
 		
 		List<MSPPutMppStructureResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstUpdateWBS, MSPPutMppStructureRequestType.class,
 				MSPPutMppStructureResultType.class, ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEWBS, GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);

@@ -109,7 +109,6 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");

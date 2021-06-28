@@ -28,6 +28,8 @@ public class GlobalConstants {
 	public static String EPC_API_IMPORTBUDGET;
 	public static String EPC_API_IMPORTBUDGETDATES;
 	
+	public static String MSP_CF_WBSPATHID, MSP_CF_RESOURCEID;
+	
 	public static String BATCH_QUEUE_STATUS_ERROR;
 	
 	
@@ -58,6 +60,9 @@ public class GlobalConstants {
 		EPC_API_RESOURCE = this.appProperties.getProperty("epc.api.resources");
 		EPC_API_IMPORTBUDGET = this.appProperties.getProperty("epc.api.importbudget");
 		EPC_API_IMPORTBUDGETDATES = this.appProperties.getProperty("epc.api.importbudgetdates");
+		
+		MSP_CF_WBSPATHID = this.appProperties.getProperty("msp.customfield.wbspathid");
+		MSP_CF_RESOURCEID = this.appProperties.getProperty("msp.customfield.resourceid");
 		
 		BATCH_QUEUE_STATUS_ERROR = this.appProperties.getProperty("batchqueue.status.error");
 		

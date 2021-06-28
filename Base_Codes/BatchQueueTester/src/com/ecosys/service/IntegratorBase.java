@@ -164,7 +164,7 @@ public abstract class IntegratorBase {
 		try {
 			xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
 		} catch (Exception e) {
-			// TODO: handle exception
+
 			e.printStackTrace();
 		}
 		
@@ -230,7 +230,6 @@ public abstract class IntegratorBase {
 				mppFilePath = uri.toString();
 				
 			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				System.exit(1);
 			}
@@ -277,7 +276,6 @@ public abstract class IntegratorBase {
 				mppFilePath = uri.toString();
 				
 			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -300,7 +298,6 @@ public abstract class IntegratorBase {
 			project = reader.read(input);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		
@@ -317,7 +314,6 @@ public abstract class IntegratorBase {
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		
@@ -339,7 +335,6 @@ public abstract class IntegratorBase {
 			bValid = validateProjectFile(project);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");
@@ -352,58 +347,46 @@ public abstract class IntegratorBase {
 		return bValid;
 	}
 	
+	//Method to validate the MS Project (mpp) file if the required custom attributes were defined
 	protected boolean validateProjectFile (ProjectFile mppFile) throws SystemException {
 		
-		boolean bValid = false;
+		boolean bValidfile = false;
+		boolean bResourceAlias = false;
+		boolean bWbspathid = false;
 		
 		try {
-
 			ProjectFile project = mppFile;
-			
 			CustomFieldContainer atts = project.getCustomFields();		
+			FieldType resResourceAlias = atts.getFieldByAlias(FieldTypeClass.RESOURCE, GlobalConstants.MSP_CF_RESOURCEID);
+			FieldType tskWBSPathID = atts.getFieldByAlias(FieldTypeClass.TASK, GlobalConstants.MSP_CF_WBSPATHID);
 			
-			 FieldType resResourceAlias = atts.getFieldByAlias(FieldTypeClass.RESOURCE, "Resource Alias");
 			 
-			 FieldType tskWBSPathID = atts.getFieldByAlias(FieldTypeClass.TASK, "WBS Path ID");
-			 
-			 if (resResourceAlias != null)
-			 {
-				 if (tskWBSPathID != null)
-				 {
-					 bValid = true;
-				 }
-				 else {
-					logError("error101 : WBS Path ID custom field not defined in mpp File");
-					throw new Exception("Task Custom Field Not Defined");
-				}
-				 
+			 if (resResourceAlias == null) {
+				 bResourceAlias = false;
+				 logError("Resource Alias custom field not defined in Resource Sheet of mpp File");
+				 throw new Exception("Resource Custom Field Not Defined");				 
 			 }
 			 else {
-					logError("error102 : Resource Alias custom field not defined in mpp File");
-					throw new Exception("Resource Custom Field Not Defined");
+				 bResourceAlias = true;
 			 }
-			
+
+			 
+			 if (tskWBSPathID == null) {
+				 bWbspathid = false;
+				 logError("WBS Path ID custom field not defined in Task sheet of mpp File");
+				 throw new Exception("Task Custom Field Not Defined");				 
+			 }
+			 else {
+				 bWbspathid = true;
+			}
+			 
+			 if (bResourceAlias && bWbspathid) {
+				 bValidfile = true;
+			 }
+
 			logDebug("Total Custom Fields : " + String.valueOf(atts.size()));
 			
-//			for (CustomField cf : atts) {
-//				
-//				if (cf.getAlias().equals("Resource Alias") && cf.getFieldType().getFieldTypeClass().name().equals("RESOURCE")) {
-//						
-//						bValid = true;
-//
-//				}
-//				else if (cf.getAlias().equals("WBS") && cf.getFieldType().getFieldTypeClass().name().equals("RESOURCE")) {
-//					
-//				}
-//				
-////				logDebug(cf.getAlias() + " | " +
-////						cf.getFieldType().getFieldTypeClass().name());
-////				
-//				
-//			}
-			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");
@@ -413,7 +396,7 @@ public abstract class IntegratorBase {
 			
 		}
 		
-		return bValid;
+		return bValidfile;
 	}
 
 }
