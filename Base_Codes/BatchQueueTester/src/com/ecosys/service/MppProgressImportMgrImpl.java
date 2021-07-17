@@ -45,9 +45,9 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 		logInfo("Validation ends");
 		
 		if (bvalidFile) {			
-			logInfo("ETC Import begins...");
+			logInfo("Progress Import begins...");
 			importProgress(mppProject);
-			logInfo("ETC Import completed");		
+			logInfo("Progress Import completed");		
 		}
 
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
@@ -66,6 +66,9 @@ public class MppProgressImportMgrImpl extends IntegratorBase implements Integrat
 			rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
 			logDebug("Project Prefix : " + mppProjectPrefix);
+			if (mppProjectPrefix == "null") {
+				throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+			}
 			
 			logDebug(padRight("Object Path ID", 25)  + " | " +
 					padRight("Description", 75) + " | " + 

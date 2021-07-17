@@ -26,7 +26,7 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 	ProjectFile mppProject;
 	
 	public void test() throws SystemException {
-		process("23562");
+		process("24803");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
@@ -74,6 +74,9 @@ public class MppBudgetImportMgrImpl extends IntegratorBase implements Integrator
 			rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
 			logDebug("Project Prefix : " + mppProjectPrefix);
+			if (mppProjectPrefix == "null") {
+				throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+			}
 			
 			logDebug(
 					padRight("WBS Path ID", 25)  + " | " +

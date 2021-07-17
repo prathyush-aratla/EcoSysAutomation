@@ -70,6 +70,9 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 			rootTask = project.getTaskByID(Integer.valueOf(0));
 			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
 			logDebug("Project Prefix : " + mppProjectPrefix);
+			if (mppProjectPrefix == "null") {
+				throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+			}
 			
 			logDebug(
 					padRight("WBS Path ID", 25)  + " | " +
