@@ -30,16 +30,6 @@ class="com.ecosys.service.BatchQueueMgrImpl">
 <property name="batchQueueLogging" ref="batchQueueLogging" />
 </bean>
 
- <bean id="BQService" class="com.ecosys.service.BQService">
-<property name="epcRestMgr" ref="epcRestMgr" />
-<property name="batchQueueMgr" ref="BatchQueueMgr" />
-</bean>
-
- <bean id="ActualsImport" class="com.ecosys.service.ActualsImportMgrImpl">
-<property name="epcRestMgr" ref="epcRestMgr" />
-<property name="batchQueueMgr" ref="BatchQueueMgr" />
-</bean>
-
  <bean id="MppIntegration" class="com.ecosys.service.MppIntegrationImpl">
 <property name="epcRestMgr" ref="epcRestMgr" />
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
@@ -60,5 +50,9 @@ class="com.ecosys.service.BatchQueueMgrImpl">
 <property name="batchQueueMgr" ref="BatchQueueMgr" />
 </bean>
 
+ <bean id="MppBudgetImport" class="com.ecosys.service.MppBudgetImportMgrImpl">
+<property name="epcRestMgr" ref="epcRestMgr" />
+<property name="batchQueueMgr" ref="BatchQueueMgr" />
+</bean>
 
 </beans>

@@ -1,52 +1,1008 @@
-2021-06-04 09:57:18,798 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
-2021-06-04 09:57:19,291 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
-2021-06-04 09:57:19,295 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
-2021-06-04 09:57:19,399 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-04 09:57:19,400 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,7CE1C9E78A22F37E02A2D7958C9EFD12
-2021-06-04 09:57:19,424 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-07-17 18:09:40,526 INFO  com.ecosys.startup.MppBudgetImport.main:30 - Start Import Budget from Microsoft Project file
+2021-07-17 18:09:41,212 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:09:41,217 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:09:42,682 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:09:42,684 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,C316E1E6577F6AB364148BCF84D93A4B
+2021-07-17 18:09:42,829 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-04 09:57:19,580 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
-2021-06-04 09:57:19,581 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
-2021-06-04 09:57:19,634 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-04 09:57:19,635 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F7F92ADE04067A48FBD53FC8586E09F5
-2021-06-04 09:57:19,645 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-07-17 18:09:43,035 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:09:43,036 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:09:43,447 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:09:43,447 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F06109AF7C381A7E0D6FF204940487B2
+2021-07-17 18:09:43,586 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-1 : PRJ-000262
-2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-2 : 40285
-2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-3 : 666
-2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Progress Import begins...
-2021-06-04 09:57:19,646 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40285
-2021-06-04 09:57:19,692 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
-2021-06-04 09:57:19,692 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,97A2CFBF55A21052CB4067FF3DA64DF3
-2021-06-04 09:57:19,701 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-07-17 18:09:43,587 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-1 : AIRP1067CON
+2021-07-17 18:09:43,588 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-2 : 43621
+2021-07-17 18:09:43,588 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:09:44,218 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:09:44,218 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:09:44,220 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,56F1D09128BDEE44CE5594C3C46E1DD9
+2021-07-17 18:09:44,359 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-04 09:57:19,807 ERROR com.ecosys.service.IntegratorBase.logError:79 - net.sf.mpxj.MPXJException: Error reading file
-2021-06-04 09:57:19,807 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Import Terminated due to Errors
-2021-06-04 09:57:19,807 INFO  com.ecosys.service.BatchQueueMgrImpl.info:? - Update Task Status to Error for 23755
-2021-06-04 09:57:19,808 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueUpdate - batch size: 2000 - true
-2021-06-04 09:57:19,808 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:1
-2021-06-04 09:57:19,879 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
-2021-06-04 09:57:19,896 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,8C328B56D21278DB5A7B848DBE51EB48
-2021-06-04 09:57:19,904 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueUpdate - elapsed time: PT0.088S for 1 records
-2021-06-04 09:57:19,904 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueUpdate - elapsed time: PT0.096S
-2021-06-04 09:57:19,914 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-07-17 18:09:56,335 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Starting validation
+2021-07-17 18:09:56,336 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:09:56,918 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:09:56,919 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:09:56,919 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,46C508BEF102CA25950A479F26052AAC
+2021-07-17 18:09:57,058 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
-2021-06-04 09:57:19,914 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
-2021-06-04 09:57:19,917 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
-2021-06-04 09:57:19,917 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:3
-2021-06-04 09:57:19,995 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
-2021-06-04 09:57:20,009 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,28D49D970DE1E361A49491D2331C6BDD
-2021-06-04 09:57:20,009 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.092S for 3 records
-2021-06-04 09:57:20,009 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.092S
-2021-06-04 09:57:20,020 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+2021-07-17 18:10:06,193 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Total Custom Fields : 6
+2021-07-17 18:10:06,193 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Valdation Ends
+2021-07-17 18:10:06,193 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Hours Import...
+2021-07-17 18:10:06,193 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : null
+2021-07-17 18:10:06,196 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | Description                                                  | WBS ID     | Ext Key         | Res Details                         | Budget Hours
+2021-07-17 18:10:06,199 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.1 | Project Meetings                                             | 1          | AIRP1067CON.380 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:10:06,200 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.2 | Monitor and Control                                          | 2          | AIRP1067CON.379 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:10:06,200 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.1 | Review SOW                                                   | 1          | AIRP1067CON.15  | Summer Bailey, sbailey              | 0.5       
+2021-07-17 18:10:06,200 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.2 | Schedule Sales Transition Meeting                            | 2          | AIRP1067CON.14  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:10:06,200 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.3 | Schedule Internal Kick-Off                                   | 3          | AIRP1067CON.13  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:10:06,201 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.4 | Setup Project Internally                                     | 4          | AIRP1067CON.370 | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:10:06,201 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.6 | Complete External Project Kick-Off Materials                 | 6          | AIRP1067CON.22  | Summer Bailey, sbailey              | 2.0       
+2021-07-17 18:10:06,201 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.8 | Complete Project Schedule for PM, PLAN, and DEFINE phases    | 8          | AIRP1067CON.344 | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:10:06,201 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.2 | Hold Project Kick-Off Meeting with Customer                  | 2          | AIRP1067CON.52  | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:10:06,202 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.7 | Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | 7          | AIRP1067CON.96  | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:10:06,202 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.1 | Project Meetings                                             | 1          | AIRP1067CON.48  | null, null                          | 10.0      
+2021-07-17 18:10:06,202 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.50 | Define RTM                                                   | 50         | AIRP1067CON.2245 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:10:06,202 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.50 | Define RTM                                                   | 50         | AIRP1067CON.2245 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:10:06,203 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.51 | Document STS                                                 | 51         | AIRP1067CON.2244 | A.D. Nath, anath                    | 8.0       
+2021-07-17 18:10:06,203 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.51 | Document STS                                                 | 51         | AIRP1067CON.2244 | Rajesh Chandwani, rchandwa          | 8.0       
+2021-07-17 18:10:06,203 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.1 | Project Meetings                                             | 1          | AIRP1067CON.395 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:10:06,203 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.2 | Technical Lead or Lead Consultant Oversight                  | 2          | AIRP1067CON.127 | A.D. Nath, anath                    | 40.0      
+2021-07-17 18:10:06,204 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.50 | Processor - File Handling                                    | 50         | AIRP1067CON.2286 | Rajesh Chandwani, rchandwa          | 88.0      
+2021-07-17 18:10:06,204 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.51 | Processor - Call SMAT APIs                                   | 51         | AIRP1067CON.2287 | Rajesh Chandwani, rchandwa          | 28.0      
+2021-07-17 18:10:06,204 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.52 | Processor - Document and Unit Test                           | 52         | AIRP1067CON.2288 | Rajesh Chandwani, rchandwa          | 30.0      
+2021-07-17 18:10:06,204 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.53 | Processor - Review Prep                                      | 53         | AIRP1067CON.2289 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:10:06,205 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.54 | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:10:06,205 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.54 | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:10:06,205 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.56 | Queue Manager - Build                                        | 56         | AIRP1067CON.2278 | Rajesh Chandwani, rchandwa          | 48.0      
+2021-07-17 18:10:06,205 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.57 | Queue Manager - Document and Unit Test                       | 57         | AIRP1067CON.2277 | Rajesh Chandwani, rchandwa          | 44.0      
+2021-07-17 18:10:06,205 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.58 | Queue Manager - Review Prep                                  | 58         | AIRP1067CON.2276 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:10:06,205 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.59 | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:10:06,206 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.59 | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:10:06,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.61 | SPF - Build API                                              | 61         | AIRP1067CON.2275 | Tom Black, rtblack                  | 42.0      
+2021-07-17 18:10:06,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.62 | SPF - Call API                                               | 62         | AIRP1067CON.2274 | Rajesh Chandwani, rchandwa          | 84.0      
+2021-07-17 18:10:06,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.63 | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Rajesh Chandwani, rchandwa          | 20.0      
+2021-07-17 18:10:06,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.63 | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Tom Black, rtblack                  | 20.0      
+2021-07-17 18:10:06,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.64 | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:10:06,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.64 | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Tom Black, rtblack                  | 4.0       
+2021-07-17 18:10:06,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | A.D. Nath, anath                    | 2.0       
+2021-07-17 18:10:06,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Rajesh Chandwani, rchandwa          | 2.0       
+2021-07-17 18:10:06,216 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Tom Black, rtblack                  | 2.0       
+2021-07-17 18:10:06,216 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.2 | Create E2E Test Scripts (Utilize User Procedures or Use Case Lists) | 2          | AIRP1067CON.264 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:10:06,216 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.1 |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | Rajesh Chandwani, rchandwa          | 16.0      
+2021-07-17 18:10:06,216 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.1 |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | A.D. Nath, anath                    | 16.0      
+2021-07-17 18:10:06,216 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.2 |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:10:06,216 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.2 |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:10:06,217 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.6.10.5 | Deploy Solution to INTEG Environment                         | 5          | AIRP1067CON.620 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:10:06,217 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 43
+2021-07-17 18:10:06,219 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudget - batch size: 2000 - true
+2021-07-17 18:10:06,219 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:43
+2021-07-17 18:10:07,252 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:10:07,302 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,BDF10623ADC4BCFEAB276045DECE53F7
+2021-07-17 18:10:07,315 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudget - elapsed time: PT1.083S for 43 records
+2021-07-17 18:10:07,315 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudget - elapsed time: PT1.096S
+2021-07-17 18:10:07,453 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
 <body><h1>Session is now logged out - EcoSys Web Service API</h1>
 </body></html>
 
+2021-07-17 18:10:07,454 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,454 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,455 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,455 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,455 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,455 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,455 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,456 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,456 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,456 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,457 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,457 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,457 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,458 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,458 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,459 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,460 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,460 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,460 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,461 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,461 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,461 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,462 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,462 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,462 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,463 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,463 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,463 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,463 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,463 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,463 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,464 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,464 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,464 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,464 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,464 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,465 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,465 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,465 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,465 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,465 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,466 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,466 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:10:07,466 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 0, Failed Items = 43
+2021-07-17 18:10:07,466 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Hours Import completed
+2021-07-17 18:10:07,466 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Dates Import...
+2021-07-17 18:10:07,466 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : null
+2021-07-17 18:10:07,467 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | WBS ID     | Start Date | End Date  
+2021-07-17 18:10:07,469 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.1 | 1          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:10:07,472 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.2 | 2          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:10:07,473 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.1 | 1          | Mon Jun 28 08:00:00 IST 2021 | Mon Jun 28 17:00:00 IST 2021
+2021-07-17 18:10:07,473 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.2 | 2          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 08:15:00 IST 2021
+2021-07-17 18:10:07,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.3 | 3          | Tue Jun 29 08:15:00 IST 2021 | Tue Jun 29 08:30:00 IST 2021
+2021-07-17 18:10:07,475 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.4 | 4          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 17:00:00 IST 2021
+2021-07-17 18:10:07,476 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.6 | 6          | Tue Jun 29 08:30:00 IST 2021 | Tue Jun 29 10:30:00 IST 2021
+2021-07-17 18:10:07,478 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.8 | 8          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:10:07,479 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.2 | 2          | Tue Jul 14 16:00:00 IST 2020 | Tue Jul 14 17:00:00 IST 2020
+2021-07-17 18:10:07,480 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.7 | 7          | Mon Jul 12 14:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:10:07,481 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.1 | 1          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:10:07,482 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.50 | 50         | Mon Jul 12 08:00:00 IST 2021 | Mon Jul 12 12:00:00 IST 2021
+2021-07-17 18:10:07,482 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.51 | 51         | Mon Jul 12 13:00:00 IST 2021 | Tue Jul 13 12:00:00 IST 2021
+2021-07-17 18:10:07,484 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.1 | 1          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:10:07,485 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.2 | 2          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:10:07,486 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.50 | 50         | Tue Jul 13 13:00:00 IST 2021 | Wed Aug 11 10:00:00 IST 2021
+2021-07-17 18:10:07,486 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.51 | 51         | Wed Aug 11 10:00:00 IST 2021 | Tue Aug 17 14:00:00 IST 2021
+2021-07-17 18:10:07,487 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.52 | 52         | Tue Aug 17 14:00:00 IST 2021 | Tue Aug 24 10:30:00 IST 2021
+2021-07-17 18:10:07,488 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.53 | 53         | Tue Aug 24 10:30:00 IST 2021 | Wed Aug 25 08:45:00 IST 2021
+2021-07-17 18:10:07,488 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.54 | 54         | Wed Aug 25 08:45:00 IST 2021 | Wed Aug 25 09:45:00 IST 2021
+2021-07-17 18:10:07,489 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.56 | 56         | Wed Aug 25 09:45:00 IST 2021 | Fri Sep 03 14:45:00 IST 2021
+2021-07-17 18:10:07,490 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.57 | 57         | Fri Sep 03 14:45:00 IST 2021 | Tue Sep 14 13:45:00 IST 2021
+2021-07-17 18:10:07,491 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.58 | 58         | Tue Sep 14 13:45:00 IST 2021 | Wed Sep 15 11:00:00 IST 2021
+2021-07-17 18:10:07,491 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.59 | 59         | Wed Sep 15 11:00:00 IST 2021 | Wed Sep 15 12:00:00 IST 2021
+2021-07-17 18:10:07,492 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.61 | 61         | Mon Jul 19 08:00:00 IST 2021 | Mon Jul 26 10:00:00 IST 2021
+2021-07-17 18:10:07,493 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.62 | 62         | Wed Sep 15 13:00:00 IST 2021 | Mon Oct 04 14:00:00 IST 2021
+2021-07-17 18:10:07,493 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.63 | 63         | Mon Oct 04 14:00:00 IST 2021 | Mon Oct 11 14:00:00 IST 2021
+2021-07-17 18:10:07,494 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.64 | 64         | Mon Oct 11 14:00:00 IST 2021 | Tue Oct 12 10:00:00 IST 2021
+2021-07-17 18:10:07,496 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | 65         | Tue Oct 12 10:00:00 IST 2021 | Tue Oct 12 12:00:00 IST 2021
+2021-07-17 18:10:07,497 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.2 | 2          | Tue Jul 13 13:00:00 IST 2021 | Tue Jul 13 17:00:00 IST 2021
+2021-07-17 18:10:07,497 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.1 | 1          | Tue Oct 12 13:00:00 IST 2021 | Tue Oct 19 12:00:00 IST 2021
+2021-07-17 18:10:07,498 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.2 | 2          | Tue Oct 19 13:00:00 IST 2021 | Wed Oct 20 11:16:24 IST 2021
+2021-07-17 18:10:07,499 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.6.10.5 | 5          | Wed Oct 20 11:16:24 IST 2021 | Thu Oct 28 14:16:24 IST 2021
+2021-07-17 18:10:07,500 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.7 | 7          | Fri May 01 08:00:00 IST 2020 | Fri May 01 17:00:00 IST 2020
+2021-07-17 18:10:07,501 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 34
+2021-07-17 18:10:07,504 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudgetDates - batch size: 2000 - true
+2021-07-17 18:10:07,504 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:34
+2021-07-17 18:10:07,996 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:10:08,034 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,A3723598658E34A97DDB7E85D3A96085
+2021-07-17 18:10:08,034 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudgetDates - elapsed time: PT0.530S for 34 records
+2021-07-17 18:10:08,034 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudgetDates - elapsed time: PT0.530S
+2021-07-17 18:10:08,173 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:10:08,173 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,173 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,174 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,175 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,175 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,175 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,175 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,176 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,176 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,177 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,177 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,177 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,177 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,177 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,177 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,178 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,179 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,179 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,179 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,179 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,179 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,179 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:10:08,180 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 0, Failed Items = 34
+2021-07-17 18:10:08,180 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Dates Import completed
+2021-07-17 18:10:08,180 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-07-17 18:10:08,184 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-07-17 18:10:08,184 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:87
+2021-07-17 18:10:08,713 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:10:08,735 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,03DDBE30F882FAA00C1CA5F858BA1A0A
+2021-07-17 18:10:08,735 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.551S for 87 records
+2021-07-17 18:10:08,735 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.551S
+2021-07-17 18:10:08,873 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:10:08,873 INFO  com.ecosys.startup.MppBudgetImport.main:46 - Completed Budget Import Process... P0000-00-00T00:00:28.387
+2021-07-17 18:11:13,043 INFO  com.ecosys.startup.MppBudgetImport.main:30 - Start Import Budget from Microsoft Project file
+2021-07-17 18:11:13,742 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:11:13,747 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:11:15,025 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:11:15,029 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,7194F5E0FE41B8307D92193954E8A217
+2021-07-17 18:11:15,173 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:11:15,370 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:11:15,371 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:11:15,783 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:11:15,783 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F22B21A220F5F7F9274D832158EFDD1A
+2021-07-17 18:11:15,924 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:11:15,927 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-1 : AIRP1067CON
+2021-07-17 18:11:15,928 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-2 : 43621
+2021-07-17 18:11:15,929 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:11:16,487 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:11:16,487 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:11:16,491 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,48C59EA82F0F9D47920CD52FEC569CB4
+2021-07-17 18:11:16,631 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:11:28,929 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Starting validation
+2021-07-17 18:11:28,930 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:11:29,555 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:11:29,555 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:11:29,556 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,0987DDD85D6817CBF90F5639B1896461
+2021-07-17 18:11:29,696 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:11:39,466 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Total Custom Fields : 6
+2021-07-17 18:11:39,466 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Valdation Ends
+2021-07-17 18:11:39,466 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Hours Import...
+2021-07-17 18:16:37,411 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : null
+2021-07-17 18:16:46,323 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | Description                                                  | WBS ID     | Ext Key         | Res Details                         | Budget Hours
+2021-07-17 18:16:58,183 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.1 | Project Meetings                                             | 1          | AIRP1067CON.380 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:16:58,187 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.2 | Monitor and Control                                          | 2          | AIRP1067CON.379 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:16:58,192 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.1 | Review SOW                                                   | 1          | AIRP1067CON.15  | Summer Bailey, sbailey              | 0.5       
+2021-07-17 18:16:58,195 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.2 | Schedule Sales Transition Meeting                            | 2          | AIRP1067CON.14  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:16:58,198 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.3 | Schedule Internal Kick-Off                                   | 3          | AIRP1067CON.13  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:16:58,201 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.4 | Setup Project Internally                                     | 4          | AIRP1067CON.370 | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:16:58,204 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.6 | Complete External Project Kick-Off Materials                 | 6          | AIRP1067CON.22  | Summer Bailey, sbailey              | 2.0       
+2021-07-17 18:16:58,207 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.8 | Complete Project Schedule for PM, PLAN, and DEFINE phases    | 8          | AIRP1067CON.344 | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:16:58,210 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.2 | Hold Project Kick-Off Meeting with Customer                  | 2          | AIRP1067CON.52  | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:16:58,213 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.7 | Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | 7          | AIRP1067CON.96  | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:16:58,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.1 | Project Meetings                                             | 1          | AIRP1067CON.48  | null, null                          | 10.0      
+2021-07-17 18:16:58,218 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.50 | Define RTM                                                   | 50         | AIRP1067CON.2245 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:16:58,220 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.50 | Define RTM                                                   | 50         | AIRP1067CON.2245 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:16:58,223 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.51 | Document STS                                                 | 51         | AIRP1067CON.2244 | A.D. Nath, anath                    | 8.0       
+2021-07-17 18:16:58,225 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.51 | Document STS                                                 | 51         | AIRP1067CON.2244 | Rajesh Chandwani, rchandwa          | 8.0       
+2021-07-17 18:16:58,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.1 | Project Meetings                                             | 1          | AIRP1067CON.395 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:16:58,232 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.2 | Technical Lead or Lead Consultant Oversight                  | 2          | AIRP1067CON.127 | A.D. Nath, anath                    | 40.0      
+2021-07-17 18:16:58,239 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.50 | Processor - File Handling                                    | 50         | AIRP1067CON.2286 | Rajesh Chandwani, rchandwa          | 88.0      
+2021-07-17 18:16:58,241 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.51 | Processor - Call SMAT APIs                                   | 51         | AIRP1067CON.2287 | Rajesh Chandwani, rchandwa          | 28.0      
+2021-07-17 18:16:58,244 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.52 | Processor - Document and Unit Test                           | 52         | AIRP1067CON.2288 | Rajesh Chandwani, rchandwa          | 30.0      
+2021-07-17 18:16:58,246 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.53 | Processor - Review Prep                                      | 53         | AIRP1067CON.2289 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:16:58,249 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.54 | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:16:58,251 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.54 | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:16:58,254 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.56 | Queue Manager - Build                                        | 56         | AIRP1067CON.2278 | Rajesh Chandwani, rchandwa          | 48.0      
+2021-07-17 18:16:58,256 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.57 | Queue Manager - Document and Unit Test                       | 57         | AIRP1067CON.2277 | Rajesh Chandwani, rchandwa          | 44.0      
+2021-07-17 18:16:58,259 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.58 | Queue Manager - Review Prep                                  | 58         | AIRP1067CON.2276 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:16:58,260 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.59 | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:16:58,264 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.59 | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:16:58,265 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.61 | SPF - Build API                                              | 61         | AIRP1067CON.2275 | Tom Black, rtblack                  | 42.0      
+2021-07-17 18:16:58,267 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.62 | SPF - Call API                                               | 62         | AIRP1067CON.2274 | Rajesh Chandwani, rchandwa          | 84.0      
+2021-07-17 18:16:58,270 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.63 | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Rajesh Chandwani, rchandwa          | 20.0      
+2021-07-17 18:16:58,272 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.63 | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Tom Black, rtblack                  | 20.0      
+2021-07-17 18:16:58,275 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.64 | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:16:58,277 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.64 | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Tom Black, rtblack                  | 4.0       
+2021-07-17 18:16:58,279 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | A.D. Nath, anath                    | 2.0       
+2021-07-17 18:16:58,281 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Rajesh Chandwani, rchandwa          | 2.0       
+2021-07-17 18:16:58,284 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Tom Black, rtblack                  | 2.0       
+2021-07-17 18:16:58,286 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.2 | Create E2E Test Scripts (Utilize User Procedures or Use Case Lists) | 2          | AIRP1067CON.264 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:16:58,289 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.1 |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | Rajesh Chandwani, rchandwa          | 16.0      
+2021-07-17 18:16:58,291 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.1 |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | A.D. Nath, anath                    | 16.0      
+2021-07-17 18:16:58,293 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.2 |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:16:58,295 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.2 |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:16:58,298 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.6.10.5 | Deploy Solution to INTEG Environment                         | 5          | AIRP1067CON.620 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:16:58,301 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 43
+2021-07-17 18:16:58,319 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudget - batch size: 2000 - true
+2021-07-17 18:16:58,319 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:43
+2021-07-17 18:17:01,361 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:17:01,998 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,45AB44BC8172DEF492FD182D415A463D
+2021-07-17 18:17:02,140 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudget - elapsed time: PT3.679S for 43 records
+2021-07-17 18:17:02,143 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudget - elapsed time: PT3.822S
+2021-07-17 18:17:02,311 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:17:02,315 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,317 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,319 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,321 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,323 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,326 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,328 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,330 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,332 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,333 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,334 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,335 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,336 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,337 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,338 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,349 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,351 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,353 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,354 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,356 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,357 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,359 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,360 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,361 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,362 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,363 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,363 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,364 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,365 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,366 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,367 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,368 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,369 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,370 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,371 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,372 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,373 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,374 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,374 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,375 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,376 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,377 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,378 ERROR com.ecosys.service.IntegratorBase.logError:95 -  , Object was ignored due to defined filter - 
+2021-07-17 18:17:02,379 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 0, Failed Items = 43
+2021-07-17 18:17:02,380 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Hours Import completed
+2021-07-17 18:17:02,380 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Dates Import...
+2021-07-17 18:17:02,380 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : null
+2021-07-17 18:17:02,380 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | WBS ID     | Start Date | End Date  
+2021-07-17 18:17:02,382 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.1 | 1          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:17:02,384 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.2 | 2          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:17:02,385 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.1 | 1          | Mon Jun 28 08:00:00 IST 2021 | Mon Jun 28 17:00:00 IST 2021
+2021-07-17 18:17:02,386 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.2 | 2          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 08:15:00 IST 2021
+2021-07-17 18:17:02,386 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.3 | 3          | Tue Jun 29 08:15:00 IST 2021 | Tue Jun 29 08:30:00 IST 2021
+2021-07-17 18:17:02,387 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.4 | 4          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 17:00:00 IST 2021
+2021-07-17 18:17:02,388 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.6 | 6          | Tue Jun 29 08:30:00 IST 2021 | Tue Jun 29 10:30:00 IST 2021
+2021-07-17 18:17:02,389 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.3.8 | 8          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:17:02,390 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.2 | 2          | Tue Jul 14 16:00:00 IST 2020 | Tue Jul 14 17:00:00 IST 2020
+2021-07-17 18:17:02,390 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.1.4.7 | 7          | Mon Jul 12 14:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:17:02,391 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.1 | 1          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:17:02,392 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.50 | 50         | Mon Jul 12 08:00:00 IST 2021 | Mon Jul 12 12:00:00 IST 2021
+2021-07-17 18:17:02,393 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.2.2.51 | 51         | Mon Jul 12 13:00:00 IST 2021 | Tue Jul 13 12:00:00 IST 2021
+2021-07-17 18:17:02,393 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.1 | 1          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:17:02,394 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.2 | 2          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:17:02,395 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.50 | 50         | Tue Jul 13 13:00:00 IST 2021 | Wed Aug 11 10:00:00 IST 2021
+2021-07-17 18:17:02,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.51 | 51         | Wed Aug 11 10:00:00 IST 2021 | Tue Aug 17 14:00:00 IST 2021
+2021-07-17 18:17:02,396 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.52 | 52         | Tue Aug 17 14:00:00 IST 2021 | Tue Aug 24 10:30:00 IST 2021
+2021-07-17 18:17:02,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.53 | 53         | Tue Aug 24 10:30:00 IST 2021 | Wed Aug 25 08:45:00 IST 2021
+2021-07-17 18:17:02,397 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.54 | 54         | Wed Aug 25 08:45:00 IST 2021 | Wed Aug 25 09:45:00 IST 2021
+2021-07-17 18:17:02,398 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.56 | 56         | Wed Aug 25 09:45:00 IST 2021 | Fri Sep 03 14:45:00 IST 2021
+2021-07-17 18:17:02,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.57 | 57         | Fri Sep 03 14:45:00 IST 2021 | Tue Sep 14 13:45:00 IST 2021
+2021-07-17 18:17:02,399 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.58 | 58         | Tue Sep 14 13:45:00 IST 2021 | Wed Sep 15 11:00:00 IST 2021
+2021-07-17 18:17:02,400 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.59 | 59         | Wed Sep 15 11:00:00 IST 2021 | Wed Sep 15 12:00:00 IST 2021
+2021-07-17 18:17:02,401 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.61 | 61         | Mon Jul 19 08:00:00 IST 2021 | Mon Jul 26 10:00:00 IST 2021
+2021-07-17 18:17:02,401 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.62 | 62         | Wed Sep 15 13:00:00 IST 2021 | Mon Oct 04 14:00:00 IST 2021
+2021-07-17 18:17:02,402 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.63 | 63         | Mon Oct 04 14:00:00 IST 2021 | Mon Oct 11 14:00:00 IST 2021
+2021-07-17 18:17:02,402 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.64 | 64         | Mon Oct 11 14:00:00 IST 2021 | Tue Oct 12 10:00:00 IST 2021
+2021-07-17 18:17:02,403 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.65 | 65         | Tue Oct 12 10:00:00 IST 2021 | Tue Oct 12 12:00:00 IST 2021
+2021-07-17 18:17:02,403 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.2 | 2          | Tue Jul 13 13:00:00 IST 2021 | Tue Jul 13 17:00:00 IST 2021
+2021-07-17 18:17:02,404 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.1 | 1          | Tue Oct 12 13:00:00 IST 2021 | Tue Oct 19 12:00:00 IST 2021
+2021-07-17 18:17:02,404 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.5.30.6.2 | 2          | Tue Oct 19 13:00:00 IST 2021 | Wed Oct 20 11:16:24 IST 2021
+2021-07-17 18:17:02,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.6.10.5 | 5          | Wed Oct 20 11:16:24 IST 2021 | Thu Oct 28 14:16:24 IST 2021
+2021-07-17 18:17:02,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.AIRP1067CON.1.7 | 7          | Fri May 01 08:00:00 IST 2020 | Fri May 01 17:00:00 IST 2020
+2021-07-17 18:17:02,406 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 34
+2021-07-17 18:17:02,408 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudgetDates - batch size: 2000 - true
+2021-07-17 18:17:02,408 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:34
+2021-07-17 18:17:02,949 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:17:03,011 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,61EB00103DA749D20E98466C59D8D0BC
+2021-07-17 18:17:03,012 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudgetDates - elapsed time: PT0.603S for 34 records
+2021-07-17 18:17:03,012 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudgetDates - elapsed time: PT0.604S
+2021-07-17 18:17:03,153 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:17:03,154 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,154 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,154 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,154 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,154 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,155 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,155 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,155 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,155 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,155 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,156 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,156 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,156 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,156 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,156 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,157 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,157 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,157 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,157 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,157 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,157 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,158 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,158 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,158 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,158 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,158 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,159 ERROR com.ecosys.service.IntegratorBase.logError:95 -  
+2021-07-17 18:17:03,160 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 0, Failed Items = 34
+2021-07-17 18:17:03,160 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Dates Import completed
+2021-07-17 18:17:03,160 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-07-17 18:17:03,164 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-07-17 18:17:03,165 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:87
+2021-07-17 18:17:03,953 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:17:03,996 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,0B193A38B6D6CE26BE276746AA5657E0
+2021-07-17 18:17:03,996 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.831S for 87 records
+2021-07-17 18:17:03,997 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.832S
+2021-07-17 18:17:04,137 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:17:04,139 INFO  com.ecosys.startup.MppBudgetImport.main:46 - Completed Budget Import Process... P0000-00-00T00:05:51.151
+2021-07-17 18:18:03,952 INFO  com.ecosys.startup.MppBudgetImport.main:30 - Start Import Budget from Microsoft Project file
+2021-07-17 18:18:04,446 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:18:04,450 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:18:05,902 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:18:05,905 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,92C8A579F1F3833731C64BE098589B65
+2021-07-17 18:18:06,046 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:18:06,199 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:18:06,200 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:18:06,554 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:18:06,554 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,DB12D60D0DF4037DDFE08BA853CC0A5C
+2021-07-17 18:18:06,705 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:18:06,706 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-1 : AIRP1067CON
+2021-07-17 18:18:06,706 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-2 : 43621
+2021-07-17 18:18:06,706 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:18:07,253 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:18:07,254 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:18:07,255 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,6EE7DC74598B827BD6E14DDD3772C9C1
+2021-07-17 18:18:07,394 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:18:18,277 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Starting validation
+2021-07-17 18:18:18,278 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:18:19,061 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:18:19,062 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:18:19,062 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,631CB69E8A5FBB81AEA83E77C3CA4A73
+2021-07-17 18:18:19,200 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:18:29,343 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Total Custom Fields : 6
+2021-07-17 18:18:29,343 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Valdation Ends
+2021-07-17 18:18:29,343 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Hours Import...
+2021-07-17 18:18:29,343 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : null
+2021-07-17 18:18:29,344 ERROR com.ecosys.service.IntegratorBase.logError:88 - com.ecosys.exception.SystemException: WBS Path ID Formula not defined correctly in mpp file
+2021-07-17 18:18:29,344 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Import Terminated due to Errors
+2021-07-17 18:18:29,344 INFO  com.ecosys.service.BatchQueueMgrImpl.info:? - Update Task Status to Error for 24803
+2021-07-17 18:18:29,345 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueUpdate - batch size: 2000 - true
+2021-07-17 18:18:29,345 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:1
+2021-07-17 18:18:29,829 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:18:29,863 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,DBFFD666230A5CB89950999BE5D2348C
+2021-07-17 18:18:29,871 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueUpdate - elapsed time: PT0.518S for 1 records
+2021-07-17 18:18:29,871 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueUpdate - elapsed time: PT0.526S
+2021-07-17 18:18:30,009 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:18:30,009 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-07-17 18:18:30,012 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-07-17 18:18:30,012 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:5
+2021-07-17 18:18:30,672 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:18:30,704 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,36C6192312A982E02D2A9CCBBB9B5B98
+2021-07-17 18:18:30,704 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.692S for 5 records
+2021-07-17 18:18:30,705 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.692S
+2021-07-17 18:18:30,843 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:14,009 INFO  com.ecosys.startup.MppBudgetImport.main:30 - Start Import Budget from Microsoft Project file
+2021-07-17 18:21:14,494 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:21:14,498 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:21:15,822 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:15,824 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,3E10391986AB84B41C45BD5F21B44D6E
+2021-07-17 18:21:15,967 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:16,136 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:21:16,136 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:21:16,754 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:16,755 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,3258457A576D70CA6B55FE352F09D728
+2021-07-17 18:21:16,901 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:16,904 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-1 : AIRP1067CON
+2021-07-17 18:21:16,904 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-2 : 43621
+2021-07-17 18:21:16,905 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:21:17,501 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:17,501 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:21:17,504 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,8748E453680971F037A3D9DA276C5DD6
+2021-07-17 18:21:17,643 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:28,158 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Starting validation
+2021-07-17 18:21:28,158 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:21:28,756 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:28,757 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:21:28,757 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,FFDDA801A80E13D4B6C225846307FD12
+2021-07-17 18:21:28,895 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:40,400 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Total Custom Fields : 6
+2021-07-17 18:21:40,400 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Valdation Ends
+2021-07-17 18:21:40,400 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Hours Import...
+2021-07-17 18:21:40,401 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : AIRP1067CON.
+2021-07-17 18:21:40,401 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | Description                                                  | WBS ID     | Ext Key         | Res Details                         | Budget Hours
+2021-07-17 18:21:40,403 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.1         | Project Meetings                                             | 1          | AIRP1067CON.380 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:21:40,404 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.2         | Monitor and Control                                          | 2          | AIRP1067CON.379 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:21:40,404 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.1       | Review SOW                                                   | 1          | AIRP1067CON.15  | Summer Bailey, sbailey              | 0.5       
+2021-07-17 18:21:40,404 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.2       | Schedule Sales Transition Meeting                            | 2          | AIRP1067CON.14  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:21:40,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.3       | Schedule Internal Kick-Off                                   | 3          | AIRP1067CON.13  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:21:40,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.4       | Setup Project Internally                                     | 4          | AIRP1067CON.370 | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:21:40,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.6       | Complete External Project Kick-Off Materials                 | 6          | AIRP1067CON.22  | Summer Bailey, sbailey              | 2.0       
+2021-07-17 18:21:40,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.8       | Complete Project Schedule for PM, PLAN, and DEFINE phases    | 8          | AIRP1067CON.344 | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:21:40,406 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.2       | Hold Project Kick-Off Meeting with Customer                  | 2          | AIRP1067CON.52  | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:21:40,406 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.7       | Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | 7          | AIRP1067CON.96  | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:21:40,406 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.1         | Project Meetings                                             | 1          | AIRP1067CON.48  | null, null                          | 10.0      
+2021-07-17 18:21:40,406 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.50      | Define RTM                                                   | 50         | AIRP1067CON.2245 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:21:40,406 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.50      | Define RTM                                                   | 50         | AIRP1067CON.2245 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:21:40,407 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.51      | Document STS                                                 | 51         | AIRP1067CON.2244 | A.D. Nath, anath                    | 8.0       
+2021-07-17 18:21:40,407 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.51      | Document STS                                                 | 51         | AIRP1067CON.2244 | Rajesh Chandwani, rchandwa          | 8.0       
+2021-07-17 18:21:40,407 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.1         | Project Meetings                                             | 1          | AIRP1067CON.395 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:21:40,408 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.2         | Technical Lead or Lead Consultant Oversight                  | 2          | AIRP1067CON.127 | A.D. Nath, anath                    | 40.0      
+2021-07-17 18:21:40,408 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.50        | Processor - File Handling                                    | 50         | AIRP1067CON.2286 | Rajesh Chandwani, rchandwa          | 88.0      
+2021-07-17 18:21:40,408 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.51        | Processor - Call SMAT APIs                                   | 51         | AIRP1067CON.2287 | Rajesh Chandwani, rchandwa          | 28.0      
+2021-07-17 18:21:40,408 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.52        | Processor - Document and Unit Test                           | 52         | AIRP1067CON.2288 | Rajesh Chandwani, rchandwa          | 30.0      
+2021-07-17 18:21:40,409 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.53        | Processor - Review Prep                                      | 53         | AIRP1067CON.2289 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:21:40,409 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.54        | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:21:40,409 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.54        | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:21:40,409 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.56        | Queue Manager - Build                                        | 56         | AIRP1067CON.2278 | Rajesh Chandwani, rchandwa          | 48.0      
+2021-07-17 18:21:40,409 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.57        | Queue Manager - Document and Unit Test                       | 57         | AIRP1067CON.2277 | Rajesh Chandwani, rchandwa          | 44.0      
+2021-07-17 18:21:40,409 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.58        | Queue Manager - Review Prep                                  | 58         | AIRP1067CON.2276 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:21:40,410 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.59        | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:21:40,410 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.59        | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:21:40,410 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.61        | SPF - Build API                                              | 61         | AIRP1067CON.2275 | Tom Black, rtblack                  | 42.0      
+2021-07-17 18:21:40,410 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.62        | SPF - Call API                                               | 62         | AIRP1067CON.2274 | Rajesh Chandwani, rchandwa          | 84.0      
+2021-07-17 18:21:40,410 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.63        | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Rajesh Chandwani, rchandwa          | 20.0      
+2021-07-17 18:21:40,411 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.63        | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Tom Black, rtblack                  | 20.0      
+2021-07-17 18:21:40,411 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.64        | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:21:40,411 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.64        | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Tom Black, rtblack                  | 4.0       
+2021-07-17 18:21:40,411 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | A.D. Nath, anath                    | 2.0       
+2021-07-17 18:21:40,412 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Rajesh Chandwani, rchandwa          | 2.0       
+2021-07-17 18:21:40,412 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Tom Black, rtblack                  | 2.0       
+2021-07-17 18:21:40,412 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.2      | Create E2E Test Scripts (Utilize User Procedures or Use Case Lists) | 2          | AIRP1067CON.264 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:21:40,412 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.1    |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | Rajesh Chandwani, rchandwa          | 16.0      
+2021-07-17 18:21:40,412 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.1    |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | A.D. Nath, anath                    | 16.0      
+2021-07-17 18:21:40,413 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.2    |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:21:40,413 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.2    |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:21:40,413 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.6.10.5      | Deploy Solution to INTEG Environment                         | 5          | AIRP1067CON.620 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:21:40,413 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 43
+2021-07-17 18:21:40,415 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudget - batch size: 2000 - true
+2021-07-17 18:21:40,415 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:43
+2021-07-17 18:21:41,187 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:41,228 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2D8105823CE108FA754C23E8CF5CD1C3
+2021-07-17 18:21:41,236 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudget - elapsed time: PT0.813S for 43 records
+2021-07-17 18:21:41,236 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudget - elapsed time: PT0.821S
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832665 Created
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832666 Created
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832667 Created
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832668 Created
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832669 Created
+2021-07-17 18:21:41,373 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832670 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832671 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832672 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832673 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832674 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832675 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832676 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832677 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832678 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832679 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832680 Created
+2021-07-17 18:21:41,374 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832681 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832682 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832683 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832684 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832685 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832686 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832687 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832688 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832689 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832690 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832691 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832692 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832693 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832694 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832695 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832696 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832697 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832698 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832699 Created
+2021-07-17 18:21:41,375 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832700 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832701 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832702 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832703 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832704 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832705 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832706 Created
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832707 Created
+2021-07-17 18:21:41,376 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 43, Failed Items = 0
+2021-07-17 18:21:41,376 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Hours Import completed
+2021-07-17 18:21:41,376 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Dates Import...
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : AIRP1067CON.
+2021-07-17 18:21:41,376 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | WBS ID     | Start Date | End Date  
+2021-07-17 18:21:41,377 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.1         | 1          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:21:41,379 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.2         | 2          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:21:41,380 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.1       | 1          | Mon Jun 28 08:00:00 IST 2021 | Mon Jun 28 17:00:00 IST 2021
+2021-07-17 18:21:41,380 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.2       | 2          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 08:15:00 IST 2021
+2021-07-17 18:21:41,381 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.3       | 3          | Tue Jun 29 08:15:00 IST 2021 | Tue Jun 29 08:30:00 IST 2021
+2021-07-17 18:21:41,381 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.4       | 4          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 17:00:00 IST 2021
+2021-07-17 18:21:41,382 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.6       | 6          | Tue Jun 29 08:30:00 IST 2021 | Tue Jun 29 10:30:00 IST 2021
+2021-07-17 18:21:41,383 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.8       | 8          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:21:41,383 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.2       | 2          | Tue Jul 14 16:00:00 IST 2020 | Tue Jul 14 17:00:00 IST 2020
+2021-07-17 18:21:41,384 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.7       | 7          | Mon Jul 12 14:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:21:41,384 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.1         | 1          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:21:41,385 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.50      | 50         | Mon Jul 12 08:00:00 IST 2021 | Mon Jul 12 12:00:00 IST 2021
+2021-07-17 18:21:41,385 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.51      | 51         | Mon Jul 12 13:00:00 IST 2021 | Tue Jul 13 12:00:00 IST 2021
+2021-07-17 18:21:41,386 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.1         | 1          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:21:41,386 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.2         | 2          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:21:41,386 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.50        | 50         | Tue Jul 13 13:00:00 IST 2021 | Wed Aug 11 10:00:00 IST 2021
+2021-07-17 18:21:41,387 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.51        | 51         | Wed Aug 11 10:00:00 IST 2021 | Tue Aug 17 14:00:00 IST 2021
+2021-07-17 18:21:41,387 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.52        | 52         | Tue Aug 17 14:00:00 IST 2021 | Tue Aug 24 10:30:00 IST 2021
+2021-07-17 18:21:41,387 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.53        | 53         | Tue Aug 24 10:30:00 IST 2021 | Wed Aug 25 08:45:00 IST 2021
+2021-07-17 18:21:41,388 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.54        | 54         | Wed Aug 25 08:45:00 IST 2021 | Wed Aug 25 09:45:00 IST 2021
+2021-07-17 18:21:41,388 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.56        | 56         | Wed Aug 25 09:45:00 IST 2021 | Fri Sep 03 14:45:00 IST 2021
+2021-07-17 18:21:41,388 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.57        | 57         | Fri Sep 03 14:45:00 IST 2021 | Tue Sep 14 13:45:00 IST 2021
+2021-07-17 18:21:41,389 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.58        | 58         | Tue Sep 14 13:45:00 IST 2021 | Wed Sep 15 11:00:00 IST 2021
+2021-07-17 18:21:41,389 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.59        | 59         | Wed Sep 15 11:00:00 IST 2021 | Wed Sep 15 12:00:00 IST 2021
+2021-07-17 18:21:41,389 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.61        | 61         | Mon Jul 19 08:00:00 IST 2021 | Mon Jul 26 10:00:00 IST 2021
+2021-07-17 18:21:41,390 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.62        | 62         | Wed Sep 15 13:00:00 IST 2021 | Mon Oct 04 14:00:00 IST 2021
+2021-07-17 18:21:41,390 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.63        | 63         | Mon Oct 04 14:00:00 IST 2021 | Mon Oct 11 14:00:00 IST 2021
+2021-07-17 18:21:41,390 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.64        | 64         | Mon Oct 11 14:00:00 IST 2021 | Tue Oct 12 10:00:00 IST 2021
+2021-07-17 18:21:41,391 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | 65         | Tue Oct 12 10:00:00 IST 2021 | Tue Oct 12 12:00:00 IST 2021
+2021-07-17 18:21:41,391 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.2      | 2          | Tue Jul 13 13:00:00 IST 2021 | Tue Jul 13 17:00:00 IST 2021
+2021-07-17 18:21:41,391 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.1    | 1          | Tue Oct 12 13:00:00 IST 2021 | Tue Oct 19 12:00:00 IST 2021
+2021-07-17 18:21:41,391 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.2    | 2          | Tue Oct 19 13:00:00 IST 2021 | Wed Oct 20 11:16:24 IST 2021
+2021-07-17 18:21:41,392 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.6.10.5      | 5          | Wed Oct 20 11:16:24 IST 2021 | Thu Oct 28 14:16:24 IST 2021
+2021-07-17 18:21:41,392 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.7           | 7          | Fri May 01 08:00:00 IST 2020 | Fri May 01 17:00:00 IST 2020
+2021-07-17 18:21:41,392 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 34
+2021-07-17 18:21:41,394 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudgetDates - batch size: 2000 - true
+2021-07-17 18:21:41,394 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:34
+2021-07-17 18:21:43,609 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:43,649 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,CCC102D567A853B99B537CD33F04B331
+2021-07-17 18:21:43,649 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudgetDates - elapsed time: PT2.255S for 34 records
+2021-07-17 18:21:43,649 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudgetDates - elapsed time: PT2.255S
+2021-07-17 18:21:43,794 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43994 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43995 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44025 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44026 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44027 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44028 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44029 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44030 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44033 Created
+2021-07-17 18:21:43,795 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44034 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43998 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44035 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44036 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44000 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44001 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44002 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44003 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44004 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44005 Created
+2021-07-17 18:21:43,796 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44006 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44008 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44009 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44010 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44011 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44013 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44014 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44015 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44016 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44017 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44037 Created
+2021-07-17 18:21:43,797 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44049 Created
+2021-07-17 18:21:43,798 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44050 Created
+2021-07-17 18:21:43,798 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44042 Created
+2021-07-17 18:21:43,798 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43635 Created
+2021-07-17 18:21:43,798 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 34, Failed Items = 0
+2021-07-17 18:21:43,798 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Dates Import completed
+2021-07-17 18:21:43,798 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-07-17 18:21:43,800 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-07-17 18:21:43,800 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:10
+2021-07-17 18:21:44,397 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:21:44,432 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,A8B1BD136D0A31014E112C6829B3EED2
+2021-07-17 18:21:44,432 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.632S for 10 records
+2021-07-17 18:21:44,432 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.632S
+2021-07-17 18:21:44,610 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:21:44,611 INFO  com.ecosys.startup.MppBudgetImport.main:46 - Completed Budget Import Process... P0000-00-00T00:00:30.641
+2021-07-17 18:22:56,345 INFO  com.ecosys.startup.MppBudgetImport.main:30 - Start Import Budget from Microsoft Project file
+2021-07-17 18:22:56,813 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:22:56,817 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:22:58,189 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:22:58,192 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,9B99561FDA4A060F0B5C9718966F9F11
+2021-07-17 18:22:58,334 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:22:58,488 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:https://ipm.devdemo.hexagonppm.com:443/ecosys/api,BatchQueueRead
+2021-07-17 18:22:58,489 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=24803
+2021-07-17 18:22:58,872 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:22:58,873 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,9CF02BA02BE0E184D136C2EFC4F437CE
+2021-07-17 18:22:59,012 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:22:59,015 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-1 : AIRP1067CON
+2021-07-17 18:22:59,016 INFO  com.ecosys.service.IntegratorBase.getArguments:180 - Argument-2 : 43621
+2021-07-17 18:22:59,017 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:22:59,580 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:22:59,580 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:22:59,581 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,79F21D849F81AF2ABDA2EBA805ACA6AE
+2021-07-17 18:22:59,730 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:23:09,985 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Starting validation
+2021-07-17 18:23:09,985 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:https://ipm.devdemo.hexagonppm.com:443/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=43621
+2021-07-17 18:23:10,518 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:23:10,518 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:255 - HTTP status code: 200
+2021-07-17 18:23:10,519 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,8E3A1D3C76DE53C3A6408EE22D386319
+2021-07-17 18:23:10,656 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:23:21,821 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Total Custom Fields : 6
+2021-07-17 18:23:21,821 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Valdation Ends
+2021-07-17 18:23:21,821 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Hours Import...
+2021-07-17 18:23:21,822 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : AIRP1067CON.
+2021-07-17 18:23:21,822 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | Description                                                  | WBS ID     | Ext Key         | Res Details                         | Budget Hours
+2021-07-17 18:23:21,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.1         | Project Meetings                                             | 1          | AIRP1067CON.380 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:23:21,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.2         | Monitor and Control                                          | 2          | AIRP1067CON.379 | Summer Bailey, sbailey              | 30.5      
+2021-07-17 18:23:21,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.1       | Review SOW                                                   | 1          | AIRP1067CON.15  | Summer Bailey, sbailey              | 0.5       
+2021-07-17 18:23:21,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.2       | Schedule Sales Transition Meeting                            | 2          | AIRP1067CON.14  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:23:21,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.3       | Schedule Internal Kick-Off                                   | 3          | AIRP1067CON.13  | Summer Bailey, sbailey              | 0.25      
+2021-07-17 18:23:21,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.4       | Setup Project Internally                                     | 4          | AIRP1067CON.370 | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:23:21,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.6       | Complete External Project Kick-Off Materials                 | 6          | AIRP1067CON.22  | Summer Bailey, sbailey              | 2.0       
+2021-07-17 18:23:21,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.8       | Complete Project Schedule for PM, PLAN, and DEFINE phases    | 8          | AIRP1067CON.344 | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:23:21,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.2       | Hold Project Kick-Off Meeting with Customer                  | 2          | AIRP1067CON.52  | Summer Bailey, sbailey              | 1.0       
+2021-07-17 18:23:21,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.7       | Complete Project Schedule for DESIGN, BUILD, and DELIVER Phases | 7          | AIRP1067CON.96  | Summer Bailey, sbailey              | 3.0       
+2021-07-17 18:23:21,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.1         | Project Meetings                                             | 1          | AIRP1067CON.48  | null, null                          | 10.0      
+2021-07-17 18:23:21,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.50      | Define RTM                                                   | 50         | AIRP1067CON.2245 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:23:21,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.50      | Define RTM                                                   | 50         | AIRP1067CON.2245 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:23:21,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.51      | Document STS                                                 | 51         | AIRP1067CON.2244 | A.D. Nath, anath                    | 8.0       
+2021-07-17 18:23:21,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.51      | Document STS                                                 | 51         | AIRP1067CON.2244 | Rajesh Chandwani, rchandwa          | 8.0       
+2021-07-17 18:23:21,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.1         | Project Meetings                                             | 1          | AIRP1067CON.395 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:23:21,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.2         | Technical Lead or Lead Consultant Oversight                  | 2          | AIRP1067CON.127 | A.D. Nath, anath                    | 40.0      
+2021-07-17 18:23:21,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.50        | Processor - File Handling                                    | 50         | AIRP1067CON.2286 | Rajesh Chandwani, rchandwa          | 88.0      
+2021-07-17 18:23:21,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.51        | Processor - Call SMAT APIs                                   | 51         | AIRP1067CON.2287 | Rajesh Chandwani, rchandwa          | 28.0      
+2021-07-17 18:23:21,831 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.52        | Processor - Document and Unit Test                           | 52         | AIRP1067CON.2288 | Rajesh Chandwani, rchandwa          | 30.0      
+2021-07-17 18:23:21,831 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.53        | Processor - Review Prep                                      | 53         | AIRP1067CON.2289 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:23:21,831 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.54        | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:23:21,831 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.54        | Processor - Review Meeting                                   | 54         | AIRP1067CON.2291 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:23:21,831 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.56        | Queue Manager - Build                                        | 56         | AIRP1067CON.2278 | Rajesh Chandwani, rchandwa          | 48.0      
+2021-07-17 18:23:21,831 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.57        | Queue Manager - Document and Unit Test                       | 57         | AIRP1067CON.2277 | Rajesh Chandwani, rchandwa          | 44.0      
+2021-07-17 18:23:21,832 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.58        | Queue Manager - Review Prep                                  | 58         | AIRP1067CON.2276 | Rajesh Chandwani, rchandwa          | 5.0       
+2021-07-17 18:23:21,832 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.59        | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | A.D. Nath, anath                    | 1.0       
+2021-07-17 18:23:21,832 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.59        | Queue Manager - Review Meeting                               | 59         | AIRP1067CON.2292 | Rajesh Chandwani, rchandwa          | 1.0       
+2021-07-17 18:23:21,832 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.61        | SPF - Build API                                              | 61         | AIRP1067CON.2275 | Tom Black, rtblack                  | 42.0      
+2021-07-17 18:23:21,832 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.62        | SPF - Call API                                               | 62         | AIRP1067CON.2274 | Rajesh Chandwani, rchandwa          | 84.0      
+2021-07-17 18:23:21,832 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.63        | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Rajesh Chandwani, rchandwa          | 20.0      
+2021-07-17 18:23:21,833 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.63        | SPF - Document and Unit Test                                 | 63         | AIRP1067CON.2281 | Tom Black, rtblack                  | 20.0      
+2021-07-17 18:23:21,833 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.64        | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:23:21,833 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.64        | SPF - Review Build                                           | 64         | AIRP1067CON.2283 | Tom Black, rtblack                  | 4.0       
+2021-07-17 18:23:21,833 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | A.D. Nath, anath                    | 2.0       
+2021-07-17 18:23:21,833 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Rajesh Chandwani, rchandwa          | 2.0       
+2021-07-17 18:23:21,833 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | SPF - Review Meeting                                         | 65         | AIRP1067CON.2294 | Tom Black, rtblack                  | 2.0       
+2021-07-17 18:23:21,834 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.2      | Create E2E Test Scripts (Utilize User Procedures or Use Case Lists) | 2          | AIRP1067CON.264 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:23:21,834 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.1    |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | Rajesh Chandwani, rchandwa          | 16.0      
+2021-07-17 18:23:21,834 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.1    |  Execute and Update Test Scripts / Use Cases, Update Defect Log - E2E1 | 1          | AIRP1067CON.272 | A.D. Nath, anath                    | 16.0      
+2021-07-17 18:23:21,834 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.2    |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | Rajesh Chandwani, rchandwa          | 4.0       
+2021-07-17 18:23:21,834 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.2    |  Address and Test Defects - E2E1                             | 2          | AIRP1067CON.273 | A.D. Nath, anath                    | 4.0       
+2021-07-17 18:23:21,834 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.6.10.5      | Deploy Solution to INTEG Environment                         | 5          | AIRP1067CON.620 | Rajesh Chandwani, rchandwa          | 40.0      
+2021-07-17 18:23:21,835 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 43
+2021-07-17 18:23:21,837 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudget - batch size: 2000 - true
+2021-07-17 18:23:21,837 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:43
+2021-07-17 18:23:25,998 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:23:26,046 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,E91F75D883DFE1C7E57C3C3CC44F8212
+2021-07-17 18:23:26,055 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudget - elapsed time: PT4.209S for 43 records
+2021-07-17 18:23:26,055 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudget - elapsed time: PT4.218S
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832718 Created
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832719 Created
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832720 Created
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832721 Created
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832722 Created
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832723 Created
+2021-07-17 18:23:26,227 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832724 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832725 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832726 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832727 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832728 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832729 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832730 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832731 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832732 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832733 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832734 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832735 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832736 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832737 Created
+2021-07-17 18:23:26,228 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832738 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832739 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832740 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832741 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832742 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832743 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832744 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832745 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832746 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832747 Created
+2021-07-17 18:23:26,229 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832748 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832749 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832750 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832751 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832752 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832753 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832754 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832755 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832756 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832757 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832758 Created
+2021-07-17 18:23:26,230 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832759 Created
+2021-07-17 18:23:26,231 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 6832760 Created
+2021-07-17 18:23:26,231 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 43, Failed Items = 0
+2021-07-17 18:23:26,231 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Hours Import completed
+2021-07-17 18:23:26,231 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Begin Budget Dates Import...
+2021-07-17 18:23:26,231 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Project Prefix : AIRP1067CON.
+2021-07-17 18:23:26,231 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - WBS Path ID               | WBS ID     | Start Date | End Date  
+2021-07-17 18:23:26,232 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.1         | 1          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:23:26,234 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.2         | 2          | Tue Oct 12 09:00:00 IST 2021 | Fri Oct 15 17:00:00 IST 2021
+2021-07-17 18:23:26,235 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.1       | 1          | Mon Jun 28 08:00:00 IST 2021 | Mon Jun 28 17:00:00 IST 2021
+2021-07-17 18:23:26,235 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.2       | 2          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 08:15:00 IST 2021
+2021-07-17 18:23:26,236 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.3       | 3          | Tue Jun 29 08:15:00 IST 2021 | Tue Jun 29 08:30:00 IST 2021
+2021-07-17 18:23:26,236 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.4       | 4          | Tue Jun 29 08:00:00 IST 2021 | Tue Jun 29 17:00:00 IST 2021
+2021-07-17 18:23:26,237 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.6       | 6          | Tue Jun 29 08:30:00 IST 2021 | Tue Jun 29 10:30:00 IST 2021
+2021-07-17 18:23:26,237 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.3.8       | 8          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:23:26,238 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.2       | 2          | Tue Jul 14 16:00:00 IST 2020 | Tue Jul 14 17:00:00 IST 2020
+2021-07-17 18:23:26,238 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.1.4.7       | 7          | Mon Jul 12 14:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:23:26,239 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.1         | 1          | Wed Jul 07 08:00:00 IST 2021 | Mon Jul 12 17:00:00 IST 2021
+2021-07-17 18:23:26,239 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.50      | 50         | Mon Jul 12 08:00:00 IST 2021 | Mon Jul 12 12:00:00 IST 2021
+2021-07-17 18:23:26,240 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.2.2.51      | 51         | Mon Jul 12 13:00:00 IST 2021 | Tue Jul 13 12:00:00 IST 2021
+2021-07-17 18:23:26,240 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.1         | 1          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:23:26,241 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.2         | 2          | Tue Jul 13 13:00:00 IST 2021 | Fri Oct 29 12:00:00 IST 2021
+2021-07-17 18:23:26,241 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.50        | 50         | Tue Jul 13 13:00:00 IST 2021 | Wed Aug 11 10:00:00 IST 2021
+2021-07-17 18:23:26,242 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.51        | 51         | Wed Aug 11 10:00:00 IST 2021 | Tue Aug 17 14:00:00 IST 2021
+2021-07-17 18:23:26,242 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.52        | 52         | Tue Aug 17 14:00:00 IST 2021 | Tue Aug 24 10:30:00 IST 2021
+2021-07-17 18:23:26,243 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.53        | 53         | Tue Aug 24 10:30:00 IST 2021 | Wed Aug 25 08:45:00 IST 2021
+2021-07-17 18:23:26,243 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.54        | 54         | Wed Aug 25 08:45:00 IST 2021 | Wed Aug 25 09:45:00 IST 2021
+2021-07-17 18:23:26,244 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.56        | 56         | Wed Aug 25 09:45:00 IST 2021 | Fri Sep 03 14:45:00 IST 2021
+2021-07-17 18:23:26,244 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.57        | 57         | Fri Sep 03 14:45:00 IST 2021 | Tue Sep 14 13:45:00 IST 2021
+2021-07-17 18:23:26,245 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.58        | 58         | Tue Sep 14 13:45:00 IST 2021 | Wed Sep 15 11:00:00 IST 2021
+2021-07-17 18:23:26,245 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.59        | 59         | Wed Sep 15 11:00:00 IST 2021 | Wed Sep 15 12:00:00 IST 2021
+2021-07-17 18:23:26,246 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.61        | 61         | Mon Jul 19 08:00:00 IST 2021 | Mon Jul 26 10:00:00 IST 2021
+2021-07-17 18:23:26,246 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.62        | 62         | Wed Sep 15 13:00:00 IST 2021 | Mon Oct 04 14:00:00 IST 2021
+2021-07-17 18:23:26,246 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.63        | 63         | Mon Oct 04 14:00:00 IST 2021 | Mon Oct 11 14:00:00 IST 2021
+2021-07-17 18:23:26,247 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.64        | 64         | Mon Oct 11 14:00:00 IST 2021 | Tue Oct 12 10:00:00 IST 2021
+2021-07-17 18:23:26,247 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.65        | 65         | Tue Oct 12 10:00:00 IST 2021 | Tue Oct 12 12:00:00 IST 2021
+2021-07-17 18:23:26,248 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.2      | 2          | Tue Jul 13 13:00:00 IST 2021 | Tue Jul 13 17:00:00 IST 2021
+2021-07-17 18:23:26,248 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.1    | 1          | Tue Oct 12 13:00:00 IST 2021 | Tue Oct 19 12:00:00 IST 2021
+2021-07-17 18:23:26,248 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.5.30.6.2    | 2          | Tue Oct 19 13:00:00 IST 2021 | Wed Oct 20 11:16:24 IST 2021
+2021-07-17 18:23:26,249 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.6.10.5      | 5          | Wed Oct 20 11:16:24 IST 2021 | Thu Oct 28 14:16:24 IST 2021
+2021-07-17 18:23:26,249 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - AIRP1067CON.1.7           | 7          | Fri May 01 08:00:00 IST 2020 | Fri May 01 17:00:00 IST 2020
+2021-07-17 18:23:26,249 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Count of Items to create : 34
+2021-07-17 18:23:26,252 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPImportBudgetDates - batch size: 2000 - true
+2021-07-17 18:23:26,252 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:34
+2021-07-17 18:23:28,654 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:23:28,686 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,EE2C273623EF2AE07110FC6DEB4491A1
+2021-07-17 18:23:28,686 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPImportBudgetDates - elapsed time: PT2.434S for 34 records
+2021-07-17 18:23:28,686 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPImportBudgetDates - elapsed time: PT2.434S
+2021-07-17 18:23:28,825 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:23:28,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43994 Created
+2021-07-17 18:23:28,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43995 Created
+2021-07-17 18:23:28,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44025 Created
+2021-07-17 18:23:28,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44026 Created
+2021-07-17 18:23:28,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44027 Created
+2021-07-17 18:23:28,826 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44028 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44029 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44030 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44033 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44034 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43998 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44035 Created
+2021-07-17 18:23:28,827 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44036 Created
+2021-07-17 18:23:28,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44000 Created
+2021-07-17 18:23:28,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44001 Created
+2021-07-17 18:23:28,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44002 Created
+2021-07-17 18:23:28,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44003 Created
+2021-07-17 18:23:28,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44004 Created
+2021-07-17 18:23:28,828 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44005 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44006 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44008 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44009 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44010 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44011 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44013 Created
+2021-07-17 18:23:28,829 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44014 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44015 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44016 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44017 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44037 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44049 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44050 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 44042 Created
+2021-07-17 18:23:28,830 DEBUG com.ecosys.service.IntegratorBase.logDebug:123 - Budget Item : 43635 Created
+2021-07-17 18:23:28,830 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Total created Items = 34, Failed Items = 0
+2021-07-17 18:23:28,831 INFO  com.ecosys.service.IntegratorBase.logInfo:116 - Budget Dates Import completed
+2021-07-17 18:23:28,831 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-07-17 18:23:28,834 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-07-17 18:23:28,834 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:10
+2021-07-17 18:23:29,379 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-07-17 18:23:29,411 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,482D646BF97BA669161FE208EF098129
+2021-07-17 18:23:29,412 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.577S for 10 records
+2021-07-17 18:23:29,412 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.578S
+2021-07-17 18:23:29,549 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-07-17 18:23:29,550 INFO  com.ecosys.startup.MppBudgetImport.main:46 - Completed Budget Import Process... P0000-00-00T00:00:33.241

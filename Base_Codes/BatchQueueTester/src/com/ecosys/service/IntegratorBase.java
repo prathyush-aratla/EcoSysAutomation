@@ -1,8 +1,8 @@
 package com.ecosys.service;
-
-import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -23,9 +23,18 @@ import com.ecosys.getmprjfile.MSPGetMppFileStructureResultType;
 import com.ecosys.getmprjfile.MSPGetMppFileStructureType;
 import com.ecosys.properties.BatchQueueConstants;
 import com.ecosys.properties.GlobalConstants;
+import com.ecosys.resources.ResourcesResultType;
+import com.ecosys.resources.ResourcesType;
 import com.ecosys.rest.BatchQueueRead.BatchQueueReadType;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
+
+import net.sf.mpxj.CustomFieldContainer;
+import net.sf.mpxj.FieldType;
+import net.sf.mpxj.FieldTypeClass;
+import net.sf.mpxj.ProjectFile;
+import net.sf.mpxj.mpp.MPPReader;
+import net.sf.mpxj.reader.ProjectReader;
 
 
 public abstract class IntegratorBase {
@@ -119,6 +128,33 @@ public abstract class IntegratorBase {
 	
 	//Custom Implementations for client starts Here
 	
+	public static String padRight(String s, int n) {
+	     return String.format("%-" + n + "s", s);  
+	}
+
+	public static String padLeft(String s, int n) {
+	    return String.format("%" + n + "s", s);  
+	}
+	
+	protected List<ResourcesType> epcResources;
+	
+	
+	public List<ResourcesType> getEpcResources() {
+		
+		ClientResponse response = this.epcRestMgr.getAsApplicationXml(client, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_RESOURCE, null, null, true);
+//		this.logger.debug("HTTP status code: " + response.getStatus());
+		NewCookie sessionCookie = this.epcRestMgr.getSessionCookie(response);
+		if(sessionCookie != null)
+			this.epcRestMgr.logout(client, GlobalConstants.EPC_REST_Uri, sessionCookie);
+		
+		ResourcesResultType result = this.epcRestMgr.responseToObject(response,ResourcesResultType.class);
+		
+		epcResources = result.getResources();
+		
+		return epcResources;
+	}
+
+
 	protected XMLGregorianCalendar dateToXMLGregorianCalendar(Date dateToConvert) {
 		
 		XMLGregorianCalendar xmlDate = null;
@@ -128,7 +164,7 @@ public abstract class IntegratorBase {
 		try {
 			xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
 		} catch (Exception e) {
-			// TODO: handle exception
+
 			e.printStackTrace();
 		}
 		
@@ -148,6 +184,7 @@ public abstract class IntegratorBase {
 		return arguments;
 	}
 	
+	
 	// Method to return the Integration Type
 	protected String getIntegrationType(String taskInternalID) throws SystemException {
 		
@@ -159,7 +196,7 @@ public abstract class IntegratorBase {
 	}
 	
 	// Method to get MPP file - Period Specific
-	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException, IOException {
+	protected String getMPPFile (Client client, String projectID, String minorPeriodID) throws SystemException {
 		String mppFilePath = null;
 		
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
@@ -193,14 +230,13 @@ public abstract class IntegratorBase {
 				mppFilePath = uri.toString();
 				
 			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				System.exit(1);
 			}
 		}
 		else {
 			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
-			throw new SystemException("File not Found");
+			throw new SystemException("error100 : File not Found");
 			
 		}
 		
@@ -240,18 +276,127 @@ public abstract class IntegratorBase {
 				mppFilePath = uri.toString();
 				
 			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		else {
 			bqrt.setBatchQueueStatusID(GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
-			throw new SystemException("File not Found");
+			throw new SystemException("error100 : File not Found");
 			
 		}
 		
 		return mppFilePath;
 	}
+	
+	//Method to return the project object from the mpp file
+	protected ProjectFile getProjectFile(String mppFilePath) throws SystemException {
+		ProjectFile project = null;
+		
+		try {
+			InputStream input = new URL(mppFilePath).openStream();
+			ProjectReader reader = new MPPReader();
+			project = reader.read(input);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return project;
+		
+	}
 
+	//WBS Path builder to replace the MS Project Prefix code with EcoSys Project ID
+	protected String pathidBuilder(String costObjectID, String mppWbsPrefix, String mppWbsPath) throws SystemException{
+		String wbsPathID = "";
+		
+		try {
+			wbsPathID =costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + mppWbsPath.replace(mppWbsPrefix, "");
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return wbsPathID;
+	}
+	
+	//
+	protected boolean validateProjectFile (String filePath) throws SystemException {
+		
+		boolean bValid = false;
+		
+		try {
+			
+			InputStream input = new URL(filePath).openStream();
+			ProjectReader reader = new MPPReader();
+			ProjectFile project = reader.read(input);
+			
+			bValid = validateProjectFile(project);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			logError(e);
+			logInfo("Import Terminated due to Errors");
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
+			System.exit(1);
+			
+		}
+		
+		return bValid;
+	}
+	
+	//Method to validate the MS Project (mpp) file if the required custom attributes were defined
+	protected boolean validateProjectFile (ProjectFile mppFile) throws SystemException {
+		
+		boolean bValidfile = false;
+		boolean bResourceAlias = false;
+		boolean bWbspathid = false;
+		
+		try {
+			ProjectFile project = mppFile;
+			CustomFieldContainer atts = project.getCustomFields();		
+			FieldType resResourceAlias = atts.getFieldByAlias(FieldTypeClass.RESOURCE, GlobalConstants.MSP_CF_RESOURCEID);
+			FieldType tskWBSPathID = atts.getFieldByAlias(FieldTypeClass.TASK, GlobalConstants.MSP_CF_WBSPATHID);
+			
+			 
+			 if (resResourceAlias == null) {
+				 bResourceAlias = false;
+				 logError("Resource Alias custom field not defined in Resource Sheet of mpp File");
+				 throw new Exception("Resource Custom Field Not Defined");				 
+			 }
+			 else {
+				 bResourceAlias = true;
+			 }
+
+			 
+			 if (tskWBSPathID == null) {
+				 bWbspathid = false;
+				 logError("WBS Path ID custom field not defined in Task sheet of mpp File");
+				 throw new Exception("Task Custom Field Not Defined");				 
+			 }
+			 else {
+				 bWbspathid = true;
+			}
+			 
+			 if (bResourceAlias && bWbspathid) {
+				 bValidfile = true;
+			 }
+
+			logDebug("Total Custom Fields : " + String.valueOf(atts.size()));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			logError(e);
+			logInfo("Import Terminated due to Errors");
+			batchQueueMgr.updateTaskStatus(client, bqrt, GlobalConstants.BATCH_QUEUE_STATUS_ERROR);
+			batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
+			System.exit(1);
+			
+		}
+		
+		return bValidfile;
+	}
 
 }

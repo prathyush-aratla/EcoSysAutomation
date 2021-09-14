@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns="http://ecosys.net/api/MSPPutMppData" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ecosys.net/api/MSPPutMppData">
-    <xs:element name="MSPPutMppDataResult" type="MSPPutMppDataResultType"/>
-    <xs:complexType name="MSPPutMppDataResultType">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns="http://ecosys.net/api/Resources" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ecosys.net/api/Resources">
+    <xs:element name="ResourcesResult" type="ResourcesResultType"/>
+    <xs:complexType name="ResourcesResultType">
         <xs:sequence>
             <xs:element maxOccurs="1" minOccurs="0" name="Meta"/>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="MSPPutMppData" type="MSPPutMppDataType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Resources" type="ResourcesType"/>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="ObjectResult" type="ObjectResultType"/>
             <xs:element maxOccurs="1" minOccurs="0" name="Performance" type="PerformanceType"/>
             <xs:element maxOccurs="1" minOccurs="0" name="Error" type="ErrorType"/>
@@ -11,24 +11,21 @@
         <xs:attribute name="successFlag" type="xs:boolean"/>
         <xs:attribute name="schemaLocation" type="xs:string"/>
     </xs:complexType>
-    <xs:element name="MSPPutMppDataRequest" type="MSPPutMppDataRequestType"/>
-    <xs:complexType name="MSPPutMppDataRequestType">
+    <xs:element name="ResourcesRequest" type="ResourcesRequestType"/>
+    <xs:complexType name="ResourcesRequestType">
         <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="MSPPutMppData" type="MSPPutMppDataType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Resources" type="ResourcesType"/>
         </xs:sequence>
         <xs:attribute name="schemaLocation" type="xs:string"/>
     </xs:complexType>
-    <xs:complexType name="MSPPutMppDataType">
+    <xs:complexType name="ResourcesType">
         <xs:sequence>
-            <xs:element name="ObjectPathID" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="CostAccount" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="Resource" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="ResourceAlias" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="StartDate" type="xs:date"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="EndDate" type="xs:date"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="MPPETC" type="xs:double"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="TransactionTypeID" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="TransactionMinorPeriodName" type="xs:string"/>
+            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="ExternalKey" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="Active" type="xs:boolean"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="Email" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="ResourceTypeID" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="InternalID" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>

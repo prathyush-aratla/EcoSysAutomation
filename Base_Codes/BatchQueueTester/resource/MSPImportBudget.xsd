@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns="http://ecosys.net/api/MSPPutMppData" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ecosys.net/api/MSPPutMppData">
-    <xs:element name="MSPPutMppDataResult" type="MSPPutMppDataResultType"/>
-    <xs:complexType name="MSPPutMppDataResultType">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns="http://ecosys.net/api/MSPImportBudget" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ecosys.net/api/MSPImportBudget">
+    <xs:element name="MSPImportBudgetResult" type="MSPImportBudgetResultType"/>
+    <xs:complexType name="MSPImportBudgetResultType">
         <xs:sequence>
             <xs:element maxOccurs="1" minOccurs="0" name="Meta"/>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="MSPPutMppData" type="MSPPutMppDataType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="MSPImportBudget" type="MSPImportBudgetType"/>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="ObjectResult" type="ObjectResultType"/>
             <xs:element maxOccurs="1" minOccurs="0" name="Performance" type="PerformanceType"/>
             <xs:element maxOccurs="1" minOccurs="0" name="Error" type="ErrorType"/>
@@ -11,24 +11,29 @@
         <xs:attribute name="successFlag" type="xs:boolean"/>
         <xs:attribute name="schemaLocation" type="xs:string"/>
     </xs:complexType>
-    <xs:element name="MSPPutMppDataRequest" type="MSPPutMppDataRequestType"/>
-    <xs:complexType name="MSPPutMppDataRequestType">
+    <xs:element name="MSPImportBudgetRequest" type="MSPImportBudgetRequestType"/>
+    <xs:complexType name="MSPImportBudgetRequestType">
         <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="MSPPutMppData" type="MSPPutMppDataType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="MSPImportBudget" type="MSPImportBudgetType"/>
         </xs:sequence>
         <xs:attribute name="schemaLocation" type="xs:string"/>
     </xs:complexType>
-    <xs:complexType name="MSPPutMppDataType">
+    <xs:complexType name="MSPImportBudgetType">
         <xs:sequence>
             <xs:element name="ObjectPathID" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="CostAccount" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="Resource" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="ResourceAlias" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="WBSType" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="StartDate" type="xs:date"/>
             <xs:element maxOccurs="1" minOccurs="0" name="EndDate" type="xs:date"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="MPPETC" type="xs:double"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="Hours" type="xs:double"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="Cost" type="xs:double"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="Currency" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="VersionID" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="FundingTypeID" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="OriginalBudgetID" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="TransactionTypeID" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="0" name="TransactionMinorPeriodName" type="xs:string"/>
             <xs:element maxOccurs="1" minOccurs="0" name="InternalID" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>

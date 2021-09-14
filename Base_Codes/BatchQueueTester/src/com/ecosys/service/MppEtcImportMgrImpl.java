@@ -1,84 +1,121 @@
 package com.ecosys.service;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import com.ecosys.ImportETC.MSPPutMppDataRequestType;
+import com.ecosys.ImportETC.MSPPutMppDataResultType;
+import com.ecosys.ImportETC.MSPPutMppDataType;
+
 import com.ecosys.exception.SystemException;
-import com.ecosys.mpupdateetc.MSPPutMppDataRequestType;
-import com.ecosys.mpupdateetc.MSPPutMppDataResultType;
-import com.ecosys.mpupdateetc.MSPPutMppDataType;
 import com.ecosys.properties.GlobalConstants;
 
-import net.sf.mpxj.MPXJException;
 import net.sf.mpxj.ProjectFile;
 import net.sf.mpxj.Resource;
 import net.sf.mpxj.ResourceAssignment;
 import net.sf.mpxj.Task;
-import net.sf.mpxj.mpp.MPPReader;
-import net.sf.mpxj.reader.ProjectReader;
+
 
 public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr  {
 	
-	String costObjectID = ""; 
+	String costObjectID , costObjectInternalID, minorPeriodID ;
+	String mppFilePath;
+	ProjectFile mppProject;
 	
 	public void test() throws SystemException {
-		process("23755");
+		process("23567");
 	}
 	
 	public void process(String taskInternalID) throws SystemException{
 		
 		if (client == null) setClient(epcRestMgr.createClient(GlobalConstants.EPC_REST_USERNAME, GlobalConstants.EPC_REST_PASSWORD));
 		if (bqrt == null) setBqrt(this.batchQueueMgr.readTask(client, taskInternalID));
-		String arguments[] = getArguments(taskInternalID);
 		
+		String arguments[] = getArguments(taskInternalID);
 		costObjectID = arguments[0];
-		logInfo("Progress Import begins...");
-		importETCHours(arguments[1], arguments[2]);
-		logInfo("Progress Import ends...");
+		costObjectInternalID = arguments[1];
+		minorPeriodID = arguments[2];
+		
+		mppFilePath = getMPPFile(client, costObjectInternalID, minorPeriodID);
+		mppProject = getProjectFile(mppFilePath);
+		
+		boolean bvalidFile;
+		
+		
+		logInfo("Validating Import file...");
+		bvalidFile = validateProjectFile(mppProject);		
+		logInfo("Validation ends");
+		
+		if (bvalidFile) {			
+			logInfo("ETC Import begins...");
+			importETCHours(mppProject);
+			logInfo("ETC Import completed");		
+		}
+
 		batchQueueMgr.logBatchQueue(client, this.loggerList, GlobalConstants.EPC_REST_Uri);
 	}
 
 	//Method to update Estimate-To-Complete Hours in EcoSys from MPP File
-	private void importETCHours(String prjInternalID, String minorPeriodID) throws SystemException {
-		
-		// TODO Auto-generated method stub
+	private void importETCHours(ProjectFile mppProjectFile) throws SystemException {
 		
 		List<MSPPutMppDataType> lstETCRecords = new ArrayList<MSPPutMppDataType>();
-		String mppFilePath;
+		
+		ProjectFile project = mppProjectFile;
+		String mppProjectPrefix;
+		Task rootTask;
+		
 		try {
-			mppFilePath = getMPPFile(client, prjInternalID, minorPeriodID);
-			InputStream input = new URL(mppFilePath).openStream();
-			ProjectReader reader = new MPPReader();
-			ProjectFile project = reader.read(input);
+			rootTask = project.getTaskByID(Integer.valueOf(0));
+			mppProjectPrefix = String.valueOf(rootTask.getFieldByAlias("WBS Path ID"));
+			logDebug("Project Prefix : " + mppProjectPrefix);
+			if (mppProjectPrefix == "null") {
+				throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+			}
+			
+			logDebug(
+					padRight("WBS Path ID", 25)  + " | " +
+					padRight("Description", 75)  + " | " +
+					padRight("WBS ID", 10)  + " | " +
+					padRight("Ext Key", 10)  + " | " +
+					padRight("Res. Count", 10)  + " | " +
+					padRight("Rem. Hours", 10)  );
 			
 			for(Task task : project.getTasks()) {
 				
-				if (task.getResourceAssignments().size() > 0 & task.getActive() == true ) {
-					
-					String resourceName = "", resourceAlias = "", strWBS = "", wbsPathID = "", origWBS= "";
-					int resCount;
-					double totalRemHrs;
-					
-					Date startDate = task.getStart();
-					Date endDate = task.getFinish();
-					
-					origWBS = task.getWBS();
-					strWBS = task.getParentTask().getWBS();
-					
-					if(strWBS.contains(costObjectID)) {
-						wbsPathID = strWBS;
-					}
-					else {
-						wbsPathID = costObjectID + GlobalConstants.EPC_HIERARCHY_SEPARATOR + strWBS; 
-					}
-					
+				boolean bActive;
+				int resCount;
+				String strWBS , pathID , wbsID , wbsName, externalKey, resourceName = null, resourceAlias = null ;
+				Date startDate, endDate;
+				double totalRemHrs;
+				
+				bActive = task.getActive();
+				resCount = task.getResourceAssignments().size();
+				externalKey = costObjectID +GlobalConstants.EPC_HIERARCHY_SEPARATOR+ task.getUniqueID().toString();
+				startDate = task.getStart();
+				endDate = task.getFinish();
+				
+				
+				if ( bActive && resCount > 0 ) {
+					strWBS = (String) task.getFieldByAlias("WBS Path ID");
+					pathID = pathidBuilder(costObjectID, mppProjectPrefix, strWBS);
+					wbsID = pathID.substring(pathID.lastIndexOf(GlobalConstants.EPC_HIERARCHY_SEPARATOR) + 1);
+					wbsName = task.getName();
 					resCount = task.getResourceAssignments().size();			
 					totalRemHrs = Double.valueOf(task.getRemainingWork().toString().replace("h", ""));
+					
+					if (strWBS.equals("null")) {
+						throw new SystemException("WBS Path ID Formula not defined correctly in mpp file");
+					}
+					
+					logDebug(
+							padRight(pathID, 25)  + " | " +
+							padRight(wbsName, 75)  + " | " +
+							padRight(wbsID, 10)  + " | " +
+							padRight(externalKey, 10)  + " | " +
+							padRight(String.valueOf(resCount), 10)  + " | " +
+							padRight(String.valueOf(totalRemHrs), 10)  );
 					
 					if (totalRemHrs > 0) {
 						
@@ -91,18 +128,12 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 							if (objResource != null) {
 								
 								resourceName = String.valueOf(objResource.getName());	
-								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));							
+								resourceAlias = String.valueOf(objResource.getFieldByAlias("Resource Alias"));
 							}
-							
-							logDebug("Record Details : " + origWBS + ", " +
-											resourceName + ", " +
-											resourceAlias + ", " +
-											(totalRemHrs/resCount) + " hrs, " +
-											dateToXMLGregorianCalendar(startDate).toString() + ", " +
-											dateToXMLGregorianCalendar(endDate).toString());
-							
-							etcRecord.setObjectPathID(wbsPathID);
+													
+							etcRecord.setObjectPathID(pathID);
 							etcRecord.setResource(resourceAlias);
+							etcRecord.setResourceAlias(resourceName + ", " + resourceAlias);
 							etcRecord.setMPPETC(totalRemHrs/resCount);
 							etcRecord.setStartDate(dateToXMLGregorianCalendar(startDate));
 							etcRecord.setEndDate(dateToXMLGregorianCalendar(endDate));
@@ -113,14 +144,13 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 						
 					}
 					else {
-						logDebug("Resources in Path ID " + wbsPathID + " skipped due to no hours left.");
+						logDebug("Resources in Path ID " + pathID + " skipped due to no hours left.");
 					}
 				}	
 			}
 		}
 		
-		catch (SystemException | IOException | MPXJException e) {
-			// TODO: handle exception
+		catch (SystemException e) {
 			e.printStackTrace();
 			logError(e);
 			logInfo("Import Terminated due to Errors");
@@ -135,17 +165,17 @@ public class MppEtcImportMgrImpl extends IntegratorBase implements IntegratorMgr
 		
 		//Push ETC Records to EcoSys
 		HashMap<String, String> parameterMap = new HashMap<String, String>();
-		parameterMap.put("RootCostObject", prjInternalID);
+		parameterMap.put("RootCostObject", costObjectInternalID);
 		parameterMap.put("ProjectPeriod", minorPeriodID);
 		
 		List<MSPPutMppDataResultType>  resultList = this.epcRestMgr.postXMLRequestInBatch(client, lstETCRecords, MSPPutMppDataRequestType.class,
-				MSPPutMppDataResultType.class, com.ecosys.mpupdateetc.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEETC , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
+				MSPPutMppDataResultType.class, com.ecosys.ImportETC.ObjectFactory.class, GlobalConstants.EPC_REST_Uri, GlobalConstants.EPC_API_UPDATEETC , GlobalConstants.EPC_REST_BATCHSIZE, parameterMap, true);
 		
     	for(MSPPutMppDataResultType result : resultList) {
-			for(com.ecosys.mpupdateetc.ObjectResultType ort : result.getObjectResult()) {
+			for(com.ecosys.ImportETC.ObjectResultType ort : result.getObjectResult()) {
 				if(!ort.isSuccessFlag()) {
-					String message = this.epcRestMgr.getErrorMessage(com.ecosys.mpupdateetc.ObjectResultType.class, com.ecosys.mpupdateetc.ResultMessageType.class, ort);
-					logError(ort.getExternalId(), message);
+					String message = this.epcRestMgr.getErrorMessage(com.ecosys.ImportETC.ObjectResultType.class, com.ecosys.ImportETC.ResultMessageType.class, ort);
+					logError(ort.getExternalId() + " " +   message);
 					failCnt++;
 				}
 				else {

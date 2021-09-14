@@ -6,12 +6,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.ecosys.properties.AppProperties;
 import com.ecosys.service.IntegratorMgr;
-import com.ecosys.service.MppEtcImportMgrImpl;
+import com.ecosys.service.MppBudgetImportMgrImpl;
 import com.ecosys.util.Stopwatch;
 
-public class MppEtcImport {
+public class MppBudgetImport {
 	
-	protected static Logger logger = Logger.getLogger(MppEtcImport.class);
+	protected static Logger logger = Logger.getLogger(MppBudgetImport.class);
 	
 	private static ApplicationContext springctx;
 	@SuppressWarnings("unused")
@@ -27,13 +27,13 @@ public class MppEtcImport {
 		int error_code = 0;
 		
 		try {
-			logger.info("Start Import ETC from Microsoft Project file");
+			logger.info("Start Import Budget from Microsoft Project file");
 			
 			springctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 			
 			appProperties = (AppProperties) springctx.getBean("appProperties",AppProperties.class);
 			
-			IntegratorMgr mppImportMgr = (MppEtcImportMgrImpl) springctx.getBean("MppEtcImport", MppEtcImportMgrImpl.class);
+			IntegratorMgr mppImportMgr = (MppBudgetImportMgrImpl) springctx.getBean("MppBudgetImport", MppBudgetImportMgrImpl.class);
 			
 			if (args.length == 0 ) {
 				mppImportMgr.test();
@@ -43,7 +43,7 @@ public class MppEtcImport {
 				mppImportMgr.process(taskInternalID);
 			}
 			
-			logger.info("Completed ETC Import Process... " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
+			logger.info("Completed Budget Import Process... " + timerTotal.stop().toString(ISOPeriodFormat.alternateExtended()));	
 			
 			((ClassPathXmlApplicationContext) springctx).close();
 		}

@@ -1,0 +1,423 @@
+2021-06-07 18:56:46,076 INFO  com.ecosys.startup.MppWbsImport.main:30 - Start Import WBS from Microsoft Project file
+2021-06-07 18:56:46,557 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-07 18:56:46,562 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-07 18:56:46,755 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:46,756 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,C26F8EFFC7BD5B5D3F2F5699297BF587
+2021-06-07 18:56:46,779 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:46,942 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-07 18:56:46,942 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-07 18:56:46,997 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:46,997 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,B2E471D29980C171D67D7BFAD85CD41C
+2021-06-07 18:56:47,007 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:47,008 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-1 : PRX2
+2021-06-07 18:56:47,008 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-2 : 39280
+2021-06-07 18:56:47,008 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Starting update Project Structure...
+2021-06-07 18:56:47,009 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39280
+2021-06-07 18:56:47,390 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:47,391 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:241 - HTTP status code: 200
+2021-06-07 18:56:47,392 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,9B4A3DDE306CCE78A943D44BB28A71BB
+2021-06-07 18:56:47,402 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1, Name: Major Phase 1, CCL=
+2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1, Name: Site A, CCL=
+2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1.1, Name: Contr 1, CCL=Y
+2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1.2, Name: Contr 2, CCL=Y
+2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.1.3, Name: Contr 3, CCL=Y
+2021-06-07 18:56:47,881 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2, Name: Site B, CCL=
+2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.1, Name: Contr 1, CCL=Y
+2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.2, Name: Contr 2, CCL=Y
+2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3, Name: Contr 3, CCL=Y
+2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3.5, Name: Spill Way Works, CCL=
+2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3.5.1, Name: Contractor A, CCL=Y
+2021-06-07 18:56:47,882 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Record added - PathID: PRX2.1.2.3.5.2, Name: Contractor B, CCL=Y
+2021-06-07 18:56:47,882 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Count of WBS Items to Update: 12
+2021-06-07 18:56:47,885 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppStructure - batch size: 2000 - true
+2021-06-07 18:56:47,885 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:12
+2021-06-07 18:56:48,266 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:48,287 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,D5E962C120D6F6894309BAB1F4331E5C
+2021-06-07 18:56:48,300 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppStructure - elapsed time: PT0.402S for 12 records
+2021-06-07 18:56:48,301 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppStructure - elapsed time: PT0.416S
+2021-06-07 18:56:48,311 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:48,311 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39311 Created/Updated
+2021-06-07 18:56:48,311 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39312 Created/Updated
+2021-06-07 18:56:48,311 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39314 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39315 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39316 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39313 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39317 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39318 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 39319 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 40084 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 40085 Created/Updated
+2021-06-07 18:56:48,312 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Cost Object Internal ID : 40086 Created/Updated
+2021-06-07 18:56:48,313 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Total created Items = 12, Failed Items = 0
+2021-06-07 18:56:48,313 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Update project structure completed.
+2021-06-07 18:56:48,313 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-07 18:56:48,320 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-07 18:56:48,320 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-07 18:56:48,596 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:48,611 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,4E9F87EA007E98C9EB6B65CF98D9752D
+2021-06-07 18:56:48,611 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.291S for 4 records
+2021-06-07 18:56:48,611 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.291S
+2021-06-07 18:56:48,624 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:48,625 INFO  com.ecosys.startup.MppWbsImport.main:46 - Completed WBS Import Process... P0000-00-00T00:00:02.603
+2021-06-07 18:56:58,510 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-07 18:56:58,980 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-07 18:56:58,984 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
+2021-06-07 18:56:59,095 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:59,096 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,51C2CE7A44A132C2EAD6FD9758912EFB
+2021-06-07 18:56:59,109 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:59,264 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-07 18:56:59,265 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
+2021-06-07 18:56:59,313 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:59,314 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2C4A9999E22A88D09C38ABB5D3119DEB
+2021-06-07 18:56:59,324 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-1 : PRJ-000262
+2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-2 : 40285
+2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.getArguments:165 - Argument-3 : 666
+2021-06-07 18:56:59,325 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Progress Import begins...
+2021-06-07 18:56:59,326 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/Resources/
+2021-06-07 18:56:59,451 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:59,451 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,377B551535783DA0B91E626547CD0AB4
+2021-06-07 18:56:59,463 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lfabrant | ABRANTES Luiz | 6838
+2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - yadler | ADLER Yuval | 6054
+2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - admin | admin | 7866
+2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - raguirre | AGUIRRE Rodolfo | 6852
+2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - snakarap | AKARAPU Sailakshmi (Nikitha) | 5449
+2021-06-07 18:56:59,503 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rkakula | AKULA Rajeev K | 7869
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adsulliv-CFVIAHByTsSJwenvbGn+WQ | Alan SULLIVAN | 8864
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - daldunate | ALDUNATE Diego | 6806
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kpalexan | ALEXANDER Kevin P | 6076
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - raliaga | ALIAGA Ramiro | 6851
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jrpalmei | ALMEIDA Johnnathan | 6829
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bbalves | ALVES Bruno | 6824
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - taalves | ALVES Thiago | 6833
+2021-06-07 18:56:59,504 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - analyst-sa | Analyst SA | 7058
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bmankam | ANKAM Bindu M | 6062
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aparesource | APA Team Resource | 8060
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aapte | APTE Abhijit D | 5671
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - garakawa | ARAKAWA Gustavo | 5853
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - architect-sa | Architect SA | 7055
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aarenas | ARENAS Alberto | 6810
+2021-06-07 18:56:59,505 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aaristimuno | ARISTIMUNO Angelica | 6872
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - drasselt | ASSELTA Daniel | 6826
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - javila | AVILA Jorge | 6072
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dfazeved | AZEVEDO Danilo | 6827
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - gbackes | BACKES Georg | 5648
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sbailey1 | BAILEY Summer | 8866
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vbarabucci | BARABUCCI Virginia | 6860
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - obarrios | BARRIOS Oswaldo | 6808
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mbartel | BARTEL Mark | 8667
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kbashab | BASHABOINA Krishna | 7872
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jbaumer | BAUMER Joseph C (Joe) | 6073
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbaxter | BAXTER Ryan | 6081
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adbenavi | BENAVIDES Andres | 6861
+2021-06-07 18:56:59,506 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mfbeynon | BEYNON Michael F (Mike) | 6077
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mbhadbha | BHADBHADE Mithila | 5696
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ljbigott | BIGOTT CAMACHO Leonardo J | 7864
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbbillup | BILLUPS Robert (Brent) | 6082
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ebinder | BINDER Erica | 6069
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rtblack | BLACK Robert T (Tom) | 6084
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - BOM | Boilermaker | 1628
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pjbote | BOTE Pratap J | 7868
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ebotteri | BOTTERILL Ewan | 6254
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmbowlin | BOWLING John M | 5670
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbritton | BRITTON Rodney S | 5659
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bbrown | BROWN Bernard | 5851
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - tbrown | BROWN Thomas D | 5666
+2021-06-07 18:56:59,507 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - tsbrule | BRULE Tony S | 6088
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - csburrou | BURROUGHS Christopher S | 5852
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bcampodo | CAMPODONICO Bruno | 6884
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - acanero | CANERO Agustina | 6457
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcardenas | CARDENAS Jorge | 6854
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dcarey | CAREY Dennis M | 5678
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ncarr | CARR Neil | 6452
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ecarrasco | CARRASCO Eduardo | 6814
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fcastillo | CASTILLO Fernando | 6815
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - schalla | CHALLA Srinivas Reddy (Houston) | 6085
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rchandwa | CHANDWANI Rajesh | 6083
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pcheng | CHENG Patrick O (Pat) | 5701
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pchittip | CHITTIPEDDI Pavan Kumar | 5450
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - achumako | CHUMAKOVA Anna | 5859
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fciarlie | CIARLIERO Francisco | 6883
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lcifuent | CIFUENTES Luis | 6802
+2021-06-07 18:56:59,508 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - CV-ENG | Civil Engineer | 1637
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lcoderre | CODERRE Landen | 5694
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - CO-SUP | Construction Manager | 1634
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - consultant-sa | Consultant SA | 7056
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jacontat | CONTAT Jakob | 5683
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcontat | CONTAT Jared | 5684
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - flimadac | COSTA Flavio | 8463
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dcraig | CRAIG Danielle R | 5653
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcuadra | CUADRA J. Santos | 5660
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ndlcuadra | CUADRA Nicolas | 6820
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ecumming | CUMMING Eliana | 6876
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcupid | CUPID Jordan | 8061
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - CSM | Customer Success Manager | 5652
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vbdamerl | DAMERLA Venkata B | 7871
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sdaripal | DARIPALLI Sandeep Kumar | 6055
+2021-06-07 18:56:59,509 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - skdas | DAS Sanjeeb K | 5705
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vdavda | DAVDA Vikash | 6655
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mfdelgad | DELGADO OLIVEROS Maria F | 6078
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - andelogu | DELOGU Andrea | 6862
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pdepix | DEPIX Pablo | 6821
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adesilet | DESILETS Alexandre | 7859
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jodiaz | DIAZ Jorge | 6818
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ydiaz | DIAZ Yulexis | 6853
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - csdiniz | DINIZ Cassiano | 6835
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rdixon | DIXON Rebecca | 5702
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sdoosa | DOOSA Sudhakar | 8263
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bdunnam | DUNNAM Bryce | 7060
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jdunnam | DUNNAM Jan K | 5668
+2021-06-07 18:56:59,510 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rdwivedi | DWIVEDI Rajnish | 5856
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - EL-ENG | Electrical Engineer | 1641
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - EXT | External Resource | 221
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dfernandez | FERNANDEZ Diego | 6813
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jrfijas | FIJAS Jeffrey (Jeff) | 6075
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - amfoard | FOARD Adam M (Adam) | 5858
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cfogle | FOGLE Clare | 5675
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cfrost | FORSYTH Cath | 5850
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - agaray | GARAY Alejandro | 6257
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vgarcia1 | GARCIA Veronica | 8462
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jgarrido | GARRIDO Javier | 6817
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aghanem | GHANEM Amar | 6051
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hghumran | GHUMRAN Hassan | 6894
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - tdgianni | GIANNI Tiago | 6844
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - arbgil | GIL Andre | 6867
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - oglauber | GLAUBERMAN Olga | 6459
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - egonzalez | Gonzalez Efren | 6255
+2021-06-07 18:56:59,511 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kgrawe | GRAWE Kurt | 6855
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jkgriffi | GRIFFITH Jesse K | 6052
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rgrover | GROVER-MADHAVAN Rachna | 5703
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - srguirli | GUIRLINGER Scott R | 6086
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rguizzar | GUIZZARDI Rodrigo | 6841
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - agupta1 | GUPTA Aditya | 5451
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kgupta | GUPTA Ketan A | 5690
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vgupta | GUPTA Vineesh | 6893
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fguzman | GUZMAN Freddys | 6857
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ehaberla | HABERLACH Eduard (Eddie) | 6057
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - echaerr | HAERR Eugene (Chip) | 6070
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - whardin | HARDIN John W (Wes) | 6056
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - gharvey | HARVEY Gary | 5682
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sthassui | HASSUI Sergio | 6843
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ahernandez | HERNANDEZ Anabel | 6871
+2021-06-07 18:56:59,512 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ohernand | HERNANDEZ Oscar | 5658
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hsmit-OqYfFN+OSUKRVkHFBzp5Ng | Hugo Smit | 8063
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ahyche | HYCHE Adam | 6460
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc1 | IISDC Resource #1 | 5661
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc2 | IISDC Resource #2 | 5662
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc3 | IISDC Resource #3 | 5663
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc4 | IISDC Resource #4 | 5664
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - iisdc5 | IISDC Resource #5 | 5665
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - InSource | Insource Partner | 7861
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - riyer | IYER Rohit | 5704
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sjadhav | JADHAV Shashi | 6053
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ljaimovi | JAIMOVICH Leonardo | 6888
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cjanzen | JANZEN Christine | 5860
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mjanzen | JANZEN Matthew | 5697
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jarunnin-faLJrVrhTFezUn3F5Ekbtw | Jon Running | 8065
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kjones | JONES Kevin P | 5691
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rjonnala | JONNALAGADDA Ravi S | 5448
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcupid-kv+SCe+GRk+mcWWAzOdBAw | Jordan Cupid | 8062
+2021-06-07 18:56:59,513 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jcbjunio | JUNIOR Jose | 6873
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pkaleem | KALEEM Paul | 8267
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pmackenzie | KENZIE Pamela | 6858
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mtkihara | KIHARA Marcos | 6839
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - joking | KING Jocelyn | 6892
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - abkondr1 | KONDRAKUNTA Anada | 7658
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - wkoo | KOO Waimun | 5649
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ikorok | KOROKHOV Igor | 6050
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - okotylar | KOTLYAR Olga | 6453
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - akumar5 | KUMAR Aaditya | 7860
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - plamelas | LAMELAS Maria Paula | 6879
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ljbigott-Lnf8XkVaR0+RYspRkmNIcA | Leonardo BIGOTT | 8865
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - klezama | LEZAMA Kevin | 6880
+2021-06-07 18:56:59,514 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dongli | LI Dong | 5679
+2021-06-07 18:56:59,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jlinares1 | LINARES Joyce | 6849
+2021-06-07 18:56:59,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - malopez | LOPEZ Elena | 7862
+2021-06-07 18:56:59,519 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sluker | LUKER Seth E | 5706
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rvmandap | MANDAPATI Ranjit | 5447
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - wmandiku | MANDIKUMBA Wimbai | 6258
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pvmantra | MANTRARATNAM Venkata N (Prasad) | 5854
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - msfmarce | MARCELINO Mateus | 6831
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - matorres | Marco Torres | 8664
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - maasouza-+sqZ54arTdem+xYzI7pg7A | Marcos Souza | 8665
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mbartel-yEXGMXgkRO+PaMATSb1AGw | Mark Bartel | 8668
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kmarlow | MARLOW Kurtis A | 5692
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmartin | MARTIN Julian | 6889
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fmartinez | MARTINEZ Fernando | 6816
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fsmartin | MARTINS Fernando | 6864
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rmashal | MASHAL Ruben | 6885
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - resmatto | MATTOS Raphael | 6832
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - krmcdonn | MCDONNELL Kevin R | 5857
+2021-06-07 18:56:59,520 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmcgraw | MCGRAW Jeremy | 5686
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bmckeon | MCKEON Brian A | 6063
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bgmcknig | MCKNIGHT Bobby G (Bobby) | 5673
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ME-ENG | Mechanical Engineer | 1653
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmescal | MESCAL Jeffery S | 5687
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mmogollon | MOGOLLON Mariola | 6819
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kmontiza | MONTIZAAN Kristian J | 5693
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pmoore | MOORE Paul A | 6080
+2021-06-07 18:56:59,521 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cefmorae | MORAES Carlos | 6869
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rlmouril | MOURILLA Ricardo | 6800
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmoya | MOYA Javier | 6807
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - amukala | MUKALA Anusha | 7867
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - anath | NATH Aditya (A.d.) | 6061
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bnewsom | NEWSOM Brent | 6064
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cokubo | OKUBO Christopher | 5676
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mrcolive | OLIVEIRA Mauro | 6865
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vortega | ORTEGA Victor | 6803
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cortiz | ORTIZ Carlos | 6458
+2021-06-07 18:56:59,522 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vosteico | OSTEICOECHEA Virgilio (Virgil) | 5667
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jowen | OWEN Salah J (James) | 5688
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dpadgett | PADGETT David A | 5680
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - japape | PAPE James A (Jimmy) | 5655
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - apardo | PARDO Alejandra | 6881
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mparra | PARRA Maritza | 6874
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pnpathar | PATHARE Prachi | 7256
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - prsekhar | PATHIVADA Raja S (Raj) | 6058
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rpatnaik | PATNAIK Ramesh Chanda | 7062
+2021-06-07 18:56:59,523 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mpaulin | PAULIN Marc | 6090
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lpavia | PAVIA Ledwis | 6850
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - apazos | PAZOS Andres | 6804
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sperez | PEREZ Sebastian | 6809
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mperron | PERRON Michael R | 5698
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - nmpeshma | PESHMAN Nicholas M | 6079
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jphan | PHAN Huy N | 5689
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lphan | PHAN Linh (Lynn) | 5695
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mnpires | PIRES Marcos | 6840
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pbaratla | Prathyush Aratla | 6454
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - apredige | PREDIGER Agustin | 6886
+2021-06-07 18:56:59,524 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - pkprodda | PRODDATURI Pradeep | 8266
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - PC-MGR | Project Controls Manager | 1659
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - PJ-MGR | Project Manager | 1662
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jlpruitt | PRUITT Jeremy L (Jeremy) | 6074
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - aramchan | RAMCHANDANI Abhishek | 5672
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cereis | REIS Carlos | 6863
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jricotta | RICOTTA John | 5855
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rktest | RK Test | 7863
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - varocha | ROCHA Vinicius | 6847
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vfrodrig | RODRIGUES Vanessa | 6846
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - crodriguez | RODRIGUEZ Cristian | 6805
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jjrodrig | RODRIGUEZ Joel J | 5656
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - nrodrigu | RODRIGUEZ Norma | 6654
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - narogers | ROGERS Neil A | 5669
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - erosario | ROSARIO FERNANDEZ Ruth E (Esther) | 6071
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mrotherh | ROTHERHAM Matthew A | 5699
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sroy | ROY Sayan | 8264
+2021-06-07 18:56:59,525 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lgruivo | RUIVO Leonardo | 6830
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - druiz | RUIZ Daniel | 6868
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jarunnin | RUNNING Jon | 8064
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - esalerno | SALERNO Ezequiel | 6882
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sksamudr | SAMUDRALA Santhosh K | 7870
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - faasanto | SANTOS Fernando | 6837
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rcsantos | SANTOS Roberto | 6870
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vsantos | SANTOS Vancler R (Van) | 6089
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - asepulve | SEPULVEDA Arturo | 6811
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - kshanmug | SHANMUGABALU Krishnaveni | 7061
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sshantanu | SHANTANU Shubham | 8262
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ascherle | SHERLE Andrea | 7457
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cshort | SHORT Corey | 5677
+2021-06-07 18:56:59,526 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - edasilva | SILVA Elver | 6256
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rbbsilva | SILVA Rodrigo | 6842
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sfsilva | SILVA Sebastian | 6866
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vrlsilva | SILVA Valter | 6845
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - esilver | SILVER Eric | 5681
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jdsimmon | SIMMONS John D | 5685
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - jmsingur | SINGURU Jagan | 8265
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bjlsique | SIQUEIRA Bruno | 6825
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - drsiquei | SIQUEIRA Douglas | 6836
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hsmit | SMIT Hugo | 5861
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - csmith1 | SMITH Christopher (Chris) | 5651
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - msmith | SMITH Matthew D | 5700
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - msokol | SOKOL Mario | 5657
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - isoto | SOTO Ivan | 6801
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - alsouza | SOUZA Andre | 6823
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - maasouza | SOUZA Marcos | 6878
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - specialist-sa | Specialist SA | 7057
+2021-06-07 18:56:59,527 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - SPIresource | SPI Resource (Generic) | 8261
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ssreedha | SREEDHARA Suresh | 8663
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - lsreeram | SREERAM Lavanya | 7258
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adstande | STANDER Alan D | 6060
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - adsulliv | SULLIVAN Alan | 6653
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dwtanner | TANNER Douglas W | 6068
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - hteftal | TEFTAL Hassan | 5654
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - sthakral | THAKRAL Siddartha | 6253
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - atoro | TORO Angelica | 6848
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - thstotar | TOTARO Thiago | 6834
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bturnbul | TURNBULL Briana C | 6065
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - cwtyson | TYSON Charles W | 6066
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - unassigned | UNASSIGNED - NA | 6251
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - vursic | URSIC Vladimir | 6822
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - svacca | VACCA Sofia | 6890
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - mvarela | VARELA Marcos | 6877
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - uvarshne | VARSHNEY Umang | 7257
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - grvasque | VASQUEZ Giovanny | 6828
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fvega | VEGA Felipe | 6891
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - evenezu | VENEZUELA Eduardo S | 5650
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - svenkate | VENKATESWARA Santosh Kumar (Santosh) | 6087
+2021-06-07 18:56:59,528 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - ilvieira | VIEIRA Iuri | 6887
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - Rvigna | VIGNA Rodrigo | 7865
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - wcwallac | WALLACE William | 7059
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - bwavle | WAVLE William | 5674
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dpwellin | WELLINGTON Darren P | 6067
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - dpwillia | WILLIAMS Dan | 6461
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - rwittmann | WITTMANN Ramiro | 6859
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - arzeff | ZEFF Andrew R (Andrew) | 6059
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - xzhang2 | ZHANG Xin | 5849
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.IntegratorBase.logDebug:116 - fzhou | ZHOU Feng (Stephen) | 6252
+2021-06-07 18:56:59,529 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40285
+2021-06-07 18:56:59,602 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:59,602 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,06244A08CD0A4C5182A79A270352976D
+2021-06-07 18:56:59,616 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:59,723 ERROR com.ecosys.service.IntegratorBase.logError:81 - net.sf.mpxj.MPXJException: Error reading file
+2021-06-07 18:56:59,723 INFO  com.ecosys.service.IntegratorBase.logInfo:109 - Import Terminated due to Errors
+2021-06-07 18:56:59,723 INFO  com.ecosys.service.BatchQueueMgrImpl.info:? - Update Task Status to Error for 23755
+2021-06-07 18:56:59,724 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueUpdate - batch size: 2000 - true
+2021-06-07 18:56:59,724 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:1
+2021-06-07 18:56:59,827 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:59,845 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,88C86088DB87D97CA7C9E248DD3FC635
+2021-06-07 18:56:59,853 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueUpdate - elapsed time: PT0.121S for 1 records
+2021-06-07 18:56:59,853 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueUpdate - elapsed time: PT0.129S
+2021-06-07 18:56:59,863 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-07 18:56:59,863 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-07 18:56:59,866 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-07 18:56:59,866 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:3
+2021-06-07 18:56:59,948 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-07 18:56:59,962 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,BEFAD2DFE398FBC736617DE93F983BCB
+2021-06-07 18:56:59,963 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.096S for 3 records
+2021-06-07 18:56:59,963 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.097S
+2021-06-07 18:56:59,973 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+

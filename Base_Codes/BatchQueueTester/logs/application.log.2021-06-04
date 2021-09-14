@@ -1,0 +1,312 @@
+2021-06-04 09:57:18,798 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-04 09:57:19,291 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 09:57:19,295 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
+2021-06-04 09:57:19,399 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 09:57:19,400 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,7CE1C9E78A22F37E02A2D7958C9EFD12
+2021-06-04 09:57:19,424 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 09:57:19,580 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 09:57:19,581 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23755
+2021-06-04 09:57:19,634 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 09:57:19,635 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F7F92ADE04067A48FBD53FC8586E09F5
+2021-06-04 09:57:19,645 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-1 : PRJ-000262
+2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-2 : 40285
+2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-3 : 666
+2021-06-04 09:57:19,646 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Progress Import begins...
+2021-06-04 09:57:19,646 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFile/?ProjectPeriod=666&RootCostObject=40285
+2021-06-04 09:57:19,692 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 09:57:19,692 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,97A2CFBF55A21052CB4067FF3DA64DF3
+2021-06-04 09:57:19,701 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 09:57:19,807 ERROR com.ecosys.service.IntegratorBase.logError:79 - net.sf.mpxj.MPXJException: Error reading file
+2021-06-04 09:57:19,807 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Import Terminated due to Errors
+2021-06-04 09:57:19,807 INFO  com.ecosys.service.BatchQueueMgrImpl.info:? - Update Task Status to Error for 23755
+2021-06-04 09:57:19,808 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueUpdate - batch size: 2000 - true
+2021-06-04 09:57:19,808 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:1
+2021-06-04 09:57:19,879 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 09:57:19,896 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,8C328B56D21278DB5A7B848DBE51EB48
+2021-06-04 09:57:19,904 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueUpdate - elapsed time: PT0.088S for 1 records
+2021-06-04 09:57:19,904 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueUpdate - elapsed time: PT0.096S
+2021-06-04 09:57:19,914 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 09:57:19,914 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-04 09:57:19,917 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-04 09:57:19,917 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:3
+2021-06-04 09:57:19,995 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 09:57:20,009 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,28D49D970DE1E361A49491D2331C6BDD
+2021-06-04 09:57:20,009 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.092S for 3 records
+2021-06-04 09:57:20,009 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.092S
+2021-06-04 09:57:20,020 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:39:57,550 INFO  com.ecosys.startup.MppEtcImport.main:30 - Start Import ETC from Microsoft Project file
+2021-06-04 22:40:25,318 INFO  com.ecosys.startup.MppWbsImport.main:30 - Start Import WBS from Microsoft Project file
+2021-06-04 22:40:26,213 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:40:26,220 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:40:31,476 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:31,478 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2A588A8BB6BF9EA4B5B6D15A0A16BAE3
+2021-06-04 22:40:31,514 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:31,784 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:40:31,784 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:40:31,987 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:31,988 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,CCEE8D1943D6E76C5D7EFA63D716DA4A
+2021-06-04 22:40:32,007 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:32,008 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-1 : PRX2
+2021-06-04 22:40:32,008 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-2 : 39280
+2021-06-04 22:40:32,008 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Starting update Project Structure...
+2021-06-04 22:40:32,009 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39280
+2021-06-04 22:40:32,742 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:32,743 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:219 - HTTP status code: 200
+2021-06-04 22:40:32,743 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,2F6414E8FF27E941A7DC03F7A70412AD
+2021-06-04 22:40:32,756 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:33,456 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1, Name: Major Phase 1, CCL=
+2021-06-04 22:40:33,457 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1, Name: Site A, CCL=
+2021-06-04 22:40:33,457 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.1, Name: Contr 1, CCL=Y
+2021-06-04 22:40:33,457 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.2, Name: Contr 2, CCL=Y
+2021-06-04 22:40:33,457 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.3, Name: Contr 3, CCL=Y
+2021-06-04 22:40:33,457 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2, Name: Site B, CCL=
+2021-06-04 22:40:33,458 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.1, Name: Contr 1, CCL=Y
+2021-06-04 22:40:33,458 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.2, Name: Contr 2, CCL=Y
+2021-06-04 22:40:33,458 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3, Name: Contr 3, CCL=Y
+2021-06-04 22:40:33,458 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5, Name: Spill Way Works, CCL=
+2021-06-04 22:40:33,459 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5.1, Name: Contractor A, CCL=Y
+2021-06-04 22:40:33,459 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5.2, Name: Contractor B, CCL=Y
+2021-06-04 22:40:33,459 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Count of WBS Items to Update: 12
+2021-06-04 22:40:33,462 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppStructure - batch size: 2000 - true
+2021-06-04 22:40:33,462 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:12
+2021-06-04 22:40:34,166 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:34,187 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,1AEADA9F55CD20B87657AC4792B19424
+2021-06-04 22:40:34,198 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppStructure - elapsed time: PT0.725S for 12 records
+2021-06-04 22:40:34,198 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppStructure - elapsed time: PT0.736S
+2021-06-04 22:40:34,214 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:34,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39311 Created/Updated
+2021-06-04 22:40:34,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39312 Created/Updated
+2021-06-04 22:40:34,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39314 Created/Updated
+2021-06-04 22:40:34,214 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39315 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39316 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39313 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39317 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39318 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39319 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40084 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40085 Created/Updated
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40086 Created/Updated
+2021-06-04 22:40:34,215 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Total created Items = 12, Failed Items = 0
+2021-06-04 22:40:34,215 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Update project structure completed.
+2021-06-04 22:40:34,215 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-04 22:40:34,225 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-04 22:40:34,225 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-04 22:40:34,695 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:34,712 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,29191524AFA9D5E12D4B893B52EEFCE4
+2021-06-04 22:40:34,712 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.487S for 4 records
+2021-06-04 22:40:34,712 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.487S
+2021-06-04 22:40:34,727 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:34,727 INFO  com.ecosys.startup.MppWbsImport.main:46 - Completed WBS Import Process... P0000-00-00T00:00:09.463
+2021-06-04 22:40:48,322 INFO  com.ecosys.startup.MppWbsImport.main:30 - Start Import WBS from Microsoft Project file
+2021-06-04 22:40:49,089 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:40:49,097 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:40:49,353 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:49,354 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,9681ED5AB938BB8209B65135DDE9B974
+2021-06-04 22:40:49,371 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:49,595 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:40:49,597 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:40:49,686 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:49,686 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,0E6625505B6187604D136F2C0C18AE85
+2021-06-04 22:40:49,702 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:49,703 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-1 : PRX2
+2021-06-04 22:40:49,703 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-2 : 39280
+2021-06-04 22:40:49,704 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Starting update Project Structure...
+2021-06-04 22:40:49,704 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39280
+2021-06-04 22:40:49,876 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:49,878 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:219 - HTTP status code: 200
+2021-06-04 22:40:49,878 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,74299C66A4F764E32B40C7CD9385725C
+2021-06-04 22:40:49,891 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:50,473 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1, Name: Major Phase 1, CCL=
+2021-06-04 22:40:50,473 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1, Name: Site A, CCL=
+2021-06-04 22:40:50,473 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.1, Name: Contr 1, CCL=Y
+2021-06-04 22:40:50,473 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.2, Name: Contr 2, CCL=Y
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.3, Name: Contr 3, CCL=Y
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2, Name: Site B, CCL=
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.1, Name: Contr 1, CCL=Y
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.2, Name: Contr 2, CCL=Y
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3, Name: Contr 3, CCL=Y
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5, Name: Spill Way Works, CCL=
+2021-06-04 22:40:50,474 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5.1, Name: Contractor A, CCL=Y
+2021-06-04 22:40:50,475 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5.2, Name: Contractor B, CCL=Y
+2021-06-04 22:40:50,475 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Count of WBS Items to Update: 12
+2021-06-04 22:40:50,477 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppStructure - batch size: 2000 - true
+2021-06-04 22:40:50,478 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:12
+2021-06-04 22:40:50,815 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:50,835 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,AB6545491881051C7B016BA636A212AB
+2021-06-04 22:40:50,846 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppStructure - elapsed time: PT0.357S for 12 records
+2021-06-04 22:40:50,847 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppStructure - elapsed time: PT0.369S
+2021-06-04 22:40:50,860 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:50,860 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39311 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39312 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39314 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39315 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39316 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39313 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39317 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39318 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39319 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40084 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40085 Created/Updated
+2021-06-04 22:40:50,861 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40086 Created/Updated
+2021-06-04 22:40:50,861 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Total created Items = 12, Failed Items = 0
+2021-06-04 22:40:50,862 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Update project structure completed.
+2021-06-04 22:40:50,862 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-04 22:40:50,871 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-04 22:40:50,871 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-04 22:40:51,109 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:40:51,128 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,1081D8A7893B860360561944D13BC8C5
+2021-06-04 22:40:51,128 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.257S for 4 records
+2021-06-04 22:40:51,128 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.257S
+2021-06-04 22:40:51,138 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:40:51,138 INFO  com.ecosys.startup.MppWbsImport.main:46 - Completed WBS Import Process... P0000-00-00T00:00:02.886
+2021-06-04 22:41:40,459 INFO  com.ecosys.startup.MppWbsImport.main:30 - Start Import WBS from Microsoft Project file
+2021-06-04 22:41:52,891 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:41:52,971 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:41:53,348 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:41:53,371 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,4CAE6CD54C4EC07B1EB03EF0BC28BA7B
+2021-06-04 22:41:53,412 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:41:56,615 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:41:56,619 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:41:56,734 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:41:56,735 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,1195951FCBB25A9BFEC08CC70570D1C5
+2021-06-04 22:41:56,758 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:41:56,771 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-1 : PRX2
+2021-06-04 22:41:56,772 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-2 : 39280
+2021-06-04 22:41:56,773 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Starting update Project Structure...
+2021-06-04 22:41:56,777 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39280
+2021-06-04 22:41:57,078 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:41:57,094 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:219 - HTTP status code: 200
+2021-06-04 22:41:57,095 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,9624575350F58DFD31780E31191E6C93
+2021-06-04 22:41:57,112 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:42:03,404 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1, Name: Major Phase 1, CCL=
+2021-06-04 22:42:03,405 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1, Name: Site A, CCL=
+2021-06-04 22:42:03,406 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.1, Name: Contr 1, CCL=Y
+2021-06-04 22:42:03,407 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.2, Name: Contr 2, CCL=Y
+2021-06-04 22:42:03,408 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.1.3, Name: Contr 3, CCL=Y
+2021-06-04 22:42:03,410 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2, Name: Site B, CCL=
+2021-06-04 22:42:03,411 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.1, Name: Contr 1, CCL=Y
+2021-06-04 22:42:03,412 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.2, Name: Contr 2, CCL=Y
+2021-06-04 22:42:03,413 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3, Name: Contr 3, CCL=Y
+2021-06-04 22:42:03,414 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5, Name: Spill Way Works, CCL=
+2021-06-04 22:42:03,415 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5.1, Name: Contractor A, CCL=Y
+2021-06-04 22:42:03,416 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1.2.3.5.2, Name: Contractor B, CCL=Y
+2021-06-04 22:42:03,417 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Count of WBS Items to Update: 12
+2021-06-04 22:42:03,439 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: MSPPutMppStructure - batch size: 2000 - true
+2021-06-04 22:42:03,440 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:12
+2021-06-04 22:42:04,191 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:42:04,536 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,769E9BACA1FF74C514337E86A65ECA77
+2021-06-04 22:42:04,744 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST MSPPutMppStructure - elapsed time: PT1.097S for 12 records
+2021-06-04 22:42:04,745 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED MSPPutMppStructure - elapsed time: PT1.306S
+2021-06-04 22:42:04,767 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:42:04,768 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39311 Created/Updated
+2021-06-04 22:42:04,770 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39312 Created/Updated
+2021-06-04 22:42:04,770 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39314 Created/Updated
+2021-06-04 22:42:04,771 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39315 Created/Updated
+2021-06-04 22:42:04,772 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39316 Created/Updated
+2021-06-04 22:42:04,773 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39313 Created/Updated
+2021-06-04 22:42:04,773 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39317 Created/Updated
+2021-06-04 22:42:04,775 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39318 Created/Updated
+2021-06-04 22:42:04,775 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 39319 Created/Updated
+2021-06-04 22:42:04,776 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40084 Created/Updated
+2021-06-04 22:42:04,777 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40085 Created/Updated
+2021-06-04 22:42:04,777 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Cost Object Internal ID : 40086 Created/Updated
+2021-06-04 22:42:04,779 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Total created Items = 12, Failed Items = 0
+2021-06-04 22:42:04,779 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Update project structure completed.
+2021-06-04 22:42:04,780 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - logBatchQueue
+2021-06-04 22:42:04,822 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - Processing requests in batch: BatchQueueLog - batch size: 500 - true
+2021-06-04 22:42:04,824 DEBUG com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - total records:4
+2021-06-04 22:42:05,189 DEBUG com.ecosys.service.EpcRestMgrImpl.postApplicationXmlAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:42:05,501 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,980CA20B6ACDF4DB7A3123E4EA4D959F
+2021-06-04 22:42:05,502 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - REQUEST BatchQueueLog - elapsed time: PT0.677S for 4 records
+2021-06-04 22:42:05,503 INFO  com.ecosys.service.EpcRestMgrImpl.postXMLRequestInBatch:? - COMPLETED BatchQueueLog - elapsed time: PT0.679S
+2021-06-04 22:42:05,521 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:42:16,252 INFO  com.ecosys.startup.MppWbsImport.main:30 - Start Import WBS from Microsoft Project file
+2021-06-04 22:42:43,373 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:42:43,457 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:42:43,759 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:42:43,779 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,8CE8E12EF81CCCA2DAA636731DFC3712
+2021-06-04 22:42:43,834 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:42:47,233 DEBUG com.ecosys.service.BatchQueueMgrImpl.debug:? - readTask:http://ipm-intg:8080/ecosys/api,BatchQueueRead
+2021-06-04 22:42:47,236 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/BatchQueueRead/?TaskInternalID=23546
+2021-06-04 22:42:47,309 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:42:47,309 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,F6A0D0D9A4326BCC02FBD91CFE8E041F
+2021-06-04 22:42:47,333 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:42:47,349 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-1 : PRX2
+2021-06-04 22:42:47,350 INFO  com.ecosys.service.IntegratorBase.getArguments:144 - Argument-2 : 39280
+2021-06-04 22:42:47,351 INFO  com.ecosys.service.IntegratorBase.logInfo:107 - Starting update Project Structure...
+2021-06-04 22:42:47,356 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - resource is:http://ipm-intg:8080/ecosys/api/restxml/MSPGetMppFileStructure/?RootCostObject=39280
+2021-06-04 22:42:47,491 DEBUG com.ecosys.service.EpcRestMgrImpl.getAsApplicationXml:? - HTTP status code: 200
+2021-06-04 22:42:47,511 DEBUG com.ecosys.service.IntegratorBase.getMPPFile:219 - HTTP status code: 200
+2021-06-04 22:42:47,513 DEBUG com.ecosys.service.EpcRestMgrImpl.getSessionCookie:? - cookie:JSESSIONID,/ecosys,967757CB78155BFC7F429E4B7D509541
+2021-06-04 22:42:47,532 DEBUG com.ecosys.service.EpcRestMgrImpl.logout:? - entity:<html><head><title>Session is now logged out - EcoSys Web Service API</title></head>
+<body><h1>Session is now logged out - EcoSys Web Service API</h1>
+</body></html>
+
+2021-06-04 22:45:27,736 DEBUG com.ecosys.service.IntegratorBase.logDebug:114 - Record added - PathID: PRX2.1, Name: Major Phase 1, CCL=
